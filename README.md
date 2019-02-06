@@ -1,1 +1,3 @@
-# intro_to_ros
+# Intro to ROS
+
+< include link to lab1c_ros > 
