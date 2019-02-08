@@ -104,24 +104,24 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 **Node Name:** fake_scan_publisher       
 **Published topic names:** fake_scan    
 **Message type:** LaserScan    
-**Subscription topics names:** None
+**Subscription topics names:** None     
 **Publish Rate:** 20hz   
 ### LaserScan Parameter Specifications
-**Header:**
-	- **Timestamp:** Current ros time
-	- **Frame_id:** “base_link”
-**Angle_min:** -2/3*pi*
-**Angle_max:** 2/3*pi*
-**Angle_increment:** 1/300*pi*
-**Time_increment:** Leave it unset if you wish
-**Scan_time:** Current ros time 
-**Range_min:** 1.0   
-**Range_max:** 10.0  
-**Ranges:** One dimensional array with elements of random floats between range_min and range_max, Use angle_min, angle_max,  and angle_increment to determine the length.
-**Intensities:** Leave it unset if you wish 
+**Header:**       
+	- **Timestamp:** Current ros time     
+	- **Frame_id:** “base_link”     
+**Angle_min:** -2/3*pi*     
+**Angle_max:** 2/3*pi*     
+**Angle_increment:** 1/300*pi*     
+**Time_increment:** Leave it unset if you wish     
+**Scan_time:** Current ros time      
+**Range_min:** 1.0        
+**Range_max:** 10.0       
+**Ranges:** One dimensional array with elements of random floats between range_min and range_max, Use angle_min, angle_max,  and angle_increment to determine the length.     
+**Intensities:** Leave it unset if you wish      
 ### Commit Specification    
 1. When your node works properly, visualize the published laser scan data using rviz. Take a screenshot of your visualized laser scan data and name it ***fake_scan_rviz.jpeg***. Save the image in `ros_exercises/rviz`
-2. Record a bag file of your laser scan data and call the file fake_scan_bag.bag, save it in `ros_exercises/rosbag`.
+2. Record a bag file of your laser scan data and call the file `fake_scan_bag.bag`, save it in `ros_exercises/rosbag`.
 3. Again, push your code, bag file, screenshot, and any supporting files with a appropriate commit message.
 
 
