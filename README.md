@@ -55,7 +55,7 @@ The following are selected chapters from the ROS Wiki documentations and Tutoria
 
 
 ## ROS Exercises
-### Question 1: Create a package and build it
+### Create a package and build it
 By following the instructions from the reference or instructions of your finding, create a catkin workspace and package named rss_lab1 and ros_exercises respectively, and make sure that your workspace is built (using [catkin_make](http://wiki.ros.org/catkin/commands/catkin_make)) before and after the package was added. Your workspace should live in the repository created in the Git exercises. After creating the workspace and the package, you should have the following directory layout.
 
 * /rss_lab1[your git repository created in lab1b]
@@ -69,10 +69,10 @@ By following the instructions from the reference or instructions of your finding
 
 **Note**: Push your workspace.
 
-### Question 2: Create Simple Publisher (Python)
+## Question 1: Create Simple Publisher (Python)
 Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly.    
     
-__Node Specification__
+### Node Specification    
 **Description:** Publishes a random number between 0 and 10.    
 **File name:** simple_publisher.py    
 **Node Name:** simple_publisher    
@@ -81,7 +81,7 @@ __Node Specification__
 **Subscriptions:** None    
 **Publish rate:** 20hz    
     
-__Commit Specification__    
+### Commit Specification    
 1. When your node works properly, take a screenshot of **rqt_graph** visualization of your node(s) and topic(s). Name your screenshot `simple_publisher_rqt.jpeg` and save it in `ros_exercises/rqt`, reate the `rqt/` directory. Note: `ros_exercises/` is the ros package you created at the beginning of this section.
 2. Push your code, the screenshot, and any supporting files with an appropriate commit message.
 
