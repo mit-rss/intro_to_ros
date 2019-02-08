@@ -3,15 +3,15 @@ The objective of the following exercises is to help you practice the most common
 
 Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on [Piazza](https://piazza.com/class/jrql7urlkqn189) so other students can benefit from the answer. If you have a question about your individual submission, please make a private post. 
 
-### Submission
+## Submission
 Each exercise has defined submission requirements and the overall assignment submission requirement follows from that. However, for your work to be graded make sure that the following two requirements are met by all your submissions.
 1. Everything submitted in this section should be in your git repository created earlier (the beginning of the Git exercises) and must be committed from the terminal.
 2. All your work should live in your workspace and more specifically your package. Make sure that your workspace builds before each submission.
-3. Finally, when you have all your nodes running smoothly, submit a `.zip` file of your package (**ros_exercises**) to [Gradescope](https://gradescope.com/) under lab1b_exercises_ros. The zip should be just your package with all your work tested and ready to go. Note: Make sure that node specifications match the requirements. Your submission will not get graded properly if you don't put it in the right format.   
+3. Finally, when you have all your nodes running smoothly, submit a `.zip` file of your package (**ros_exercises**) to [Gradescope](https://gradescope.com/) under lab1c_exercises_ros. The zip should be just your package with all your work tested and ready to go. Note: Make sure that node specifications match the requirements. Your submission will not get graded properly if you don't put it in the right format.   
 
-This lab is due on **TBD**.
+This lab is due on **1:00pm EST on Feb 20th, 2019**.
 
-### References
+## References
 The following are selected chapters from the ROS Wiki documentations and Tutorials. If you understand all the concepts covered in these exercises, you should be ready for the following exercises and for the most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki Documentation](http://wiki.ros.org/) section and follow the links to learn more.
 1. [Catkin](http://wiki.ros.org/catkin/conceptual_overview)   
 2. Catkin Workspace   
@@ -42,20 +42,19 @@ The following are selected chapters from the ROS Wiki documentations and Tutoria
 	b. [rosparam](http://wiki.ros.org/rosparam)   
 9. Visualization Tools   
 	a. RQT   
-		i. [RQT](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics)   
-		ii. [RQT_GRAPH](http://wiki.ros.org/rqt_graph)   
+		- [RQT](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics)   
+		- [RQT_GRAPH](http://wiki.ros.org/rqt_graph)   
 	b. RVIZ   
-		i. [User Guide](http://wiki.ros.org/rviz/UserGuide)   
-		ii. [Interactive Markers](http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers%3A%20Getting%20Started)   
-		iii. [Tutorials](http://wiki.ros.org/rviz/Tutorials)   
-10. TF   
-	a. [Tf](http://wiki.ros.org/tf)   
+		- [User Guide](http://wiki.ros.org/rviz/UserGuide)   
+		- [Interactive Markers](http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers%3A%20Getting%20Started)   
+		- [Tutorials](http://wiki.ros.org/rviz/Tutorials)   
+10. [TF](http://wiki.ros.org/tf)   
 11. Rosbag   
 	a. [Rosbag](http://wiki.ros.org/Bags)    
 	b. [Command-Line Tools](http://wiki.ros.org/rosbag/Commandline)   
 
 
-### ROS Exercises
+## ROS Exercises
 ### Question 1: Create a package and build it
 By following the instructions from the reference or instructions of your finding, create a catkin workspace and package named rss_lab1 and ros_exercises respectively, and make sure that your workspace is built (using [catkin_make](http://wiki.ros.org/catkin/commands/catkin_make)) before and after the package was added. Your workspace should live in the repository created in the Git exercises. After creating the workspace and the package, you should have the following directory layout.
 
@@ -71,4 +70,16 @@ By following the instructions from the reference or instructions of your finding
 **Note**: Push your workspace.
 
 ### Question 2: Create Simple Publisher (Python)
- 
+Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly.
+#### Node Specification
+<span style="color:blue">**Description:**</span> Publishes a random number between 0 and 10.
+<span style="color:blue">**File name:**</span> simple_publisher.py
+<span style="color:blue">**Node Name:**</span> simple_publisher
+<span style="color:blue">**Published topic names:**</span> my_random_float
+<span style="color:blue">**Message type:**</span> Float32
+<span style="color:blue">**Subscriptions:**</span> None
+<span style="color:blue">**Publish rate:**</span> 20hz
+#### Commit Specification
+1. When your node works properly, take a screenshot of ***rqt_graph*** visualization of your node(s) and topic(s). Name your screenshot `simple_publisher_rqt.jpeg` and save it in `ros_exercises/rqt`, create the rqt directory. Note: `ros_exercises/` is the ros package you created at the beginning of this section.
+2. Push your code, the screenshot, and any supporting files with an appropriate commit message.
+
