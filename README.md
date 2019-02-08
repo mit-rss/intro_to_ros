@@ -72,14 +72,14 @@ By following the instructions from the reference or instructions of your finding
 ### Question 2: Create Simple Publisher (Python)
 Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly.
 #### Node Specification
-<span style="color:blue">**Description:**</span> Publishes a random number between 0 and 10.
-<span style="color:blue">**File name:**</span> simple_publisher.py
-<span style="color:blue">**Node Name:**</span> simple_publisher
-<span style="color:blue">**Published topic names:**</span> my_random_float
-<span style="color:blue">**Message type:**</span> Float32
-<span style="color:blue">**Subscriptions:**</span> None
-<span style="color:blue">**Publish rate:**</span> 20hz
+**Description:** Publishes a random number between 0 and 10.    
+**File name:** simple_publisher.py    
+**Node Name:** simple_publisher    
+**Published topic names:** my_random_float    
+**Message type:** Float32    
+**Subscriptions:** None    
+**Publish rate:** 20hz    
 #### Commit Specification
-1. When your node works properly, take a screenshot of ***rqt_graph*** visualization of your node(s) and topic(s). Name your screenshot `simple_publisher_rqt.jpeg` and save it in `ros_exercises/rqt`, create the rqt directory. Note: `ros_exercises/` is the ros package you created at the beginning of this section.
+1. When your node works properly, take a screenshot of **rqt_graph** visualization of your node(s) and topic(s). Name your screenshot `simple_publisher_rqt.jpeg` and save it in `ros_exercises/rqt`, reate the `rqt/` directory. Note: `ros_exercises/` is the ros package you created at the beginning of this section.
 2. Push your code, the screenshot, and any supporting files with an appropriate commit message.
 
