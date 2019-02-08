@@ -8,8 +8,7 @@ In order for your work to be graded make sure that the following two requirement
 1. Everything submitted in this lab should be in your git repository created from the previous lab (intro_to_git) and must be committed from the terminal.
 2. All your work should live in your workspace and more specifically your package. Make sure that your workspace builds before each submission.
 3. Finally, when you have all your nodes running smoothly, submit a `.zip` file of your package (**ros_exercises.zip**) to [Gradescope](https://gradescope.com/) under lab1c_exercises_ros. The zip should be just your package with all your work tested and ready to go. Note: Make sure that node specifications match the requirements. Your submission will not get graded properly if you don't put it in the right format.   
-
-## Deadline
+           
 This lab is due on **Wednesday, February 20th at 1:00PM EST**.
 
 ## References
