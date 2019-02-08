@@ -9,7 +9,7 @@ Each exercise has defined submission requirements and the overall assignment sub
 2. All your work should live in your workspace and more specifically your package. Make sure that your workspace builds before each submission.
 3. Finally, when you have all your nodes running smoothly, submit a `.zip` file of your package (**ros_exercises**) to [Gradescope](https://gradescope.com/) under lab1c_exercises_ros. The zip should be just your package with all your work tested and ready to go. Note: Make sure that node specifications match the requirements. Your submission will not get graded properly if you don't put it in the right format.   
 
-This lab is due on **1:00pm EST on Feb 20th, 2019**.
+This lab is due on **Wednesday, February 20th at 1:00PM EST**.
 
 ## References
 The following are selected chapters from the ROS Wiki documentations and Tutorials. If you understand all the concepts covered in these exercises, you should be ready for the following exercises and for the most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki Documentation](http://wiki.ros.org/) section and follow the links to learn more.
@@ -71,7 +71,6 @@ By following the instructions from the reference or instructions of your finding
 
 ## Question 1: Create Simple Publisher (Python)
 Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly.    
-    
 ### Node Specification    
 **Description:** Publishes a random number between 0 and 10.    
 **File name:** simple_publisher.py    
@@ -80,8 +79,22 @@ Your task in this exercise is to create a simple ROS node that publishes a rando
 **Message type:** Float32    
 **Subscriptions:** None    
 **Publish rate:** 20hz    
-    
 ### Commit Specification    
-1. When your node works properly, take a screenshot of **rqt_graph** visualization of your node(s) and topic(s). Name your screenshot `simple_publisher_rqt.jpeg` and save it in `ros_exercises/rqt`, reate the `rqt/` directory. Note: `ros_exercises/` is the ros package you created at the beginning of this section.
+1. When your node works properly, take a screenshot of ***rqt_graph*** visualization of your node(s) and topic(s). Name your screenshot `simple_publisher_rqt.jpeg` and save it in `ros_exercises/rqt`, reate the `rqt/` directory. Note: `ros_exercises/` is the ros package you created at the beginning of this section.
 2. Push your code, the screenshot, and any supporting files with an appropriate commit message.
+
+## Question 2: Create Simple Publisher (Python)
+In this exercise, you will write a listener (subscriber) that listens to the topic ***my_random_float***, which is published on to by the previous node (simple_subscriber). The node takes the natural log of the message on ***my_random_float*** and publishes it to ***random_float_log***.    
+### Node Specification    
+**Description:** Subscribes to the topic published on by the simple_publisher and publishes the natural log of the received messages.     
+**File name:** simple_subscriber.py             
+**Node Name:** simple_subscriber       
+**Published topic names:** random_float_log    
+**Message type:** Float32    
+**Subscription topics names:** my_random_float   
+### Commit Specification    
+1. Again, take a screenshot of ***rqt_graph*** showing your nodes running, name it `simple_subscriber_rqt.jpeg`, and save it in the same folder as the previous exercise.
+2. Again, push your code, the screenshot, and any supporting files with a appropriate commit message.
+
+
 
