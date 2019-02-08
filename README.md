@@ -13,46 +13,46 @@ This lab is due on **TBD**.
 
 ### References
 The following are selected chapters from the ROS Wiki documentations and Tutorials. If you understand all the concepts covered in these exercises, you should be ready for the following exercises and for the most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki Documentation](http://wiki.ros.org/) section and follow the links to learn more.
-1. [Catkin](http://wiki.ros.org/catkin/conceptual_overview)
-2. Catkin Workspace
-	a. [Catkin workspaces](http://wiki.ros.org/catkin/workspaces)
-	b. [Creating Catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
-3. Packages
-	a. [ROS package](http://wiki.ros.org/Packages)
-	b. [Creating ROS package](http://wiki.ros.org/catkin/Tutorials/CreatingPackage)
-4. Messages
-	a. [ROS Messages](http://wiki.ros.org/Messages)
-	b. [Creating custom messages](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv)
-	c. [The rosmsg command-line tools](http://wiki.ros.org/rosmsg)
-	d. [Common ros message categories](http://wiki.ros.org/common_msgs)
-5. Topics 
-	a. [ROS Topics](http://wiki.ros.org/Topics)
-	b. [Rostopic Command-Line tool](http://wiki.ros.org/rostopic)
-6. Nodes
-	a. [ROS Nodes](http://wiki.ros.org/Nodes)
-	b. [The rosnode command-line tools](http://wiki.ros.org/rosnode)
-	c. [Writing Publisher and Subscriber(Python)](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29)
-7. Launch Files 
-	a. [ROS Launch](http://wiki.ros.org/roslaunch)
-	b. [Command-line Tools](http://wiki.ros.org/roslaunch/Commandline%20Tools)
-	c. [XML Format](http://wiki.ros.org/roslaunch/XML)
-	d. [Tips for Large Projects](http://wiki.ros.org/roslaunch/Tutorials/Roslaunch%20tips%20for%20larger%20projects)
-8. Parameter server
-	a. [Parameter server](http://wiki.ros.org/Parameter%20Server)
-	b. [rosparam](http://wiki.ros.org/rosparam)
-9. Visualization Tools
-	a. RQT
-		i. [RQT](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics)
-		ii. [RQT_GRAPH](http://wiki.ros.org/rqt_graph)
-	b. RVIZ
-		i. [User Guide](http://wiki.ros.org/rviz/UserGuide)
-		ii. [Interactive Markers](http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers%3A%20Getting%20Started)
-		iii. [Tutorials](http://wiki.ros.org/rviz/Tutorials)
-10. TF
-	a. [Tf](http://wiki.ros.org/tf)
-11. Rosbag
-	a. [Rosbag](http://wiki.ros.org/Bags) 
-	b. [Command-Line Tools](http://wiki.ros.org/rosbag/Commandline)
+1. [Catkin](http://wiki.ros.org/catkin/conceptual_overview)   
+2. Catkin Workspace   
+	a. [Catkin workspaces](http://wiki.ros.org/catkin/workspaces)   
+	b. [Creating Catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)   
+3. Packages   
+	a. [ROS package](http://wiki.ros.org/Packages)   
+	b. [Creating ROS package](http://wiki.ros.org/catkin/Tutorials/CreatingPackage)   
+4. Messages   
+	a. [ROS Messages](http://wiki.ros.org/Messages)   
+	b. [Creating custom messages](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv)   
+	c. [The rosmsg command-line tools](http://wiki.ros.org/rosmsg)   
+	d. [Common ros message categories](http://wiki.ros.org/common_msgs)   
+5. Topics    
+	a. [ROS Topics](http://wiki.ros.org/Topics)   
+	b. [Rostopic Command-Line tool](http://wiki.ros.org/rostopic)   
+6. Nodes   
+	a. [ROS Nodes](http://wiki.ros.org/Nodes)   
+	b. [The rosnode command-line tools](http://wiki.ros.org/rosnode)   
+	c. [Writing Publisher and Subscriber(Python)](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29)   
+7. Launch Files    
+	a. [ROS Launch](http://wiki.ros.org/roslaunch)   
+	b. [Command-line Tools](http://wiki.ros.org/roslaunch/Commandline%20Tools)   
+	c. [XML Format](http://wiki.ros.org/roslaunch/XML)   
+	d. [Tips for Large Projects](http://wiki.ros.org/roslaunch/Tutorials/Roslaunch%20tips%20for%20larger%20projects)   
+8. Parameter server   
+	a. [Parameter server](http://wiki.ros.org/Parameter%20Server)   
+	b. [rosparam](http://wiki.ros.org/rosparam)   
+9. Visualization Tools   
+	a. RQT   
+		i. [RQT](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics)   
+		ii. [RQT_GRAPH](http://wiki.ros.org/rqt_graph)   
+	b. RVIZ   
+		i. [User Guide](http://wiki.ros.org/rviz/UserGuide)   
+		ii. [Interactive Markers](http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers%3A%20Getting%20Started)   
+		iii. [Tutorials](http://wiki.ros.org/rviz/Tutorials)   
+10. TF   
+	a. [Tf](http://wiki.ros.org/tf)   
+11. Rosbag   
+	a. [Rosbag](http://wiki.ros.org/Bags)    
+	b. [Command-Line Tools](http://wiki.ros.org/rosbag/Commandline)   
 
 
 ### ROS Exercises
