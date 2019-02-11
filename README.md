@@ -81,7 +81,7 @@ Your task in this exercise is to create a simple ROS node that publishes a rando
 **Subscription topic names:** None    
 **Publish rate:** 20hz    
 ### Commit Specification    
-1. When your node works properly, take a screenshot of ***rqt_graph*** visualization of your node(s) and topic(s). Name your screenshot `simple_publisher_rqt.jpeg` and save it in `ros_exercises/rqt`, reate the `rqt/` directory. Note: `ros_exercises/` is the ros package you created at the beginning of this section.
+1. When your node works properly, take a screenshot of ***rqt_graph*** visualization of your node(s) and topic(s). Name your screenshot `simple_publisher_rqt.jpeg` and save it in `ros_exercises/rqt` (create the `rqt/` directory). Note: `ros_exercises/` is the ros package you created at the beginning of this section.
 2. Push your code, the screenshot, and any supporting files with an appropriate commit message.
 
 ## Question 2: Create Simple Subscriber (Python)
