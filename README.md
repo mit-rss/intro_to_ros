@@ -12,7 +12,7 @@ In order for your work to be graded make sure that the following two requirement
 This lab is due on **Wednesday, February 20th at 1:00PM EST**.
 
 ## References
-The following are selected chapters from the ROS Wiki documentations and Tutorials. If you understand all the concepts covered in these exercises, you should be ready for the following exercises and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki Documentation](http://wiki.ros.org/) section and follow the links to learn more.
+The following are selected chapters from the ROS Wiki [Documentation](http://wiki.ros.org/) and [Tutorials](http://wiki.ros.org/ROS/Tutorials). If you understand all the concepts covered in these exercises, you should be ready for the following exercises and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki](http://wiki.ros.org/) section and follow the links to learn more.
 1. [Catkin](http://wiki.ros.org/catkin/conceptual_overview)   
 2. Catkin Workspace   
 	a. [Catkin workspaces](http://wiki.ros.org/catkin/workspaces)   
