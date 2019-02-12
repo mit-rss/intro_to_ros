@@ -141,7 +141,7 @@ Create a node that subscribes to the fake laser scan data and outputs the longes
 2. Again, push your code, the screenshot, and any supporting files with a appropriate commit message.
 
 ## Question 5: Create a custom Message and Publish it
-The publisher from the previous exercise was publishing two related pieces of data on two separate topics (***open_space/distance*** and ***open_space/angle***). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data, the same way the LaserScan message type combines multiple pieces of data, and name your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the previous exercise to publish this message type on the topic ***open_space***. Hint: Don't forget to modify your `CmakeLists.txt` and `package.xml` files. 
+The publisher from the previous exercise was publishing two related pieces of data on two separate topics (***open_space/distance*** and ***open_space/angle***). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data, the same way the LaserScan message type combines multiple pieces of data, and name your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the previous exercise to publish this message type on the topic ***open_space***. Hint: Don't forget to modify your `CMakeLists.txt` and `package.xml` files. 
 ### Commit Specification    
 1. Commit your modified code, config/meta files, and your custom message file as well any supporting files.
 
@@ -177,10 +177,6 @@ When writing the last publisher (***fake_scan_publisher***), you had a couple of
 In question 3, we asked you to visualize your laserscan data on rviz and record a bag file. The rviz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed, real laserscan data is a lot prettier and informative. Download these [bagfiles](https://www.dropbox.com/sh/lvbtzph8qba3y8e/AAA2mTp0VxY-9DyJXcyA0GoHa), follow the instructions [here](http://wiki.ros.org/rosrecord/Tutorials/Recording%20and%20playing%20back%20data), and visualize the laser scan data on rviz. Try it with multiple coordinate frames.     
      
 **Note**: the provided bag files are from our cars driving around in the basement of Stata center, where you will be raising later.
-
-
-
-
 
 
 
