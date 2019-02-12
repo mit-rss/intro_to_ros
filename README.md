@@ -85,7 +85,8 @@ Your task in this exercise is to create a simple ROS node that publishes a rando
 2. Push your code, the screenshot, and any supporting files with an appropriate commit message.
 
 ## Question 2: Create Simple Subscriber (Python)
-In this exercise, you will write a listener (subscriber) that listens to the topic ***my_random_float***, which is published on to by the previous node. The node takes the natural log of the message on ***my_random_float*** and publishes it to ***random_float_log***.    
+In this exercise, you will write a listener (subscriber) that listens to the topic ***my_random_float***, which is published on to by the previous node. The node takes the natural log of the message on ***my_random_float*** and publishes it to ***random_float_log***.  
+
 ### Node Specification    
 **Description:** Subscribes to the topic published on by the simple_publisher and publishes the natural log of the received messages.     
 **File name:** simple_subscriber.py             
@@ -128,7 +129,7 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 ## Question 4: Create a more complex Subscriber(Python)
 Create a node that subscribes to the fake laser scan data and outputs the longest range from the laser scan ranges and its corresponding angle.    
 ### Node Specification    
-**Description:** Subscribes fake_scan topic published on by the fake_scan_publisher from the previous exercises finds the longest return(the range element with the greatest value) and publishes the corresponding angle and return value or distance.    
+**Description:** Subscribes to the fake_scan topic published on by the fake_scan_publisher from the previous exercises, and finds the longest return (the range element with the greatest value) and publishes the corresponding angle and return value or distance.    
 **File name:** open_space_publisher.py    
 **Node Name:** open_space_publisher    
 **Published topic names:** open_space/distance and open_space/angle    
@@ -140,14 +141,20 @@ Create a node that subscribes to the fake laser scan data and outputs the longes
 2. Again, push your code, the screenshot, and any supporting files with a appropriate commit message.
 
 ## Question 5: Create a custom Message and Publish it
-The publisher from the previous exercise was publishing two related pieces of data on two separate topics (***open_space/distance*** and ***open_space/angle***). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data, the same way the LaserScan message type combines multiple pieces of data, and name your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the previous exercise to publish this message type on the topic ***open_space***.
+The publisher from the previous exercise was publishing two related pieces of data on two separate topics (***open_space/distance*** and ***open_space/angle***). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data, the same way the LaserScan message type combines multiple pieces of data, and name your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the previous exercise to publish this message type on the topic ***open_space***. Hint: Don't forget to modify your `CmakeLists.txt` and `package.xml` files. 
 ### Commit Specification    
 1. Commit your modified code, config/meta files, and your custom message file as well any supporting files.
 
 ## Question 6: Using launch files
-If you have been running your publisher(s), subscriber(s), and roscore separately using the rosrun command, there’s a more organized way to run multiple nodes at same time with one command. In this exercise, we ask you to write launch file that runs your last publisher and subscriber. Note: roslaunch runs roscore automatically without you specifying it.
+If you have been running your publisher(s), subscriber(s), and roscore separately using the rosrun command, there’s a more organized way to run multiple nodes at same time with one command. 
+
+In this exercise, we ask you to write 2 launch files.
+
+One will run your last first publisher and subscriber.
+Another one will run your last publisher and subscriber.
+
 ### Commit Specification    
-1. Commit your launch file.
+1. Commit your launch files. They should be inside a folder called `launch` inside the `src` folder of your package.
 
 ## Question 7: Use ROS parameters
 When writing the last publisher (***fake_scan_publisher***), you had a couple of variables with default values including angle_min, angle_max, range_min, range_max, etc. With the current setup, if you want to change the value of one of those variables you will have to edit the Python code. For hundreds of lines of code, finding where each of such variables is defined can be tedious. The rosparam server provides a way to set those parameters on the terminal when running your program and in launch or config files. You task here is to parameterize the following variables from the last two nodes.     
