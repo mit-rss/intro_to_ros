@@ -148,10 +148,7 @@ The publisher from the previous exercise was publishing two related pieces of da
 ## Question 6: Using launch files
 If you have been running your publisher(s), subscriber(s), and roscore separately using the rosrun command, there’s a more organized way to run multiple nodes at same time with one command. 
 
-In this exercise, we ask you to write 2 launch files.
-
-One will run your last first publisher and subscriber.
-Another one will run your last publisher and subscriber.
+In this exercise, we ask you to write a single launch file called `my_first_launch.launch` containing all 4 python files that you have written thus far.
 
 ### Commit Specification    
 1. Commit your launch files. They should be inside a folder called `launch` inside the `src` folder of your package.
@@ -176,7 +173,7 @@ When writing the last publisher (***fake_scan_publisher***), you had a couple of
 ## Question 8: Playing with bag files
 In question 3, we asked you to visualize your laserscan data on rviz and record a bag file. The rviz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed, real laserscan data is a lot prettier and informative. Download these [bagfiles](https://www.dropbox.com/sh/lvbtzph8qba3y8e/AAA2mTp0VxY-9DyJXcyA0GoHa), follow the instructions [here](http://wiki.ros.org/rosrecord/Tutorials/Recording%20and%20playing%20back%20data), and visualize the laser scan data on rviz. Try it with multiple coordinate frames.     
      
-**Note**: the provided bag files are from our cars driving around in the basement of Stata center, where you will be raising later.
+**Note**: the provided bag files are from our cars driving around in the basement of Stata center, where you will be using later.
 
 
 
