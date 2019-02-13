@@ -71,7 +71,7 @@ The following are selected chapters from the ROS Wiki [Documentation](http://wik
 
 ## ROS Exercises
 ### Create a package and build it
-By following the instructions from the reference or instructions of your finding, create a catkin workspace and package named `catkin_ws/` and `ros_exercises/` respectively, and make sure that your workspace is built (using [catkin_make](http://wiki.ros.org/catkin/commands/catkin_make)) before and after the package was added. Your workspace should live in the repository created in the Git exercises. After creating the workspace and the package, you should have the following directory layout.
+By following the instructions from the reference or instructions of your finding, create a catkin workspace and package named `catkin_ws/` and `ros_exercises/` respectively, and make sure that your workspace is built (using [catkin_make](http://wiki.ros.org/catkin/commands/catkin_make)) before and after the package was added. Your workspace should live in the repository created in the Git exercises. After creating the workspace and the package, you should have the following directory layout. 
 
 * /rss_lab1[your git repository created in lab1b]
     * /catkin_ws[your catkin workspace]
@@ -82,7 +82,9 @@ By following the instructions from the reference or instructions of your finding
 	  	* [other ros related files and packages if any]
     * [files and directories from lab1a_linux and lab1b_git]
 
-**Note**: Push your workspace.
+**Note**: Push your workspace. 
+
+Additionally, everytime you make an edit to your files, make sure to run `catkin_make` and source your `setup.bash` file!
 
 ## Question 1: Create Simple Publisher (Python)
 Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly. Note that this file will reside inside of the /src folder of your newly created package. 
