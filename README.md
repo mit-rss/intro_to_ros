@@ -5,7 +5,7 @@ Although you're encouraged to collaborate with others if you are stuck, the lab 
 
 ## Testing 
 
-The test suite we have made runs on entirely on it's own and tests to make sure you have completed all problems as defined. You can download the test binary by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases/) and downloading the ```run_tests``` binary. Make the binary executable with ```chmod```:
+The test suite we have made runs on entirely on it's own and tests to make sure you have completed all problems as defined. You can download the test binary by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases/) and downloading the ```run_tests``` binary, and running it from ``ros_exercises/src``.Make the binary executable with ```chmod```:
 
     chmod +x run_tests
 
