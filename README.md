@@ -28,6 +28,9 @@ This lab is due on **Wednesday, February 20th at 1:00PM EST**.
 
 ## References
 The following are selected chapters from the ROS Wiki [Documentation](http://wiki.ros.org/) and [Tutorials](http://wiki.ros.org/ROS/Tutorials). If you understand all the concepts covered in these exercises, you should be ready for the following exercises and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki](http://wiki.ros.org/) section and follow the links to learn more.
+
+Additionally, reference this amazing ROS cheatsheet to get an overview of all the keywords [here!](https://github.com/ros/cheatsheet/releases/download/0.0.1/ROScheatsheet_catkin.pdf).
+
 1. [Catkin](http://wiki.ros.org/catkin/conceptual_overview)   
 2. Catkin Workspace   
 	a. [Catkin workspaces](http://wiki.ros.org/catkin/workspaces)   
@@ -191,6 +194,4 @@ When writing the last publisher (***fake_scan_publisher***), you had a couple of
 In question 3, we asked you to visualize your laserscan data on rviz and record a bag file. The rviz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed, real laserscan data is a lot prettier and informative. Download these [bagfiles](https://www.dropbox.com/sh/lvbtzph8qba3y8e/AAA2mTp0VxY-9DyJXcyA0GoHa), follow the instructions [here](http://wiki.ros.org/rosrecord/Tutorials/Recording%20and%20playing%20back%20data), and visualize the laser scan data on rviz. Try it with multiple coordinate frames.     
      
 **Note**: the provided bag files are from our cars driving around in the basement of Stata center, where you will be using later.
-
-
 
