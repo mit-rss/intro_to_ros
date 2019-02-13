@@ -3,26 +3,8 @@ The objective of the following exercises is to help you practice the most common
 
 Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on [Piazza](https://piazza.com/class/jrql7urlkqn189) so other students can benefit from the answer. If you have a question about your individual submission, please make a private post. 
 
-## Testing 
-
-The test suite we have made runs on entirely on it's own and tests to make sure you have completed all problems as defined. You can download the test binary by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases/) and downloading the ```run_tests``` binary, and running it from ``ros_exercises/src``.Make the binary executable with ```chmod```:
-
-    chmod +x run_tests
-
-First, kill all running ROS processes.
-Then start ```roscore```. 
-
-Finally, run the following in a new terminal to begin testing:
-
-    ./run_tests
-
-You should be graded on the completion of 6 Tests. This will generate a ``log.npz`` file which you will upload on gradescope. Your submission will not get graded properly if you don't put the files in the right format as defined in this handout. 
-
-## Submission
-In order for your work to be graded make sure that the following two requirements are met by all your submissions.
-1. All your work should live in your workspace and more specifically your package. Make sure that your workspace builds before each submission.
-1.A. If you want, you can make the `ros_exercises` package into a git repository so that you can access this later on or remotely, however this is not necessary for the autograder.
-2. Finally, when you have completed all problems, run ``./run_tests`` and upload your ``log.npz`` file to [Gradescope](https://gradescope.com/) under lab1c_exercises_ros.
+## Grading
+You're meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests, which will be released on Friday at 1pm. 
            
 This lab is due on **Wednesday, February 20th at 1:00PM EST**.
 
