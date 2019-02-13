@@ -116,7 +116,8 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 **Angle_max:** (2/3)*pi*     
 **Angle_increment:** (1/300)*pi*     
 **Time_increment:** Leave it unset if you wish     
-**Scan_time:** The time difference in seconds between consecutive scans. 
+**Scan_time:** The time difference in seconds between consecutive scans.
+
 **Range_min:** 1.0        
 **Range_max:** 10.0       
 **Ranges:** One dimensional array with elements of random floats between range_min and range_max, Use angle_min, angle_max,  and angle_increment to determine the length.     
