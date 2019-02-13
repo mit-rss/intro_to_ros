@@ -56,7 +56,7 @@ Additionally, reference this amazing ROS cheatsheet to get an overview of all th
 
 ## ROS Exercises
 ### Create a package and build it
-By following the instructions from the reference or instructions of your finding, create a catkin workspace and package named `catkin_ws/` and `ros_exercises/` respectively, and make sure that your workspace is built (using [catkin_make](http://wiki.ros.org/catkin/commands/catkin_make)) before and after the package was added. Your package (ros_exercises) should live in the `/src/` directory, where you add other packages (such as other labs later on). After creating the workspace and the package, you should have the following directory layout. 
+By following the instructions from the reference or instructions of your finding, create a catkin workspace and package named `catkin_ws/` and `ros_exercises/` respectively, and make sure that your workspace is built (using [catkin_make](http://wiki.ros.org/catkin/commands/catkin_make)) before and after the package was added. Your package (ros_exercises) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make your ros_exercises a git repo. After creating the workspace and the package, you should have the following directory layout. 
 
 * /catkin_ws[your catkin workspace] 
 	* /src 
