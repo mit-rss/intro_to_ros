@@ -70,7 +70,7 @@ By following the instructions from the reference or instructions of your finding
 Additionally, everytime you make an edit to your files, make sure to run `catkin_make` and source your `setup.bash` file.
 
 ## Question 1: Create Simple Publisher (Python)
-Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly. Note that this file will reside inside of the /src folder of your newly created package. 
+Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly. Note that this file will reside inside of the /ros_exercises folder of your newly created package. 
 
 ### Node Specification    
 **Description:** Publishes a random number between 0 and 10.    
