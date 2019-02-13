@@ -3,8 +3,39 @@ The objective of the following exercises is to help you practice the most common
 
 Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on [Piazza](https://piazza.com/class/jrql7urlkqn189) so other students can benefit from the answer. If you have a question about your individual submission, please make a private post. 
 
-## Grading
-You're meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests, which will be released on Friday at 1pm. 
+## Testing 
+Testing Tips for ROS:
+ROS provides many helpful tools to be able to check if your packages and code is working as you expect. After doing the ROS tutorials, you should understand how to run ROS nodes and create launch files to run many nodes at once. When testing, it is helpful to check that each specific node is running as expected by rosrunning only that node (remember that rosrun requires a roscore to be started in the background, then you can use the command `rosrun <PKG_NAME> NODE_NAME.py` to start a node). 
+Helpful debugging tools (once a node is running):
+1. `rostopic list`
+A running node should be publishing or subscribing to different topics. To check that these topics are being listened/talked to, the command `rostopic list`, which will list all topics that are currently active (either being subscribed to, published to, or both).
+
+2. `rostopic echo /topic_name`
+Once you know that a command is being published/subscribed to, you can echo its contents, which can show whether or not any information is being passed across this topic or if you are not sending what you expect. A
+
+3. `rostopic hz /topic_name`
+This command can tell you the rate at which messages are being published. This tool is helpful to verify if you are publishing messages at a certain frequency.
+
+This page, http://wiki.ros.org/rostopic, from the ROS documentation can provide many other tools to debug your ROS node setup. Another helpful technique is to look at the RQT_GRAPH (http://wiki.ros.org/rqt_graph) which shows the interactions between nodes for your system.
+
+The test suite we have made runs on entirely on it's own and tests to make sure you have completed all problems as defined. You can download the test binary by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases/) and downloading the ```run_tests``` binary, and running it from ``ros_exercises/src``.Make the binary executable with ```chmod```:
+
+    chmod +x run_tests
+
+First, kill all running ROS processes.
+Then start ```roscore```. 
+
+Finally, run the following in a new terminal to begin testing:
+
+    ./run_tests
+
+You should be graded on the completion of 6 Tests. This will generate a ``log.npz`` file which you will upload on gradescope. Your submission will not get graded properly if you don't put the files in the right format as defined in this handout. 
+
+## Submission
+In order for your work to be graded make sure that the following two requirements are met by all your submissions.
+1. All your work should live in your workspace and more specifically your package. Make sure that your workspace builds before each submission.
+1.A. If you want, you can make the `ros_exercises` package into a git repository so that you can access this later on or remotely, however this is not necessary for the autograder.
+2. Finally, when you have completed all problems, run ``./run_tests`` and upload your ``log.npz`` file to [Gradescope](https://gradescope.com/) under lab1c_exercises_ros.
            
 This lab is due on **Wednesday, February 20th at 1:00PM EST**.
 
@@ -175,9 +206,3 @@ In question 3, we asked you to visualize your laserscan data on rviz and record 
      
 **Note**: the provided bag files are from our cars driving around in the basement of Stata center, where you will be using later.
 
-## Debugging Hints
-Here are some helpful tools to use when trying to debugging your code!
-
-1. `rostopic` : This is a command that is used to check the contents of the topics you are publishing or subscribing to. You can use `rostopic list` to see all topics being published, or see the specific contents of a topic by typing `rostopic echo <insert topic name here>` 
-2. ``rqt graph``: This is a tool to display graphs of running ROS nodes with connecting topics and package dependencies. Allows you to visualize your entire framework!
-3.  ``rviz``: This is a 3D visualizer tool for displaying sensor data and state information from ROS. You will be using it more extensively in future labs. 
