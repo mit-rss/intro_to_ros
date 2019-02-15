@@ -8,6 +8,21 @@ You're meant to complete this lab by testing your code and verifying the results
            
 This lab is due on **Wednesday, February 20th at 1:00PM EST**.
 
+## Automated Tests 
+
+The test suite we have made runs on entirely on it's own and tests to make sure you have completed all problems as defined. You can download the test binary by going to the releases page of this repo and downloading the run_tests binary, and running it from ros_exercises/src. Make the binary executable with chmod:
+
+chmod +x run_tests
+
+First, kill all running ROS processes. Then start roscore.
+
+Finally, run the following in a new terminal to begin testing:
+
+./run_tests
+You should be graded on the completion of 6 Tests. This will generate a log.npz file which you will upload on gradescope. Your submission will not get graded properly if you don't put the files in the right format as defined in this handout.
+
+If you have successfully completed all parts, you should receive a score of 2.5/4.0. The rest will be a manual grading of your lab by the staff of your git repository! 
+
 ## References
 The following are selected chapters from the ROS Wiki [Documentation](http://wiki.ros.org/) and [Tutorials](http://wiki.ros.org/ROS/Tutorials). If you understand all the concepts covered in these exercises, you should be ready for the following exercises and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki](http://wiki.ros.org/) section and follow the links to learn more.
 
