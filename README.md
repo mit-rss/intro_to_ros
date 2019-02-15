@@ -20,9 +20,9 @@ Finally, run the following in a new terminal to begin testing:
 
     ./run_tests
 
-You should be graded on the completion of 6 Tests. This will generate a log.npz file which you will upload on gradescope. Your submission will not get graded properly if you don't put the files in the right format as defined in this handout.
+You should be graded on the completion of 6 Tests. This will generate a log.npz file which you will upload on Gradescope. Your submission will not get graded properly if you don't put the files in the right format as defined in this handout.
 
-If you have successfully completed all parts, you should receive a score of 2.5/4.0. The rest will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be avaliable on your mit github account.
+If you have successfully completed all parts, you should receive a score of 2.5/4.0 on Gradescope. The rest will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be avaliable on your mit github account.
 
 ## References
 The following are selected chapters from the ROS Wiki [Documentation](http://wiki.ros.org/) and [Tutorials](http://wiki.ros.org/ROS/Tutorials). If you understand all the concepts covered in these exercises, you should be ready for the following exercises and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki](http://wiki.ros.org/) section and follow the links to learn more.
