@@ -188,7 +188,7 @@ When writing the last publisher (***fake_scan_publisher***), you had a couple of
 1. Commit your modified nodes along with any other important changes.
 
 ## Question 8: Playing with bag files
-In question 3, we asked you to visualize your laserscan data on rviz and record a bag file. The rviz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed, real laserscan data is a lot prettier and informative. Download these [bagfiles](https://www.dropbox.com/sh/lvbtzph8qba3y8e/AAA2mTp0VxY-9DyJXcyA0GoHa), follow the instructions [here](http://wiki.ros.org/rosrecord/Tutorials/Recording%20and%20playing%20back%20data), and visualize the laser scan data on rviz. Try it with multiple coordinate frames.     
+In question 3, we asked you to visualize your laserscan data on rviz and record a bag file. The rviz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed, real laserscan data is a lot prettier and informative. Download these [bagfiles](https://www.dropbox.com/sh/lvbtzph8qba3y8e/AAA2mTp0VxY-9DyJXcyA0GoHa), follow the instructions [here](http://wiki.ros.org/ROS/Tutorials/Recording%20and%20playing%20back%20data), and visualize the laser scan data on rviz. Try it with multiple coordinate frames.     
      
 **Note**: the provided bag files are from our cars driving around in the basement of Stata center, where you will be using later.
 
