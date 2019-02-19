@@ -10,7 +10,11 @@ This lab is due on **Wednesday, February 20th at 1:00PM EST**.
 
 ## Automated Tests 
 
-The test suite we have made runs on entirely on it's own and tests to make sure you have completed all problems as defined. You can download the test binary by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary, and running it from ``ros_exercises``. Make the binary executable with ```chmod```:
+The test suite we have made runs on entirely on it's own and tests to make sure you have completed all problems as defined. You can download the test binary by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary. **Make sure you place the binary in your ```ros_exercises``` folder.**:
+
+    mv run_tests ~/catkin_ws/ros_exercises/
+    
+Then make the binary executable with ```chmod```
 
     chmod +x run_tests
 
