@@ -141,7 +141,7 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 
 **Range_min:** 1.0        
 **Range_max:** 10.0       
-**Ranges:** One dimensional array with elements of random floats between range_min and range_max, Use angle_min, angle_max,  and angle_increment to determine the length.     
+**Ranges:** One dimensional array with elements of random floats between range_min and range_max, Use angle_min, angle_max,  and angle_increment to determine the length. Be careful of an off by 1 error! There should be an element **at** ```angle_min``` and ```angle_max```.
 **Intensities:** Leave it unset if you wish      
 ### Commit Specification    
 1. When your node works properly, visualize the published laser scan data using rviz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.jpeg`. Save the image in `ros_exercises/rviz`
@@ -150,8 +150,8 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 
 **If you are failing this test make sure you have these files in your ```ros_exercises``` directory**:
 
-- rviz/fake_scan_rviz.jpeg
-- rosbag/fake_scan_bag.bag
+- ```rviz/fake_scan_rviz.jpeg```
+- ```rosbag/fake_scan_bag.bag```
 
 ## Question 4: Create a more complex Subscriber(Python)
 Create a node that subscribes to the fake laser scan data and outputs the longest range from the laser scan ranges and its corresponding angle.    
@@ -169,7 +169,7 @@ Create a node that subscribes to the fake laser scan data and outputs the longes
 
 **If you are failing this test make sure you have these files in your ```ros_exercises``` directory**:
 
-- rqt/open_space_rqt.jpeg
+- ```rqt/open_space_rqt.jpeg```
 
 ## Question 5: Create a custom Message and Publish it
 The publisher from the previous exercise was publishing two related pieces of data on two separate topics (***open_space/distance*** and ***open_space/angle***). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data, the same way the LaserScan message type combines multiple pieces of data, and name your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the previous exercise to publish this message type on the topic ***open_space***. Hint: Don't forget to modify your `CMakeLists.txt` and `package.xml` files. 
