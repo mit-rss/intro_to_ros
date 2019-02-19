@@ -22,6 +22,7 @@ First, kill all running ROS processes. Then start ```roscore```.
 
 Finally, run the following in a new terminal to begin testing:
 
+     cd ~/catkin_ws/ros_exercises/
     ./run_tests
 
 You should be graded on the completion of 6 Tests. This will generate a log.npz file which you will upload on Gradescope. Your submission will not get graded properly if you don't put the files in the right format as defined in this handout.
@@ -147,6 +148,11 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 2. Record a bag file of your laser scan data and call the file `fake_scan_bag.bag`, save it in `ros_exercises/rosbag`.
 3. Again, push your code, bag file, screenshot, and any supporting files with a appropriate commit message.
 
+**If you are failing this test make sure you have these files in your ```ros_exercises``` directory**:
+
+- rviz/fake_scan_rviz.jpeg
+- rosbag/fake_scan_bag.bag
+
 ## Question 4: Create a more complex Subscriber(Python)
 Create a node that subscribes to the fake laser scan data and outputs the longest range from the laser scan ranges and its corresponding angle.    
 ### Node Specification    
@@ -160,6 +166,10 @@ Create a node that subscribes to the fake laser scan data and outputs the longes
 ### Commit Specification    
 1. Again, take a screenshot of ***rqt_graph*** showing your nodes running, named it `open_space_rqt.jpeg`, and save it in `ros_exercises/rqt`.
 2. Again, push your code, the screenshot, and any supporting files with a appropriate commit message.
+
+**If you are failing this test make sure you have these files in your ```ros_exercises``` directory**:
+
+- rqt/open_space_rqt.jpeg
 
 ## Question 5: Create a custom Message and Publish it
 The publisher from the previous exercise was publishing two related pieces of data on two separate topics (***open_space/distance*** and ***open_space/angle***). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data, the same way the LaserScan message type combines multiple pieces of data, and name your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the previous exercise to publish this message type on the topic ***open_space***. Hint: Don't forget to modify your `CMakeLists.txt` and `package.xml` files. 
