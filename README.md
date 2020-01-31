@@ -25,7 +25,7 @@ Finally, run the following in a new terminal to begin testing:
      cd ~/catkin_ws/ros_exercises/
     ./run_tests
 
-You should be graded on the completion of 6 Tests. Becareful with naming the various files defined in the handout correctly or else you won't be graded properly.
+You should be graded on the completion of 6 Tests. Be careful with naming the various files defined in the handout correctly or else you won't be graded properly.
 
 Additionally the ```run_tests``` file will generate a file called ```log.npz``` which you **must upload to gradescope for credit**.
 
