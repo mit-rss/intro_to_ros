@@ -7,7 +7,7 @@ The objective of the following exercises is to help you practice the most common
 Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on [Piazza](http://piazza.com/mit/spring2020/614116405) so other students can benefit from the answer. If you have a question about your individual submission, please make a private post. 
 
 ## Grading
-You're meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests, which will be released on Friday at 1pm. Please refer to Automated Tests (below) for instructions on how to run these tests.
+You are meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests, which will be released on Friday at 1pm. Please refer to Automated Tests (below) for instructions on how to run these tests.
            
 This lab is due on **Wednesday, February 19th at 1:00PM EST**.
 
@@ -28,7 +28,7 @@ Finally, run the following in a new terminal to begin testing:
      cd ~/catkin_ws/ros_exercises/
     ./run_tests
 
-You should be graded on the completion of 6 Tests. Be careful with naming the various files defined in the handout correctly or else you won't be graded properly.
+You should be graded on the completion of 6 tests. Be careful with naming the various files defined in the handout correctly or else you won't be graded properly.
 
 Additionally the ```run_tests``` file will generate a file called ```log.npz``` which you **must upload to gradescope for credit**.
 
@@ -122,7 +122,7 @@ In this exercise, you will write a listener (subscriber) that listens to the top
 **Subscription topic names:** my_random_float   
 ### Commit Specification    
 1. Again, take a screenshot of ***rqt_graph*** showing your nodes running, name it `simple_subscriber_rqt.jpeg`, and save it in the same folder as the previous exercise.
-2. Again, push your code, the screenshot, and any supporting files with a appropriate commit message.
+2. Again, push your code, the screenshot, and any supporting files with an appropriate commit message.
 
 ## Question 3: Create more Complex Publisher (Python)
 In this exercise, you will write a node that publishes fake laser scan data as specified below.   
