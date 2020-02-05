@@ -178,7 +178,10 @@ In this exercise, we ask you to write a single launch file called `my_first_laun
 1. Commit your launch file. It should be inside a directory called `launch` within your package.
 
 ## Question 7: Use ROS parameters
-When writing the last publisher (***fake_scan_publisher***), you had a couple of variables with default values including angle_min, angle_max, range_min, range_max, etc. With the current setup, if you want to change the value of one of those variables you will have to edit the Python code. For hundreds of lines of code, finding where each of such variables is defined can be tedious. The rosparam server provides a way to set those parameters on the terminal when running your program and in launch or config files. You task here is to parameterize the following variables from the last two nodes.     
+When writing the last publisher (***fake_scan_publisher***), you had a couple of variables with default values including angle_min, angle_max, range_min, range_max, etc. With the current setup, if you want to change the value of one of those variables you will have to edit the Python code. For hundreds of lines of code, finding where each of such variables is defined can be tedious. The rosparam server provides a way to set those parameters on the terminal when running your program and in launch or config files. You task here is to parameterize the following variables from the last two nodes. 
+
+**Note:** Your node should be able to start (e.g. via `rosrun`) even if not all of these parameters have been set. If a parameter has not been set, your node should default to using the values given in the previous question.
+
 1. Fake Scan Publisher     
 	* Publish topic      
 	* Publish rate      
