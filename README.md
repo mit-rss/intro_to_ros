@@ -87,7 +87,7 @@ Your task in this exercise is to create a simple ROS node that publishes a rando
 **Subscription topic names:** None    
 **Publish rate:** 20hz    
 ### Commit Specification    
-1. When your node works properly, take a screenshot of ***rqt_graph*** visualization of your node(s) and topic(s). Name your screenshot `simple_publisher_rqt.jpeg` and save it in `ros_exercises/rqt` (create the `rqt/` directory). Note: `ros_exercises/` is the ros package you created at the beginning of this section.
+1. When your node works properly, take a screenshot of ***rqt_graph*** visualization of your node(s) and topic(s). Name your screenshot `simple_publisher_rqt.png` and save it in `ros_exercises/rqt` (create the `rqt/` directory). Note: `ros_exercises/` is the ros package you created at the beginning of this section.
 2. Push your code, the screenshot, and any supporting files with an appropriate commit message.
 
 ## Question 2: Create Simple Subscriber (Python)
@@ -137,13 +137,13 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 
 ### Commit Specification   
 
-1. When your node works properly, visualize the published laser scan data using rviz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.jpeg`. Save the image in `ros_exercises/rviz`
+1. When your node works properly, visualize the published laser scan data using rviz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`
 2. Record a bag file of your laser scan data and call the file `fake_scan_bag.bag`, save it in `ros_exercises/rosbag`.
 3. Again, push your code, bag file, screenshot, and any supporting files with a appropriate commit message.
 
 **If you are failing this test make sure you have these files in your ```ros_exercises``` directory**:
 
-- ```rviz/fake_scan_rviz.jpeg```
+- ```rviz/fake_scan_rviz.png```
 - ```rosbag/fake_scan_bag.bag```
 
 ## Question 4: Create a more complex Subscriber(Python)
@@ -162,7 +162,7 @@ Create a node that subscribes to the fake laser scan data and outputs the longes
 
 **If you are failing this test make sure you have these files in your ```ros_exercises``` directory**:
 
-- ```rqt/open_space_rqt.jpeg```
+- ```rqt/open_space_rqt.png```
 
 ## Question 5: Create a custom Message and Publish it
 The publisher from the previous exercise was publishing two related pieces of data on two separate topics (***open_space/distance*** and ***open_space/angle***). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data, the same way the LaserScan message type combines multiple pieces of data, and name your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the previous exercise to publish this message type on the topic ***open_space***. Hint: Don't forget to modify your `CMakeLists.txt` and `package.xml` files. 
