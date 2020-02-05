@@ -236,7 +236,7 @@ Once you know that a command is being published/subscribed to, you can echo its 
 ### `rostopic hz /topic_name`
 This command can tell you the rate at which messages are being published. This tool is helpful to verify if you are publishing messages at a certain frequency.
 
-The ROS documentation for rostopic at http://wiki.ros.org/rostopicncan provide many other tools to debug your ROS node setup. 
+The ROS documentation for rostopic at http://wiki.ros.org/rostopic can provide many other tools to debug your ROS node setup. 
 
 ### `rqt graph`
 This is a tool to display graphs of running ROS nodes with connecting topics and package dependencies. Allows you to visualize your entire framework! Another helpful technique is to look at the [rqt_graph](http://wiki.ros.org/rqt_graph) which shows the interactions between nodes for your system.
