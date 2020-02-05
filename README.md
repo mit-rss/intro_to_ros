@@ -180,7 +180,7 @@ In this exercise, we ask you to write a single launch file called `my_first_laun
 ## Question 7: Use ROS parameters
 When writing the last publisher (***fake_scan_publisher***), you had a couple of variables with default values including angle_min, angle_max, range_min, range_max, etc. With the current setup, if you want to change the value of one of those variables you will have to edit the Python code. For hundreds of lines of code, finding where each of such variables is defined can be tedious. The rosparam server provides a way to set those parameters on the terminal when running your program and in launch or config files. You task here is to parameterize the following variables from the last two nodes. 
 
-**Note:** Your node should be able to start (e.g. via `rosrun`) even if not all of these parameters have been set. If a parameter has not been set, your node should default to using the values given in the previous question. You will most likely want to use [`rospy.get_param`](http://wiki.ros.org/rospy/Overview/Parameter%20Server), which provides a mechanism for this.
+**Note:** Your node should be able to start (e.g. via `rosrun`) even if not all of these parameters have been set. If a parameter has not been set, your node should default to using the values given in the previous question. You will most likely want to use [`rospy.get_param`](http://wiki.ros.org/rospy/Overview/Parameter%20Server), which provides a mechanism for this. This way of falling back to hard-coded defaults can still be useful, especially in cases where a sensible default for a parameter is known and changes would only have to be made rarely. 
 
 1. Fake Scan Publisher     
 	* Publish topic      
