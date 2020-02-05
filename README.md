@@ -213,12 +213,12 @@ First, kill all running ROS processes. Then start ```roscore```.
 
 Finally, run the following in a new terminal to begin testing:
 
-     cd ~/catkin_ws/ros_exercises/
+     cd ~/catkin_ws/src/ros_exercises/
     ./run_tests
 
 You should be graded on the completion of 6 tests. Be careful with naming the various files defined in the handout correctly or else you won't be graded properly.
 
-Additionally the `run_tests` file will generate a file called `log.npz` which you **must upload to gradescope for credit**.
+Additionally the `run_tests` file will generate a file called `log.npf` which you **must upload to gradescope for credit**.
 
 If you have successfully completed all parts, you should receive a score of 3.0/4.0 on Gradescope. The rest of your score (1.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be avaliable on your `github.mit.edu` account.
 
