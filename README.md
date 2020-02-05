@@ -91,7 +91,7 @@ Your task in this exercise is to create a simple ROS node that publishes a rando
 2. Push your code, the screenshot, and any supporting files with an appropriate commit message.
 
 ## Question 2: Create Simple Subscriber (Python)
-In this exercise, you will write a listener (subscriber) that listens to the topic ***my_random_float***, which is published on to by the previous node. The node takes the natural log of the message on ***my_random_float*** and publishes it to ***random_float_log***.  
+In this exercise, you will write a listener (subscriber) that listens to the topic ***my_random_float***, which is published to by the previous node. The new node takes the natural log of the message on ***my_random_float*** and publishes it to ***random_float_log***.  
 
 ### Node Specification
 
