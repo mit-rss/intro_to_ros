@@ -203,7 +203,7 @@ In question 3, we asked you to visualize your laserscan data on rviz and record 
 
 You can download the test binary by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary. **Make sure you place the binary in your ```ros_exercises``` folder.**:
 
-    mv run_tests ~/catkin_ws/ros_exercises/
+    mv run_tests ~/catkin_ws/src/ros_exercises/
     
 Then make the binary executable with ```chmod```
 
