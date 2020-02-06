@@ -207,6 +207,8 @@ In question 3, we asked you to visualize your laserscan data on rviz and record 
 
 ## Automated Tests and Your Submission
 
+**Note:** The `run_tests` binary is not currently available, but will be released by 8 am on February 6.
+
 You can download the test binary by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary. **Make sure you place the binary in your ```ros_exercises``` folder.**:
 
     mv run_tests ~/catkin_ws/src/ros_exercises/
