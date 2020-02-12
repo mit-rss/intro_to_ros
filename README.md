@@ -235,7 +235,7 @@ For extra credit, complete the following exercises. You will need to download [t
 
 ### Part 1: The Hard Way
 
-The rosbag was collected from a robot driving around in a simulated environment. It's `base_link` position in the environment is broadcast to the TF tree in ROS. However, the sensors onboard the robot are not broadcasted to the TF tree.
+The rosbag was collected from a robot driving around in a simulated environment. Its `base_link` position in the environment is broadcast to the TF tree in ROS. However, the sensors onboard the robot are not broadcasted to the TF tree.
 
 Begin by developing a ROS node that publishes the correct TF of the left and right cameras to the TF tree. Name this node `dynamic_tf_cam_publisher.py`.
 
@@ -247,15 +247,15 @@ At each time step, your node should:
 2. Convert the robot's transform to a 4x4 numpy array.
 3. Compute the current transform of the left camera w.r.t. world by composing the precomputed camera-base_link transform with the base_link-world transform.
 4. Compute the current transform of the right camera w.r.t **the left camera** by composing the relevant matrices.
-5. Broadcast the final transform between the cameras and `world` to the TF tree. The left camera's TF should be broadcast on the `/left_cam` frame, and the right camera's TF goes on `/right_cam`.
+5. Broadcast the computed transforms for the cameras to the TF tree. The left camera's TF should be broadcast on the `/left_cam` frame, and the right camera's TF goes on `/right_cam`.
 
 Save a short (~3-5 second) gif of RVIZ as the rosbag plays with your node running. Make sure we can see the base_link frame and both the left and right camera frames moving around. Name this file `dynamic_node.gif` and save it in the `/rviz` directory of your package.
 
 * **Note 1:** Don't worry if the new TF frames are jittery and/or don't follow the `base_link_gt` frame fast enough; this should be fixed in part 2.
 
-* **Note 2:** You will be doing some transformations in your ROS node. Use [tf.transformations](http://docs.ros.org/jade/api/tf/html/python/transformations.html), a file built into the `tf` package. View the source code [here](https://github.com/ros/geometry/blob/melodic-devel/tf/src/tf/transformations.py). Also, use `numpy`!
+* **Note 2:** You will be doing some transformations in your ROS node. Use [tf.transformations](http://docs.ros.org/jade/api/tf/html/python/transformations.html), a file built into the `tf` package. View the source code [here](https://github.com/ros/geometry/blob/melodic-devel/tf/src/tf/transformations.py). Also, use numpy!
 
-* **Note 3:** You can easily record gifs using the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post), or by recording mp4 files using `Kazam` and then converting to gif using a web-hosted tool.
+* **Note 3:** You can easily record screen-captures using the Kazam package (`sudo apt-get install kazam`) and you can use the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post) or a web-hosted tool to convert to gif.
 
 
 ### Part 2: The ~~Easy~~ Better Way
@@ -273,7 +273,7 @@ Additionally, write a roslaunch file that launches the `static_transform_publish
 * **Note 1:** Your launch file should not launch any of your nodes yet.
 
 
-### Part 3: Extra Stuff
+### Part 3: Back to base_link
 
 Write a new ROS node called `base_link_tf_pub.py`. Copy the 4x4 numpy matrix that represented the transform between `base_link_gt` and `world` in your first node into this node. 
 
