@@ -231,7 +231,7 @@ If you have successfully completed all parts, you should receive a score of 3.0/
 
 ## Question 9: Optional TF Exercises
 
-For extra credit, complete the following exercises. You will need to download [this rosbag](TODO) from google drive; it may take a while.
+For extra credit, complete the following exercises. You will need to download [this rosbag](https://drive.google.com/file/d/16Vbwjb9o58g8tTDrX2BVLYMFzZmkWA9T/view?usp=sharing) from google drive; it may take a while.
 
 ### Part 1: The Hard Way
 
@@ -245,30 +245,43 @@ At each time step, your node should:
 
 1. Get the current transform of the robot w.r.t. the world.
 2. Convert the robot's transform to a 4x4 numpy array.
-3. Compute the current transform of the left and right cameras w.r.t. the world by composing the precomputed camera-base_link transform with the base_link-world transform.
-4. Broadcast the final transform between the cameras and `world` to the TF tree. The left camera's TF should be broadcast on the `/left_cam` frame, and the right camera's TF goes on `/right_cam`.
+3. Compute the current transform of the left camera w.r.t. world by composing the precomputed camera-base_link transform with the base_link-world transform.
+4. Compute the current transform of the right camera w.r.t **the left camera** by composing the relevant matrices.
+5. Broadcast the final transform between the cameras and `world` to the TF tree. The left camera's TF should be broadcast on the `/left_cam` frame, and the right camera's TF goes on `/right_cam`.
 
-Save a short (~3-5 second) gif of RVIZ as the rosbag plays with your node running. Make sure we can see the base_link frame and both the left and right camera frames moving around. Name this file `dynamic_node.gif` and save it in the `\rviz` directory of your package.
+Save a short (~3-5 second) gif of RVIZ as the rosbag plays with your node running. Make sure we can see the base_link frame and both the left and right camera frames moving around. Name this file `dynamic_node.gif` and save it in the `/rviz` directory of your package.
 
-**Note 1:** Don't worry if the new TF frames are jittery and/or don't follow the `base_link_gt` frame fast enough; this should be fixed in part 2.
+* **Note 1:** Don't worry if the new TF frames are jittery and/or don't follow the `base_link_gt` frame fast enough; this should be fixed in part 2.
 
-**Note 2:** You will be doing some transformations in your ROS node. Use [tf.transformations](http://docs.ros.org/jade/api/tf/html/python/transformations.html), a file built into the `tf` package. View the source code [here](https://github.com/ros/geometry/blob/melodic-devel/tf/src/tf/transformations.py). Also, use `numpy`!
+* **Note 2:** You will be doing some transformations in your ROS node. Use [tf.transformations](http://docs.ros.org/jade/api/tf/html/python/transformations.html), a file built into the `tf` package. View the source code [here](https://github.com/ros/geometry/blob/melodic-devel/tf/src/tf/transformations.py). Also, use `numpy`!
 
-**Note 3:** You can easily record gifs using the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post), or by recording mp4 files using `Kazam` and then converting to gif using a web-hosted tool.
+* **Note 3:** You can easily record gifs using the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post), or by recording mp4 files using `Kazam` and then converting to gif using a web-hosted tool.
+
 
 ### Part 2: The ~~Easy~~ Better Way
 
 #### 2a: ROS Node
 
-Write a ROS node that publishes the relative pose between each camera and the robot as a **static transform**. It should only broadcast the transform once. Name this node `static_tf_cam_publisher.py`.
+Write a ROS node that publishes the relative pose between each camera and the robot as a **static transform**. It should only broadcast the transform once. Name this node `static_tf_cam_publisher.py`. Make sure to use `tf2_ros`
 
-Save a short (~3-5 second) gif of RVIZ just as in part 1, but with your `static_tf_cam_publisher.py` node running. Name this file `static_node.gif` and save it in the `\rviz` directory of your package.
+Save a short (~3-5 second) gif of RVIZ just as in part 1, but with your `static_tf_cam_publisher.py` node running. Name this file `static_node.gif` and save it in the `/rviz` directory of your package.
 
 #### 2b: Launch File
 
-Additionally, write a roslaunch file that launches the `static_transform_publisher` node from the `tf` package and automatically publishes the two transforms. Name this launch file `static_tf_publisher.launch` and save it in the `\launch` directory of your package.
+Additionally, write a roslaunch file that launches the `static_transform_publisher` node from the `tf` package and automatically publishes the two transforms. Name this launch file `static_tf_publisher.launch` and save it in the `/launch` directory of your package.
 
-**Note 1:** Your launch file should not launch any of your nodes.
+* **Note 1:** Your launch file should not launch any of your nodes yet.
+
+
+### Part 3: Extra Stuff
+
+Write a new ROS node called `base_link_tf_pub.py`. Copy the 4x4 numpy matrix that represented the transform between `base_link_gt` and `world` in your first node into this node. 
+
+This new node must listen to the transform between `left_cam` and `world` and then broadcasts the transform from `base_link_gt` to `world` on a new frame: `base_link_gt_2`. The transform you publish must be computed by composing the transform between `left_cam` and `base_link` with the transform you are listening for. In other words, this **cannot** be a static transform.
+
+Add this node to your `static_tf_publisher.launch` file, such that both the static transforms for the two cameras are published when the launch file is executed. You should be able to visualize both `base_link_gt` and `base_link_gt_2` on top of each other in RVIZ.
+
+* **Tip:** Use numpy.inv()!
 
 
 ## Debugging Hints
