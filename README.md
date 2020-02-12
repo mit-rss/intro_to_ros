@@ -226,7 +226,8 @@ You should be graded on the completion of 6 tests. Be careful with naming the va
 
 Additionally the `run_tests` file will generate a file called `log.npf` which you **must upload to gradescope for credit**.
 
-If you have successfully completed all parts, you should receive a score of 3.0/4.0 on Gradescope. The rest of your score (1.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be avaliable on your `github.mit.edu` account.
+### Manual Grading Portion
+If you have successfully completed all parts, you should receive a score of 3.0/4.0 on Gradescope. The rest of your score (1.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be avaliable on your `github.mit.edu` account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**
 
 ## Debugging Hints
 Here are some helpful tools to use when trying to debugging your code.
