@@ -253,7 +253,9 @@ At each time step, your node should:
 4. Compute the current transform of the right camera w.r.t **the left camera** by composing the relevant matrices.
 5. Broadcast the computed transforms for the cameras to the TF tree. The left camera's TF should be broadcast on the `/left_cam` frame, and the right camera's TF goes on `/right_cam`.
 
-Save a short (~3-5 second) gif of RVIZ as the rosbag plays with your node running. Make sure we can see the base_link frame and both the left and right camera frames moving around. Name this file `dynamic_node.gif` and save it in the `/rviz` directory of your package.
+Save a short (~3-5 second) gif of RVIZ as the rosbag plays with your node running. Make sure we can see the base_link frame and both the left and right camera frames moving around. Name this file `dynamic_node.gif` and save it in the `ros_exercises/rviz` directory of your package.
+
+Take a screen-shot of your tf tree in **rqt** using the `tf-tree` plugin. Save it in `ros_exercises/rqt` and name it `dynamic_tf_tree.png`
 
 * **Note 1:** Don't worry if the new TF frames are jittery and/or don't follow the `base_link_gt` frame fast enough; this should be fixed in part 2.
 
@@ -270,22 +272,24 @@ Save a short (~3-5 second) gif of RVIZ as the rosbag plays with your node runnin
 
 Write a ROS node that publishes the relative pose between each camera and the robot as a **static transform**. It should only broadcast the transform once. Name this node `static_tf_cam_publisher.py`. Make sure to use `tf2_ros`
 
-Save a short (~3-5 second) gif of RVIZ just as in part 1, but with your `static_tf_cam_publisher.py` node running. Name this file `static_node.gif` and save it in the `/rviz` directory of your package.
+Save a short (~3-5 second) gif of RVIZ just as in part 1, but with your `static_tf_cam_publisher.py` node running. Name this file `static_node.gif` and save it in the `ros_exercises/rviz` directory of your package. This should look much smoother than in part 1.
 
 #### 2b: Launch File
 
-Additionally, write a roslaunch file that launches the `static_transform_publisher` node from the `tf` package and automatically publishes the two transforms. Name this launch file `static_tf_publisher.launch` and save it in the `/launch` directory of your package.
+Additionally, write a roslaunch file that launches the `static_transform_publisher` node from the `tf` package and automatically publishes the two transforms. Name this launch file `static_tf_publisher.launch` and save it in the `ros_exercises/launch` directory of your package.
 
 * **Note 1:** Your launch file should not launch any of your nodes yet, just the `static_transform_publisher` node in the `tf` package.
 
 
 ### Part 3: Back to `base_link`
 
-Write a new ROS node called `base_link_tf_pub.py`. Copy the 4x4 numpy matrix that represented the transform between `base_link_gt` and `world` in your first node into this node. 
+Write a new ROS node called `base_link_tf_pub.py`.
 
-This new node must listen to the transform between `left_cam` and `world` and then broadcasts the transform from `base_link_gt` to `world` on a new frame: `base_link_gt_2`. The transform you publish must be computed by composing the transform between `left_cam` and `base_link` with the transform you are listening for. In other words, this **cannot** be a static transform.
+This new node must listen to the transform between `left_cam` and `world` and then broadcast the transform from `base_link_gt` to `world` on a new frame: `base_link_gt_2`. The transform you publish must be computed by composing the transform between `left_cam` and `base_link` with the transform you are listening for. In other words, this **cannot** be a static transform.
 
 Add this node to your `static_tf_publisher.launch` file, such that both the static transforms for the two cameras are published when the launch file is executed. You should be able to visualize both `base_link_gt` and `base_link_gt_2` on top of each other in RVIZ.
+
+Save a short gif of RVIZ again, and make sure you can see the both `base_link_gt_2` and `base_link_gt` on top of each other. Name this file `back_to_base_link.gif` and save it in the `ros_exercises/rviz` directory.
 
 * **Tip:** Use `numpy.inv()`!
 
