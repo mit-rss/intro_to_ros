@@ -233,19 +233,23 @@ If you have successfully completed all parts, you should receive a score of 3.0/
 
 For extra credit, complete the following exercises. You will need to download [this rosbag](https://drive.google.com/file/d/16Vbwjb9o58g8tTDrX2BVLYMFzZmkWA9T/view?usp=sharing) from google drive; it may take a while.
 
-### Part 1: The Hard Way
+The rosbag was collected from a robot driving around in a simulated environment. Its `base_link` position in the environment is broadcast to the TF tree in ROS. However, the poses of the sensors onboard the robot are not broadcasted to the TF tree.
 
-The rosbag was collected from a robot driving around in a simulated environment. Its `base_link` position in the environment is broadcast to the TF tree in ROS. However, the sensors onboard the robot are not broadcasted to the TF tree.
+Note that instead of `map`, this rosbag uses `world`. Instead of `base_link`, this rosbag uses `base_link_gt`.
+
+### Part 1: The Hard Way
 
 Begin by developing a ROS node that publishes the correct TF of the left and right cameras to the TF tree. Name this node `dynamic_tf_cam_publisher.py`.
 
-Use the `camera_info` rostopics associated with each camera to figure out what the relative transforms _should_ be, and define the transform between each camera and `base_link_gt` as a 4x4 numpy array.
+The left camera is located `0.05m` to the left of the `base_link_gt` position, and the right camera is located `0.05m` to the right of the `base_link_gt` position. Both cameras have identity rotation relative to the `base_link_gt` pose. In this case, the right-direction is the positive-x axis.
+
+Precompute the relative transforms between the cameras and `base_link_gt` as 4x4 numpy arrays using the above information. Refer to lecture notes for the typical 4x4 formulation.
 
 At each time step, your node should:
 
-1. Get the current transform of the robot w.r.t. the world.
+1. Get the current transform of the robot w.r.t. `world`. Use the TF tree!
 2. Convert the robot's transform to a 4x4 numpy array.
-3. Compute the current transform of the left camera w.r.t. world by composing the precomputed camera-base_link transform with the base_link-world transform.
+3. Compute the current transform of the left camera w.r.t. **world** by composing the precomputed camera-base_link transform with the base_link-world transform.
 4. Compute the current transform of the right camera w.r.t **the left camera** by composing the relevant matrices.
 5. Broadcast the computed transforms for the cameras to the TF tree. The left camera's TF should be broadcast on the `/left_cam` frame, and the right camera's TF goes on `/right_cam`.
 
@@ -253,9 +257,11 @@ Save a short (~3-5 second) gif of RVIZ as the rosbag plays with your node runnin
 
 * **Note 1:** Don't worry if the new TF frames are jittery and/or don't follow the `base_link_gt` frame fast enough; this should be fixed in part 2.
 
-* **Note 2:** You will be doing some transformations in your ROS node. Use [tf.transformations](http://docs.ros.org/jade/api/tf/html/python/transformations.html), a file built into the `tf` package. View the source code [here](https://github.com/ros/geometry/blob/melodic-devel/tf/src/tf/transformations.py). Also, use numpy!
+* **Note 2:** You will be doing some transformations in your ROS node. Use [tf.transformations](http://docs.ros.org/jade/api/tf/html/python/transformations.html), a file built into the `tf` package. View the source code [here](https://github.com/ros/geometry/blob/melodic-devel/tf/src/tf/transformations.py). Also, use `numpy`!
 
-* **Note 3:** You can easily record screen-captures using the Kazam package (`sudo apt-get install kazam`) and you can use the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post) or a web-hosted tool to convert to gif.
+* **Note 3:** Remember: your `/left_cam` trasnform is defined relative to `world`, and your `/right_cam` transform is defined relative to `/left_cam`. These require slightly different equations!
+
+* **Note 4:** You can easily record screen-captures using the Kazam package (`sudo apt-get install kazam`) and you can use the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post) or a web-hosted tool to convert to gif.
 
 
 ### Part 2: The ~~Easy~~ Better Way
@@ -270,10 +276,10 @@ Save a short (~3-5 second) gif of RVIZ just as in part 1, but with your `static_
 
 Additionally, write a roslaunch file that launches the `static_transform_publisher` node from the `tf` package and automatically publishes the two transforms. Name this launch file `static_tf_publisher.launch` and save it in the `/launch` directory of your package.
 
-* **Note 1:** Your launch file should not launch any of your nodes yet.
+* **Note 1:** Your launch file should not launch any of your nodes yet, just the `static_transform_publisher` node in the `tf` package.
 
 
-### Part 3: Back to base_link
+### Part 3: Back to `base_link`
 
 Write a new ROS node called `base_link_tf_pub.py`. Copy the 4x4 numpy matrix that represented the transform between `base_link_gt` and `world` in your first node into this node. 
 
@@ -281,7 +287,7 @@ This new node must listen to the transform between `left_cam` and `world` and th
 
 Add this node to your `static_tf_publisher.launch` file, such that both the static transforms for the two cameras are published when the launch file is executed. You should be able to visualize both `base_link_gt` and `base_link_gt_2` on top of each other in RVIZ.
 
-* **Tip:** Use numpy.inv()!
+* **Tip:** Use `numpy.inv()`!
 
 
 ## Debugging Hints
