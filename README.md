@@ -251,7 +251,7 @@ At each time step, your node should:
 2. Convert the robot's transform to a 4x4 numpy array.
 3. Compute the current transform of the left camera w.r.t. **world** by composing the precomputed camera-base_link transform with the base_link-world transform.
 4. Compute the current transform of the right camera w.r.t **the left camera** by composing the relevant matrices.
-5. Broadcast the computed transforms for the cameras to the TF tree. The left camera's TF should be broadcast on the `/left_cam` frame, and the right camera's TF goes on `/right_cam`.
+5. Broadcast the computed transforms for the cameras to the TF tree. The left camera's TF should be broadcast on the `left_cam` frame, and the right camera's TF goes on `right_cam`.
 
 Save a short (~3-5 second) gif of RVIZ as the rosbag plays with your node running. Make sure we can see the base_link frame and both the left and right camera frames moving around. Name this file `dynamic_node.gif` and save it in the `ros_exercises/rviz` directory of your package.
 
@@ -261,7 +261,7 @@ Take a screen-shot of your tf tree in **rqt** using the `tf-tree` plugin. Save i
 
 * **Note 2:** You will be doing some transformations in your ROS node. Use [tf.transformations](http://docs.ros.org/jade/api/tf/html/python/transformations.html), a file built into the `tf` package. View the source code [here](https://github.com/ros/geometry/blob/melodic-devel/tf/src/tf/transformations.py). Also, use `numpy`!
 
-* **Note 3:** Remember: your `/left_cam` trasnform is defined relative to `world`, and your `/right_cam` transform is defined relative to `/left_cam`. These require slightly different equations!
+* **Note 3:** Remember: your `left_cam` trasnform is defined relative to `world`, and your `right_cam` transform is defined relative to `left_cam`. These require slightly different equations!
 
 * **Note 4:** You can easily record screen-captures using the Kazam package (`sudo apt-get install kazam`) and you can use the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post) or a web-hosted tool to convert to gif.
 
