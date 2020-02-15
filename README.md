@@ -291,7 +291,7 @@ Add this node to your `static_tf_publisher.launch` file, such that both the stat
 
 Save a short gif of RVIZ again, and make sure you can see the both `base_link_gt_2` and `base_link_gt` on top of each other. Name this file `back_to_base_link.gif` and save it in the `ros_exercises/rviz` directory.
 
-* **Tip:** Use `numpy.inv()`!
+* **Tip:** Use `numpy.linalg.inv()`!
 
 
 ## Debugging Hints
