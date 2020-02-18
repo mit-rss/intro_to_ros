@@ -261,7 +261,7 @@ Take a screen-shot of your tf tree in **rqt** using the `tf-tree` plugin. Save i
 
 * **Note 2:** You will be doing some transformations in your ROS node. Use [tf.transformations](http://docs.ros.org/jade/api/tf/html/python/transformations.html), a file built into the `tf` package. View the source code [here](https://github.com/ros/geometry/blob/melodic-devel/tf/src/tf/transformations.py). Also, use `numpy`!
 
-* **Note 3:** Remember: your `left_cam` trasnform is defined relative to `world`, and your `right_cam` transform is defined relative to `left_cam`. These require slightly different equations!
+* **Note 3:** Remember: your `left_cam` transform is defined relative to `world`, and your `right_cam` transform is defined relative to `left_cam`. These require slightly different equations!
 
 * **Note 4:** You can easily record screen-captures using the Kazam package (`sudo apt-get install kazam`) and you can use the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post) or a web-hosted tool to convert to gif.
 
@@ -277,6 +277,20 @@ Save a short (~3-5 second) gif of RVIZ just as in part 1, but with your `static_
 #### 2b: Launch File
 
 Additionally, write a roslaunch file that launches the `static_transform_publisher` node from the `tf` package and automatically publishes the two transforms. Name this launch file `static_tf_publisher.launch` and save it in the `ros_exercises/launch` directory of your package.
+
+If you're getting an "extrapolation into the future" error, add this to your launch file:
+
+```bash
+<param name="/use_sim_time" value="true"/>
+```
+
+And make sure you're running the rosbag with the `/clock` topic published like so:
+
+```bash
+rosbag play tesse_no_statics_2.bag --clock
+```
+
+See [here](https://answers.ros.org/question/288672/how-use_sim_time-works/) for more information.
 
 * **Note 1:** Your launch file should not launch any of your nodes yet, just the `static_transform_publisher` node in the `tf` package.
 
