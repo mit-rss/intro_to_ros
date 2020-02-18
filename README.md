@@ -237,6 +237,9 @@ The rosbag was collected from a robot driving around in a simulated environment.
 
 Note that instead of `map`, this rosbag uses `world`. Instead of `base_link`, this rosbag uses `base_link_gt`.
 
+* **MAKE SURE TO RESUBMIT YOUR REPO AS A ZIP FILE TO GRADESCOPE AFTER DOING THESE EXERCISES**
+* **USE tf2_ros, NOT tf!!**
+
 ### Part 1: The Hard Way
 
 Begin by developing a ROS node that publishes the correct TF of the left and right cameras to the TF tree. Name this node `dynamic_tf_cam_publisher.py`.
