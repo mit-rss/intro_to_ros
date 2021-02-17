@@ -1,5 +1,6 @@
 | **Due Date**  | **Wednesday, February 19th at 1:00PM EST**  |
 |---------------|---------------------------------------------|
+|  **Submission**   | `ros_exercizes.zip` on [Gradescope](https://gradescope.com/)|
 
 # Lab 1C: Intro to ROS
 The objective of the following exercises is to help you practice the most commonly used concepts in ROS. We provide a quick reference document and pointers to relevant documentations. Feel free to use all the resources available to you to learn the concepts as thoroughly as possible and complete the exercises as efficiently as possible. 
@@ -15,9 +16,9 @@ This lab is due on **Wednesday, February 19th at 1:00PM EST**.
 
 The following are selected chapters from the ROS Wiki [Documentation](http://wiki.ros.org/) and [Tutorials](http://wiki.ros.org/ROS/Tutorials). If you understand all the concepts covered in these exercises, you should be ready for the following exercises and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki](http://wiki.ros.org/) section and follow the links to learn more.
 
-Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/cheat_sheets/ROS.docset/Contents/Resources/Documents/index) or [here](https://github.com/ros/cheatsheet/releases/download/0.0.1/ROScheatsheet_catkin.pdf).
+Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/cheat_sheets/ROS.docset/Contents/Resources/Documents/index) and [here](https://github.com/ros/cheatsheet/releases/download/0.0.1/ROScheatsheet_catkin.pdf).
 
-**Note:** We are using ROS Melodic for this class. Some links may have instructions for different ROS distribuitions; make sure to select the correct one.
+**Note:** We are using ROS Melodic for this class and catkin. Some links may have instructions for different ROS distribuitions / build systems; make sure to select the correct one.
 
 1. [Catkin](http://wiki.ros.org/catkin/conceptual_overview)   
 2. Catkin Workspace   
@@ -75,7 +76,7 @@ By following the instructions from the reference or instructions of your finding
 
 **Note**: Push your `ros_exercises/` package. 
 
-Additionally, everytime you make an edit to your files, make sure to run `catkin_make` and **source your `setup.bash` file** (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `catkin_make`!)_.
+Additionally, everytime you make an edit to your files, make sure to run `catkin_make`, and **source your `setup.bash` file** (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `catkin_make`!)_. You will also need to source your `setup.bash` file each time you open a new terminal window.
 
 ## Question 1: Create Simple Publisher (Python)
 Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly. Note that this file will reside inside of the /ros_exercises folder of your newly created package. 
