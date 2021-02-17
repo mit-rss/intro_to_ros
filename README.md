@@ -4,7 +4,7 @@
 # Lab 1C: Intro to ROS
 The objective of the following exercises is to help you practice the most commonly used concepts in ROS. We provide a quick reference document and pointers to relevant documentations. Feel free to use all the resources available to you to learn the concepts as thoroughly as possible and complete the exercises as efficiently as possible. 
 
-Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on [Piazza](http://piazza.com/mit/spring2020/614116405) so other students can benefit from the answer. If you have a question about your individual submission, please make a private post. 
+Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on [Piazza](https://tinyurl.com/RSS2021-piazza) so other students can benefit from the answer. If you have a question about your individual submission, please make a private post. 
 
 ## Grading
 You are meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests, which will be released on Friday at 1pm. Please refer to the **Automated Tests and Your Submission** section located after the **Questions** section for instructions on how to run these tests.
@@ -16,6 +16,8 @@ This lab is due on **Wednesday, February 19th at 1:00PM EST**.
 The following are selected chapters from the ROS Wiki [Documentation](http://wiki.ros.org/) and [Tutorials](http://wiki.ros.org/ROS/Tutorials). If you understand all the concepts covered in these exercises, you should be ready for the following exercises and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki](http://wiki.ros.org/) section and follow the links to learn more.
 
 Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/cheat_sheets/ROS.docset/Contents/Resources/Documents/index) or [here](https://github.com/ros/cheatsheet/releases/download/0.0.1/ROScheatsheet_catkin.pdf).
+
+**Note:** We are using ROS Melodic for this class. Some links may have instructions for different ROS distribuitions; make sure to select the correct one.
 
 1. [Catkin](http://wiki.ros.org/catkin/conceptual_overview)   
 2. Catkin Workspace   
