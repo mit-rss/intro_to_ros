@@ -1,6 +1,7 @@
-| **Due Date**  | **Wednesday, February 19th at 1:00PM EST**  |
-|---------------|---------------------------------------------|
-|  **Submission**   | `ros_exercizes.zip` on [Gradescope](https://gradescope.com/)|
+
+| **Due Date**  | **Wednesday, March 3rd at 1:00PM EST**                                 |
+|---------------|----------------------------------------------------------------------------|
+|  **Submission**   | `log.npf` and `ros_exercises.zip` on [Gradescope](https://gradescope.com/) (listed as two separate assignments)|
 
 # Lab 1C: Intro to ROS
 The objective of the following exercises is to help you practice the most commonly used concepts in ROS. We provide a quick reference document and pointers to relevant documentations. Feel free to use all the resources available to you to learn the concepts as thoroughly as possible and complete the exercises as efficiently as possible. 
@@ -10,7 +11,31 @@ Although you're encouraged to collaborate with others if you are stuck, the lab 
 ## Grading
 You are meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests, which will be released on Friday at 1pm. Please refer to the **Automated Tests and Your Submission** section located after the **Questions** section for instructions on how to run these tests.
            
-This lab is due on **Wednesday, February 19th at 1:00PM EST**.
+This lab is due on **Wednesday, March 3rd at 1:00PM EST**.
+
+### Automated Tests and Your Submission
+
+You can download the test binary to check your solutions locally by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary. **Make sure you place the binary in your ```ros_exercises``` folder.**:
+
+    mv run_tests ~/catkin_ws/src/ros_exercises/
+    
+Then make the binary executable with ```chmod```
+
+    chmod +x run_tests
+
+First, kill all running ROS processes. Then start ```roscore```.
+
+Finally, run the following in a new terminal to begin testing:
+
+     cd ~/catkin_ws/src/ros_exercises/
+    ./run_tests
+
+You should be graded on the completion of 6 tests. Be careful with naming the various files defined in the handout correctly or else you won't be graded properly.
+
+Additionally the `run_tests` file will generate a file called `log.npf` which you **must upload to gradescope for credit**.
+
+### Manual Grading Portion
+If you have successfully completed all parts, you should receive a score of 3.0/4.0 on Gradescope. The rest of your score (1.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be avaliable on your `github.mit.edu` account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**
 
 ## References
 
@@ -18,7 +43,7 @@ The following are selected chapters from the ROS Wiki [Documentation](http://wik
 
 Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/cheat_sheets/ROS.docset/Contents/Resources/Documents/index) and [here](https://github.com/ros/cheatsheet/releases/download/0.0.1/ROScheatsheet_catkin.pdf).
 
-**Note:** We are using ROS Melodic for this class and catkin. Some links may have instructions for different ROS distribuitions / build systems; make sure to select the correct one.
+**Note:** We are using ROS Melodic and catkin for this class. Some links may have instructions for different ROS distribuitions / or build systems; make sure to select the correct one.
 
 1. [Catkin](http://wiki.ros.org/catkin/conceptual_overview)   
 2. Catkin Workspace   
@@ -76,7 +101,7 @@ By following the instructions from the reference or instructions of your finding
 
 **Note**: Push your `ros_exercises/` package. 
 
-Additionally, everytime you make an edit to your files, make sure to run `catkin_make`, and **source your `setup.bash` file** (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `catkin_make`!)_. You will also need to source your `setup.bash` file each time you open a new terminal window.
+Additionally, everytime you make an edit to your files, make sure to run `catkin_make` and **source your `setup.bash` file** (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `catkin_make`!)_. You will also need to source your setup.bash file each time you open a new terminal window.
 
 ## Question 1: Create Simple Publisher (Python)
 Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly. Note that this file will reside inside of the /ros_exercises folder of your newly created package. 
@@ -207,30 +232,6 @@ When writing the last publisher (***fake_scan_publisher***), you had a couple of
 In question 3, we asked you to visualize your laserscan data on rviz and record a bag file. The rviz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed, real laserscan data is a lot prettier and informative. Download these [bagfiles](https://www.dropbox.com/sh/lvbtzph8qba3y8e/AAA2mTp0VxY-9DyJXcyA0GoHa), follow the instructions [here](http://wiki.ros.org/ROS/Tutorials/Recording%20and%20playing%20back%20data), and visualize the laser scan data on rviz. Try it with multiple coordinate frames.     
      
 **Note**: The provided bag files are from our cars driving around in the basement of Stata center, which is where you will be using them later.
-
-## Automated Tests and Your Submission
-
-You can download the test binary by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary. **Make sure you place the binary in your ```ros_exercises``` folder.**:
-
-    mv run_tests ~/catkin_ws/src/ros_exercises/
-    
-Then make the binary executable with ```chmod```
-
-    chmod +x run_tests
-
-First, kill all running ROS processes. Then start ```roscore```.
-
-Finally, run the following in a new terminal to begin testing:
-
-     cd ~/catkin_ws/src/ros_exercises/
-    ./run_tests
-
-You should be graded on the completion of 6 tests. Be careful with naming the various files defined in the handout correctly or else you won't be graded properly.
-
-Additionally the `run_tests` file will generate a file called `log.npf` which you **must upload to gradescope for credit**.
-
-### Manual Grading Portion
-If you have successfully completed all parts, you should receive a score of 3.0/4.0 on Gradescope. The rest of your score (1.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be avaliable on your `github.mit.edu` account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**
 
 ## Question 9: Optional TF Exercises
 
