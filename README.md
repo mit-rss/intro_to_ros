@@ -11,7 +11,7 @@ Although you're encouraged to collaborate with others if you are stuck, the lab 
 ## Grading
 You are meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests, which will be released on Friday at 1pm. Please refer to the **Automated Tests and Your Submission** section located after the **Questions** section for instructions on how to run these tests.
            
-This lab is due on **Wednesday, February 19th at 1:00PM EST**.
+This lab is due on **Wednesday, March 3rd at 1:00PM EST**.
 
 ## References
 
