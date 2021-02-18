@@ -1,5 +1,7 @@
-| **Due Date**  | **Wednesday, February 19th at 1:00PM EST**  |
-|---------------|---------------------------------------------|
+
+| **Due Date**  | **Wednesday, March 3rd at 1:00PM EST**                                 |
+|---------------|----------------------------------------------------------------------------|
+|  **Submission**   | `ros_exercises.zip` on [Gradescope](https://gradescope.com/)|
 
 # Lab 1C: Intro to ROS
 The objective of the following exercises is to help you practice the most commonly used concepts in ROS. We provide a quick reference document and pointers to relevant documentations. Feel free to use all the resources available to you to learn the concepts as thoroughly as possible and complete the exercises as efficiently as possible. 
