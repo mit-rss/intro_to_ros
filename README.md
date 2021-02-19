@@ -34,8 +34,35 @@ You should be graded on the completion of 6 tests. Be careful with naming the va
 
 Additionally the `run_tests` file will generate a file called `log.npf` which you **must upload to gradescope for credit**.
 
+
+### Automatic grade Breakdown
+
+This table shows how the different tasks will be graded by the automated grader.
+| Task                    |      Grade        |
+|-------------------------|-------------------|
+| Simple Publisher        |      0.5 points   |
+| Simple Subscriber       |      0.5 Points   |
+| Complex Publisher       |      0.5 Points   |
+| Complex Subscriber      |      1.0 Points   |
+| Launch File             |      0.5 Points   |
+| **Total**               |   **3.0 Points**  |
+
+
+
 ### Manual Grading Portion
 If you have successfully completed all parts, you should receive a score of 3.0/4.0 on Gradescope. The rest of your score (1.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be avaliable on your `github.mit.edu` account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**
+
+### The Manual Grade Breakdown
+This table shows the grading breakdown of the manually graded portion of the lab.
+| Task                                | Grade          |
+|-------------------------------------|----------------|
+| Simple Publisher RQT Screenshot     | 0.1 Points     |
+| Simple Subscriber RQT screenshot    | 0.1 Points     | 
+| Fake Scan RViz ScreenShot           | 0.1 Points     |
+| Open Space Publisher RQT Screenshot | 0.2 Points     |
+| Custom Message file inspection      | 0.2 Points     |
+| Launch file inspection              | 0.1 Points     |
+| **Total**                           | **1.0 Points** |
 
 ## References
 
