@@ -63,6 +63,9 @@ Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/chea
 
 **Note:** Some useful **debugging hints** are provided at the end of this document.
 
+### Setup
+Before you get started with this lab, make sure you have the proper dependencies installed by following Steps 1.5 to 1.7 in [this guide](https://wiki.ros.org/melodic/Installation/Debian).
+
 ## ROS Exercises
 
 ### Create a package and build it
