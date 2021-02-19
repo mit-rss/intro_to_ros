@@ -62,6 +62,7 @@ This table shows the grading breakdown of the manually graded portion of the lab
 | Open Space Publisher RQT Screenshot | 0.2 Points     |
 | Custom Message file inspection      | 0.2 Points     |
 | Launch file inspection              | 0.1 Points     |
+| Setting  ROS parameters	      | 0.2 Points     |
 | **Total**                           | **1.0 Points** |
 
 ## References
@@ -103,7 +104,7 @@ Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/chea
 	a. rqt   
 		- [rqt](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics)   
 		- [rqt_graph](http://wiki.ros.org/rqt_graph)   
-	b. rviz   
+	b. RViz   
 		- [User Guide](http://wiki.ros.org/rviz/UserGuide)   
 		- [Interactive Markers](http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers%3A%20Getting%20Started)   
 		- [Tutorials](http://wiki.ros.org/rviz/Tutorials)   
@@ -192,9 +193,11 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 
 ### Commit Specification   
 
-1. When your node works properly, visualize the published laser scan data using rviz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`
+1. When your node works properly, visualize the published laser scan data using RViz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`
 2. Record a bag file of your laser scan data and call the file `fake_scan_bag.bag`, save it in `ros_exercises/rosbag`.
 3. Again, push your code, bag file, screenshot, and any supporting files with a appropriate commit message.
+
+Note: You should get an error in RViz that says "No tf data. Actual error: Fixed Frame [map] does not exist". This will not affect your visualization of the laser scan; however, if you would like, you can run `rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map base_link 10` in a separate terminal window to link `map` to your TF tree.
 
 **If you are failing this test make sure you have these files in your ```ros_exercises``` directory**:
 
@@ -256,13 +259,13 @@ When writing the last publisher (***fake_scan_publisher***), you had a couple of
 1. Commit your modified nodes along with any other important changes.
 
 ## Question 8: Playing with bag files
-In question 3, we asked you to visualize your laserscan data on rviz and record a bag file. The rviz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed, real laserscan data is a lot prettier and informative. Download these [bagfiles](https://www.dropbox.com/sh/lvbtzph8qba3y8e/AAA2mTp0VxY-9DyJXcyA0GoHa), follow the instructions [here](http://wiki.ros.org/ROS/Tutorials/Recording%20and%20playing%20back%20data), and visualize the laser scan data on rviz. Try it with multiple coordinate frames.     
+In question 3, we asked you to visualize your laserscan data on RViz and record a bag file. The RViz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed; real laserscan data is a lot prettier and more informative. Download these [bagfiles](https://www.dropbox.com/sh/lvbtzph8qba3y8e/AAA2mTp0VxY-9DyJXcyA0GoHa), follow the instructions [here](http://wiki.ros.org/ROS/Tutorials/Recording%20and%20playing%20back%20data), and visualize the laser scan data on RViz. Try it with multiple coordinate frames.     
      
-**Note**: The provided bag files are from our cars driving around in the basement of Stata center, which is where you will be using them later.
+**Note**: The provided bag files are from our cars driving around in the basement of Stata center.
 
 ## Question 9: Optional TF Exercises
 
-For extra credit, complete the following exercises. You will need to download [this rosbag](https://www.dropbox.com/s/qvqloye6dilsj4y/tesse_no_statics_2.bag?dl=0) from google drive; it may take a while.
+For extra credit, complete the following exercises. You will need to download [this rosbag](https://www.dropbox.com/s/qvqloye6dilsj4y/tesse_no_statics_2.bag?dl=0) from Google drive; it may take a while.
 
 The rosbag was collected from a robot driving around in a simulated environment. Its `base_link` position in the environment is broadcast to the TF tree in ROS. However, the poses of the sensors onboard the robot are not broadcasted to the TF tree.
 
@@ -287,7 +290,7 @@ At each time step, your node should:
 4. Compute the current transform of the right camera w.r.t **the left camera** by composing the relevant matrices.
 5. Broadcast the computed transforms for the cameras to the TF tree. The left camera's TF should be broadcast on the `left_cam` frame, and the right camera's TF goes on `right_cam`.
 
-Save a short (~3-5 second) gif of RVIZ as the rosbag plays with your node running. Make sure we can see the base_link frame and both the left and right camera frames moving around. Name this file `dynamic_node.gif` and save it in the `ros_exercises/rviz` directory of your package.
+Save a short (~3-5 second) gif of RViz as the rosbag plays with your node running. Make sure we can see the base_link frame and both the left and right camera frames moving around. Name this file `dynamic_node.gif` and save it in the `ros_exercises/rviz` directory of your package.
 
 Take a screen-shot of your tf tree in **rqt** using the `tf-tree` plugin. Save it in `ros_exercises/rqt` and name it `dynamic_tf_tree.png`
 
@@ -306,7 +309,7 @@ Take a screen-shot of your tf tree in **rqt** using the `tf-tree` plugin. Save i
 
 Write a ROS node that publishes the relative pose between each camera and the robot as a **static transform**. It should only broadcast the transform once. Name this node `static_tf_cam_publisher.py`. Make sure to use `tf2_ros`
 
-Save a short (~3-5 second) gif of RVIZ just as in part 1, but with your `static_tf_cam_publisher.py` node running. Name this file `static_node.gif` and save it in the `ros_exercises/rviz` directory of your package. This should look much smoother than in part 1.
+Save a short (~3-5 second) gif of RViz just as in part 1, but with your `static_tf_cam_publisher.py` node running. Name this file `static_node.gif` and save it in the `ros_exercises/rviz` directory of your package. This should look much smoother than in part 1.
 
 #### 2b: Launch File
 
@@ -335,9 +338,9 @@ Write a new ROS node called `base_link_tf_pub.py`.
 
 This new node must listen to the transform between `left_cam` and `world` and then broadcast the transform from `base_link_gt` to `world` on a new frame: `base_link_gt_2`. The transform you publish must be computed by composing the transform between `left_cam` and `base_link` with the transform you are listening for. In other words, this **cannot** be a static transform.
 
-Add this node to your `static_tf_publisher.launch` file, such that both the static transforms for the two cameras are published when the launch file is executed. You should be able to visualize both `base_link_gt` and `base_link_gt_2` on top of each other in RVIZ.
+Add this node to your `static_tf_publisher.launch` file, such that both the static transforms for the two cameras are published when the launch file is executed. You should be able to visualize both `base_link_gt` and `base_link_gt_2` on top of each other in RViz.
 
-Save a short gif of RVIZ again, and make sure you can see the both `base_link_gt_2` and `base_link_gt` on top of each other. Name this file `back_to_base_link.gif` and save it in the `ros_exercises/rviz` directory.
+Save a short gif of RViz again, and make sure you can see the both `base_link_gt_2` and `base_link_gt` on top of each other. Name this file `back_to_base_link.gif` and save it in the `ros_exercises/rviz` directory.
 
 * **Tip:** Use `numpy.linalg.inv()`!
 
