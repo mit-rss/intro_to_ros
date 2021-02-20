@@ -4,13 +4,13 @@
 |  **Submission**   | `log.npf` and `ros_exercises.zip` on [Gradescope](https://gradescope.com/) (listed as two separate assignments)|
 
 # Lab 1C: Intro to ROS
-The objective of the following exercises is to help you practice the most commonly used concepts in ROS. We provide a quick reference document and pointers to relevant documentations. Feel free to use all the resources available to you to learn the concepts as thoroughly as possible and complete the exercises as efficiently as possible. 
+The objective of the following exercises is to help you practice the most commonly used concepts in ROS. We provide a quick reference document and pointers to relevant documentations. Feel free to use all the resources available to you to learn the concepts as thoroughly as possible and complete the exercises as efficiently as possible.
 
-Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on [Piazza](https://tinyurl.com/RSS2021-piazza) so other students can benefit from the answer. If you have a question about your individual submission, please make a private post. 
+Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on [Piazza](https://tinyurl.com/RSS2021-piazza) so other students can benefit from the answer. If you have a question about your individual submission, please make a private post.
 
 ## Grading
 You are meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests, which will be released on Friday at 1pm. Please refer to the **Automated Tests and Your Submission** section located after the **Questions** section for instructions on how to run these tests.
-           
+
 This lab is due on **Wednesday, March 3rd at 1:00PM EST**.
 
 ### Automated Tests and Your Submission
@@ -18,7 +18,7 @@ This lab is due on **Wednesday, March 3rd at 1:00PM EST**.
 You can download the test binary to check your solutions locally by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary. **Make sure you place the binary in your ```ros_exercises``` folder.**:
 
     mv run_tests ~/catkin_ws/src/ros_exercises/
-    
+
 Then make the binary executable with ```chmod```
 
     chmod +x run_tests
@@ -57,7 +57,7 @@ This table shows the grading breakdown of the manually graded portion of the lab
 | Task                                | Grade          |
 |-------------------------------------|----------------|
 | Simple Publisher RQT Screenshot     | 0.1 Points     |
-| Simple Subscriber RQT screenshot    | 0.1 Points     | 
+| Simple Subscriber RQT screenshot    | 0.1 Points     |
 | Fake Scan RViz ScreenShot           | 0.1 Points     |
 | Open Space Publisher RQT Screenshot | 0.2 Points     |
 | Custom Message file inspection      | 0.2 Points     |
@@ -115,24 +115,27 @@ Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/chea
 
 **Note:** Some useful **debugging hints** are provided at the end of this document.
 
+### Setup
+Before you get started with this lab, make sure you have the proper dependencies installed by following Steps 1.5 to 1.7 in [this guide](https://wiki.ros.org/melodic/Installation/Debian).
+
 ## ROS Exercises
 
 ### Create a package and build it
-By following the instructions from the reference or instructions of your finding, create a catkin workspace named `catkin_ws/`. Inside that workspace, create a new package, named `ros_exercises/`, which should depend on `rospy`, `std_msgs`, and `sensor_msgs`. **Make sure that your workspace is built (using [catkin_make](http://wiki.ros.org/catkin/commands/catkin_make)) before and after the package was added, and do not forget to source `devel/setup.bash`**. Your package (`ros_exercises`) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make your `ros_exercises` a git repo. After creating the workspace and the package, you should have the following directory layout. 
+By following the instructions from the reference or instructions of your finding, create a catkin workspace named `catkin_ws/`. Inside that workspace, create a new package, named `ros_exercises/`, which should depend on `rospy`, `std_msgs`, and `sensor_msgs`. **Make sure that your workspace is built (using [catkin_make](http://wiki.ros.org/catkin/commands/catkin_make)) before and after the package was added, and do not forget to source `devel/setup.bash`**. Your package (`ros_exercises`) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make your `ros_exercises` a git repo. After creating the workspace and the package, you should have the following directory layout.
 
-* /catkin_ws[your catkin workspace] 
-	* /src 
+* /catkin_ws[your catkin workspace]
+	* /src
 		* /ros_exercises[Your catkin package]
 		* [other ros related files and packages if any]
 	* /devel[automatically generated by catkin_make]
 	* /build[automatically generated by catkin_make]
 
-**Note**: Push your `ros_exercises/` package. 
+**Note**: Push your `ros_exercises/` package.
 
 Additionally, everytime you make an edit to your files, make sure to run `catkin_make` and **source your `setup.bash` file** (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `catkin_make`!)_. You will also need to source your setup.bash file each time you open a new terminal window.
 
 ## Question 1: Create Simple Publisher (Python)
-Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly. Note that this file will reside inside of the /ros_exercises folder of your newly created package. 
+Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly. Note that this file will reside inside of the /ros_exercises folder of your newly created package.
 
 ### Node Specification    
 **Description:** Publishes a random number between 0 and 10.    
@@ -223,7 +226,7 @@ Create a node that subscribes to the fake laser scan data and outputs the longes
 - ```rqt/open_space_rqt.png```
 
 ## Question 5: Create a custom Message and Publish it
-The publisher from the previous exercise was publishing two related pieces of data on two separate topics (***open_space/angle*** and ***open_space/distance***). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data, the same way the LaserScan message type combines multiple pieces of data, and name your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the previous exercise to publish this message type on the topic ***open_space***. Hint: Don't forget to modify your `CMakeLists.txt` and `package.xml` files. 
+The publisher from the previous exercise was publishing two related pieces of data on two separate topics (***open_space/angle*** and ***open_space/distance***). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data, the same way the LaserScan message type combines multiple pieces of data, and name your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the previous exercise to publish this message type on the topic ***open_space***. Hint: Don't forget to modify your `CMakeLists.txt` and `package.xml` files.
 
 **Important:** For grading purposes, it is required that your ***angle*** field be specified **BEFORE** your ***distance*** field. When creating your messages, you will be completely in charge of what your message specification looks like, so be aware that this is just a somewhat arbitrary requirement of the autograding system.
 
@@ -231,7 +234,7 @@ The publisher from the previous exercise was publishing two related pieces of da
 1. Commit your modified code, config/meta files, and your custom message file as well any supporting files.
 
 ## Question 6: Using launch files
-If you have been running your publisher(s), subscriber(s), and roscore separately using the rosrun command, there’s a more organized way to run multiple nodes at same time with one command. 
+If you have been running your publisher(s), subscriber(s), and roscore separately using the rosrun command, there’s a more organized way to run multiple nodes at same time with one command.
 
 In this exercise, we ask you to write a single launch file called `my_first_launch.launch` containing all 4 python files that you have written thus far.
 
@@ -239,9 +242,9 @@ In this exercise, we ask you to write a single launch file called `my_first_laun
 1. Commit your launch file. It should be inside a directory called `launch` within your package.
 
 ## Question 7: Use ROS parameters
-When writing the last publisher (***fake_scan_publisher***), you had a couple of variables with default values including angle_min, angle_max, range_min, range_max, etc. With the current setup, if you want to change the value of one of those variables you will have to edit the Python code. For hundreds of lines of code, finding where each of such variables is defined can be tedious. The rosparam server provides a way to set those parameters on the terminal when running your program and in launch or config files. You task here is to parameterize the following variables from the last two nodes. 
+When writing the last publisher (***fake_scan_publisher***), you had a couple of variables with default values including angle_min, angle_max, range_min, range_max, etc. With the current setup, if you want to change the value of one of those variables you will have to edit the Python code. For hundreds of lines of code, finding where each of such variables is defined can be tedious. The rosparam server provides a way to set those parameters on the terminal when running your program and in launch or config files. You task here is to parameterize the following variables from the last two nodes.
 
-**Note:** Your node should be able to start (e.g. via `rosrun`) even if not all of these parameters have been set. If a parameter has not been set, your node should default to using the values given in the previous question. You will most likely want to use [`rospy.get_param`](http://wiki.ros.org/rospy/Overview/Parameter%20Server), which provides a mechanism for this. This way of falling back to hard-coded defaults can still be useful, especially in cases where a sensible default for a parameter is known and changes would only have to be made rarely. 
+**Note:** Your node should be able to start (e.g. via `rosrun`) even if not all of these parameters have been set. If a parameter has not been set, your node should default to using the values given in the previous question. You will most likely want to use [`rospy.get_param`](http://wiki.ros.org/rospy/Overview/Parameter%20Server), which provides a mechanism for this. This way of falling back to hard-coded defaults can still be useful, especially in cases where a sensible default for a parameter is known and changes would only have to be made rarely.
 
 1. Fake Scan Publisher     
 	* Publish topic      
@@ -260,7 +263,7 @@ When writing the last publisher (***fake_scan_publisher***), you had a couple of
 
 ## Question 8: Playing with bag files
 In question 3, we asked you to visualize your laserscan data on RViz and record a bag file. The RViz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed; real laserscan data is a lot prettier and more informative. Download these [bagfiles](https://www.dropbox.com/sh/lvbtzph8qba3y8e/AAA2mTp0VxY-9DyJXcyA0GoHa), follow the instructions [here](http://wiki.ros.org/ROS/Tutorials/Recording%20and%20playing%20back%20data), and visualize the laser scan data on RViz. Try it with multiple coordinate frames.     
-     
+
 **Note**: The provided bag files are from our cars driving around in the basement of Stata center.
 
 ## Question 9: Optional TF Exercises
@@ -359,10 +362,10 @@ Once you know that a command is being published/subscribed to, you can echo its 
 ### `rostopic hz /topic_name`
 This command can tell you the rate at which messages are being published. This tool is helpful to verify if you are publishing messages at a certain frequency.
 
-The ROS documentation for rostopic at http://wiki.ros.org/rostopic can provide many other tools to debug your ROS node setup. 
+The ROS documentation for rostopic at http://wiki.ros.org/rostopic can provide many other tools to debug your ROS node setup.
 
 ### `rqt graph`
 This is a tool to display graphs of running ROS nodes with connecting topics and package dependencies. Allows you to visualize your entire framework! Another helpful technique is to look at the [rqt_graph](http://wiki.ros.org/rqt_graph) which shows the interactions between nodes for your system.
 
 ### **`rviz`**
-This is a powerful 3D visualization tool for displaying sensor data and state information from ROS. You will be using it more extensively in future labs. 
+This is a powerful 3D visualization tool for displaying sensor data and state information from ROS. You will be using it more extensively in future labs.
