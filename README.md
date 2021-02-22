@@ -10,56 +10,6 @@ The objective of the following exercises is to help you practice the most common
 
 Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on [Piazza](https://tinyurl.com/RSS2021-piazza) so other students can benefit from the answer. If you have a question about your individual submission, please make a private post.
 
-### References
-
-The following are selected chapters from the ROS Wiki [Documentation](http://wiki.ros.org/) and [Tutorials](http://wiki.ros.org/ROS/Tutorials). If you understand all the concepts covered in these exercises, you will be ready for the exercises of this lab (given below) and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki](http://wiki.ros.org/) section and follow the links to learn more.
-
-Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/cheat_sheets/ROS.docset/Contents/Resources/Documents/index) and [here](https://github.com/ros/cheatsheet/releases/download/0.0.1/ROScheatsheet_catkin.pdf).
-
-**Note:** We are using ROS Melodic and catkin for this class. Some links may have instructions for different ROS distribuitions / or build systems; make sure to select the correct one.
-
-1. [Catkin](http://wiki.ros.org/catkin/conceptual_overview)   
-2. Catkin Workspace   
-	a. [Catkin workspaces](http://wiki.ros.org/catkin/workspaces)   
-	b. [Creating Catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)   
-3. Packages   
-	a. [ROS package](http://wiki.ros.org/Packages)   
-	b. [Creating ROS package](http://wiki.ros.org/catkin/Tutorials/CreatingPackage)   
-4. Messages   
-	a. [ROS Messages](http://wiki.ros.org/Messages)   
-	b. [Creating custom messages](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv)   
-	c. [The rosmsg command-line tools](http://wiki.ros.org/rosmsg)   
-	d. [Common ros message categories](http://wiki.ros.org/common_msgs)   
-5. Topics    
-	a. [ROS Topics](http://wiki.ros.org/Topics)   
-	b. [Rostopic Command-Line tool](http://wiki.ros.org/rostopic)   
-6. Nodes   
-	a. [ROS Nodes](http://wiki.ros.org/Nodes)   
-	b. [The rosnode command-line tools](http://wiki.ros.org/rosnode)   
-	c. [Writing Publisher and Subscriber(Python)](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29)   
-7. Launch Files    
-	a. [ROS Launch](http://wiki.ros.org/roslaunch)   
-	b. [Command-line Tools](http://wiki.ros.org/roslaunch/Commandline%20Tools)   
-	c. [XML Format](http://wiki.ros.org/roslaunch/XML)   
-	d. [Tips for Large Projects](http://wiki.ros.org/roslaunch/Tutorials/Roslaunch%20tips%20for%20larger%20projects)   
-8. Parameter server   
-	a. [Parameter server](http://wiki.ros.org/Parameter%20Server)   
-	b. [rosparam](http://wiki.ros.org/rosparam)   
-9. Visualization Tools   
-	a. rqt   
-		- [rqt](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics)   
-		- [rqt_graph](http://wiki.ros.org/rqt_graph)   
-	b. RViz   
-		- [User Guide](http://wiki.ros.org/rviz/UserGuide)   
-		- [Interactive Markers](http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers%3A%20Getting%20Started)   
-		- [Tutorials](http://wiki.ros.org/rviz/Tutorials)   
-10. [TF](http://wiki.ros.org/tf)   
-11. Rosbag   
-	a. [Rosbag](http://wiki.ros.org/Bags)    
-	b. [Command-Line Tools](http://wiki.ros.org/rosbag/Commandline)   
-
-**Note:** Some useful **debugging hints** are provided at the end of this document.
-
 ## Submission
 You are meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests. Please refer to the next section, **Automated Tests** for instructions on how to run these tests. You will be submitting the resulting `log.npf` file to "Lab 1C: Intro to ROS -- log.npf submission" on Gradescope, in addition to a zip file containing your local repository (`ros_exercises.zip`) to "Lab 1C: Intro to ROS -- Git repo submission".
 
@@ -117,8 +67,58 @@ This table shows the grading breakdown of the manually graded portion of the lab
 | Setting  ROS parameters	      | 0.2 Points     |
 | **Total**                           | **1.0 Points** |
 
-### Setup
+## Setup
 Before you get started with this lab, make sure you have the proper dependencies installed by following Steps 1.5 to 1.7 in [this guide](https://wiki.ros.org/melodic/Installation/Debian).
+
+### References
+
+The following are selected chapters from the ROS Wiki [Documentation](http://wiki.ros.org/) and [Tutorials](http://wiki.ros.org/ROS/Tutorials). If you understand all the concepts covered in these exercises, you will be ready for the exercises of this lab (given below) and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki](http://wiki.ros.org/) section and follow the links to learn more.
+
+Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/cheat_sheets/ROS.docset/Contents/Resources/Documents/index) and [here](https://github.com/ros/cheatsheet/releases/download/0.0.1/ROScheatsheet_catkin.pdf).
+
+**Note:** We are using ROS Melodic and catkin for this class. Some links may have instructions for different ROS distribuitions / or build systems; make sure to select the correct one.
+
+1. [Catkin](http://wiki.ros.org/catkin/conceptual_overview)   
+2. Catkin Workspace   
+	a. [Catkin workspaces](http://wiki.ros.org/catkin/workspaces)   
+	b. [Creating Catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)   
+3. Packages   
+	a. [ROS package](http://wiki.ros.org/Packages)   
+	b. [Creating ROS package](http://wiki.ros.org/catkin/Tutorials/CreatingPackage)   
+4. Messages   
+	a. [ROS Messages](http://wiki.ros.org/Messages)   
+	b. [Creating custom messages](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv)   
+	c. [The rosmsg command-line tools](http://wiki.ros.org/rosmsg)   
+	d. [Common ros message categories](http://wiki.ros.org/common_msgs)   
+5. Topics    
+	a. [ROS Topics](http://wiki.ros.org/Topics)   
+	b. [Rostopic Command-Line tool](http://wiki.ros.org/rostopic)   
+6. Nodes   
+	a. [ROS Nodes](http://wiki.ros.org/Nodes)   
+	b. [The rosnode command-line tools](http://wiki.ros.org/rosnode)   
+	c. [Writing Publisher and Subscriber(Python)](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29)   
+7. Launch Files    
+	a. [ROS Launch](http://wiki.ros.org/roslaunch)   
+	b. [Command-line Tools](http://wiki.ros.org/roslaunch/Commandline%20Tools)   
+	c. [XML Format](http://wiki.ros.org/roslaunch/XML)   
+	d. [Tips for Large Projects](http://wiki.ros.org/roslaunch/Tutorials/Roslaunch%20tips%20for%20larger%20projects)   
+8. Parameter server   
+	a. [Parameter server](http://wiki.ros.org/Parameter%20Server)   
+	b. [rosparam](http://wiki.ros.org/rosparam)   
+9. Visualization Tools   
+	a. rqt   
+		- [rqt](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics)   
+		- [rqt_graph](http://wiki.ros.org/rqt_graph)   
+	b. RViz   
+		- [User Guide](http://wiki.ros.org/rviz/UserGuide)   
+		- [Interactive Markers](http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers%3A%20Getting%20Started)   
+		- [Tutorials](http://wiki.ros.org/rviz/Tutorials)   
+10. [TF](http://wiki.ros.org/tf)   
+11. Rosbag   
+	a. [Rosbag](http://wiki.ros.org/Bags)    
+	b. [Command-Line Tools](http://wiki.ros.org/rosbag/Commandline)   
+
+**Note:** Some useful **debugging hints** are provided at the end of this document.
 
 ## ROS Exercises
 
