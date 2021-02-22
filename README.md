@@ -74,7 +74,7 @@ Before you get started with this lab, make sure you have the proper dependencies
 
 The following are selected chapters from the ROS Wiki [Documentation](http://wiki.ros.org/) and [Tutorials](http://wiki.ros.org/ROS/Tutorials). If you understand all the concepts covered in these exercises, you will be ready for the exercises of this lab (given below) and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki](http://wiki.ros.org/) section and follow the links to learn more.
 
-Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/cheat_sheets/ROS.docset/Contents/Resources/Documents/index) and [here](https://github.com/ros/cheatsheet/releases/download/0.0.1/ROScheatsheet_catkin.pdf).
+Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/cheat_sheets/ROS.docset/Contents/Resources/Documents/index) and [here](https://www.datamachinist.com/wp-content/uploads/2020/05/ROS_cheat_sheet.pdf).
 
 **Note:** We are using ROS Melodic and catkin for this class. Some links may have instructions for different ROS distribuitions / or build systems; make sure to select the correct one.
 
