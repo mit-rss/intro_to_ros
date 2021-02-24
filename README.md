@@ -264,7 +264,7 @@ When writing the last publisher (***fake_scan_publisher***), you had a couple of
 1. Commit your modified nodes along with any other important changes.
 
 ## Question 8: Playing with bag files
-In question 3, we asked you to visualize your laserscan data on RViz and record a bag file. The RViz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed; real laserscan data is a lot prettier and more informative. Download these bagfiles (to be uploaded Thursday, 2/24/21), follow the instructions [here](http://wiki.ros.org/ROS/Tutorials/Recording%20and%20playing%20back%20data), and visualize the laser scan data on RViz. Try it with multiple coordinate frames.     
+In question 3, we asked you to visualize your laserscan data on RViz and record a bag file. The RViz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed; real laserscan data is a lot prettier and more informative. Download these bagfiles[https://www.dropbox.com/s/17d25jtued10jk0/gmapping_data_active_only.zip?dl=0] follow the instructions [here](http://wiki.ros.org/ROS/Tutorials/Recording%20and%20playing%20back%20data), and visualize the laser scan data on RViz. Try it with multiple coordinate frames.     
 
 **Note**: The provided bag files are from our cars driving around in the basement of Stata center.
 
