@@ -266,9 +266,9 @@ In question 3, we asked you to visualize your laserscan data on RViz and record 
 
 **Note**: The provided bag files are from our cars driving around in the basement of Stata center.
 
-## Question 9: Optional TF Exercises
+## Question 9: TF Exercises
 
-For extra credit, complete the following exercises. You will need to download [this rosbag](https://www.dropbox.com/s/qvqloye6dilsj4y/tesse_no_statics_2.bag?dl=0) from Google drive; it may take a while.
+You will need to download [this rosbag](https://www.dropbox.com/s/qvqloye6dilsj4y/tesse_no_statics_2.bag?dl=0) from Google drive; it may take a while.
 
 The rosbag was collected from a robot driving around in a simulated environment. Its `base_link` position in the environment is broadcast to the TF tree in ROS. However, the poses of the sensors onboard the robot are not broadcasted to the TF tree.
 
