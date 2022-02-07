@@ -1,5 +1,5 @@
 
-| **Due Date**  | **Wednesday, March 3rd at 1:00PM EST**                                 |
+| **Due Date**  | **Monday, February 14th at 1:00PM EST**                                 |
 |---------------|----------------------------------------------------------------------------|
 |  **Submission**   | `log.npf` and `ros_exercises.zip` on [Gradescope](https://gradescope.com/) (listed as two separate assignments)|
 
