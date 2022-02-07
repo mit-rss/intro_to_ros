@@ -32,7 +32,7 @@ Finally, run the following in a new terminal to begin testing:
      cd ~/catkin_ws/src/ros_exercises/
     ./run_tests
 
-You should be graded on the completion of 6 tests. Be careful with naming the various files defined in the handout correctly or else you won't be graded properly.
+You should be graded on the completion of 6 tests. Be careful with naming the various files defined in the handout correctly or else you won't be graded properly. Also, **be sure to `cd` into `ros_exercises` before running the tests**, or the automated tests may use the wrong paths to each of the files it checks for.
 
 Additionally the `run_tests` file will generate a file called `log.npf` which you **must upload to gradescope for credit**.
 
