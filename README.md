@@ -8,7 +8,7 @@
 ## Introduction
 The objective of the following exercises is to help you practice the most commonly used concepts in ROS. We provide a quick reference document and pointers to relevant documentations. Feel free to use all the resources available to you to learn the concepts as thoroughly as possible and complete the exercises as efficiently as possible.
 
-Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on [Piazza](https://tinyurl.com/RSS2021-piazza) so other students can benefit from the answer. If you have a question about your individual submission, please make a private post.
+Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on Piazza so other students can benefit from the answer. If you have a question about your individual submission, please make a private post.
 
 ## Submission
 You are meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests. Please refer to the next section, **Automated Tests** for instructions on how to run these tests. You will be submitting the resulting `log.npf` file to "Lab 1C: Intro to ROS -- log.npf submission" on Gradescope, in addition to a zip file containing your local repository (`ros_exercises.zip`) to "Lab 1C: Intro to ROS -- Git repo submission".
@@ -19,7 +19,7 @@ The due date is listed at the top of this document.
 
 You can download the test binary to check your solutions locally by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary. **Make sure you place the binary in your ```ros_exercises``` folder.**:
 
-    mv run_tests ~/catkin_ws/src/ros_exercises/
+    mv run_tests ~/racecar_ws/src/ros_exercises/
 
 Then make the binary executable with ```chmod```
 
@@ -29,7 +29,7 @@ First, kill all running ROS processes. Then start ```roscore```.
 
 Finally, run the following in a new terminal to begin testing:
 
-     cd ~/catkin_ws/src/ros_exercises/
+     cd ~/racecar_ws/src/ros_exercises/
     ./run_tests
 
 You should be graded on the completion of 6 tests. Be careful with naming the various files defined in the handout correctly or else you won't be graded properly. Also, **be sure to `cd` into `ros_exercises` before running the tests**, or the automated tests may use the wrong paths to each of the files it checks for.
@@ -66,9 +66,6 @@ This table shows the grading breakdown of the manually graded portion of the lab
 | Launch file inspection              | 0.1 Points     |
 | Setting  ROS parameters	      | 0.2 Points     |
 | **Total**                           | **1.0 Points** |
-
-## Setup
-Before you get started with this lab, make sure you have the proper dependencies installed by following Steps 1.5 to 1.7 in [this guide](https://wiki.ros.org/melodic/Installation/Debian).
 
 ### References
 
@@ -123,9 +120,10 @@ Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/chea
 ## ROS Exercises
 
 ### Create a package and build it
-By following the instructions from the reference or instructions of your finding, create a catkin workspace named `catkin_ws/`. Inside that workspace, create a new package, named `ros_exercises/`, which should depend on `rospy`, `std_msgs`, and `sensor_msgs`. **Make sure that your workspace is built (using [catkin_make](http://wiki.ros.org/catkin/commands/catkin_make)) before and after the package was added, and do not forget to source `devel/setup.bash`**. Your package (`ros_exercises`) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make your `ros_exercises` a git repo. After creating the workspace and the package, you should have the following directory layout.
 
-* /catkin_ws[your catkin workspace]
+The racecar docker image already has a catkin workspace installed called `racecar_ws`. If you are using ROS via a virtual machine or a manual install, make sure to create your own catkin workspace. Inside your workspace, create a new package, named `ros_exercises/`, which should depend on `rospy`, `std_msgs`, and `sensor_msgs`. **Make sure to build your workspace (using [catkin_make](http://wiki.ros.org/catkin/commands/catkin_make)) before and after you add the package,  and do not forget to source `devel/setup.bash`**. Your package (`ros_exercises`) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make your `ros_exercises` a git repo. After creating the workspace and the package, you should have the following directory layout.
+
+* ~/racecar_ws[your catkin workspace]
 	* /src
 		* /ros_exercises[Your catkin package]
 		* [other ros related files and packages if any]
