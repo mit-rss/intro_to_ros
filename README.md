@@ -17,7 +17,8 @@ The due date is listed at the top of this document.
 
 ### Automated Tests
 
-You can download the test binary to check your solutions locally by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary. **Make sure you place the binary in your ```ros_exercises``` folder.**:
+You can download the test binary to check your solutions locally by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary.
+Most people will probably need to use the `amd64` version but if you have a new M1 Mac you'll need to use the `arm64` version. **Make sure you place the binary in your ```ros_exercises``` folder.**:
 
     mv run_tests ~/racecar_ws/src/ros_exercises/
 
