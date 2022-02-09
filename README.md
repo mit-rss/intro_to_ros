@@ -53,7 +53,7 @@ This table shows how the different tasks will be graded by the automated grader.
 
 
 ### Manual Grading Portion
-If you have successfully completed all parts, you should receive a score of 3.0/4.0 on Gradescope. The rest of your score (1.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be avaliable on your github account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**
+If you have successfully completed all parts, you should receive a score of 3.0/5.0 on Gradescope. The rest of your score (2.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be avaliable on your github account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**
 
 ### The Manual Grade Breakdown
 This table shows the grading breakdown of the manually graded portion of the lab.
@@ -66,7 +66,8 @@ This table shows the grading breakdown of the manually graded portion of the lab
 | Custom Message file inspection      | 0.2 Points     |
 | Launch file inspection              | 0.1 Points     |
 | Setting  ROS parameters	      | 0.2 Points     |
-| **Total**                           | **1.0 Points** |
+| TF Exercises                        |   1 Point      |
+| **Total**                           | **2.0 Points** |
 
 ### References
 
