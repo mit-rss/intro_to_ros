@@ -198,7 +198,7 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 
 ### Commit Specification   
 
-1. When your node works properly, visualize the published laser scan data using RViz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`
+1. When your node works properly, visualize the published laser scan data using RViz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`. If you can't see anything in `rviz` it's probably because you're publishing your laser scan message with the header `base_link` but rviz is visualizing relative to the frame `map`. In the panel on the right, under global options change "`frame: map`" to "`frame: base_link`".
 2. Record a bag file of your laser scan data and call the file `fake_scan_bag.bag`, save it in `ros_exercises/rosbag`.
 3. Again, push your code, bag file, screenshot, and any supporting files with a appropriate commit message.
 
