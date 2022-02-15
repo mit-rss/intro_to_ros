@@ -53,7 +53,9 @@ This table shows how the different tasks will be graded by the automated grader.
 
 
 ### Manual Grading Portion
+
 If you have successfully completed all parts, you should receive a score of 3.0/4.0 on Gradescope. The rest of your score (1.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be avaliable on your github account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**. Make sure that your zip file does not contain large folders or files that are not part of the assignments (the **.git** folder should not be zipped) since large zip files will probably get rejected by Gradescope. 
+
 
 ### The Manual Grade Breakdown
 This table shows the grading breakdown of the manually graded portion of the lab.
@@ -66,7 +68,8 @@ This table shows the grading breakdown of the manually graded portion of the lab
 | Custom Message file inspection      | 0.2 Points     |
 | Launch file inspection              | 0.1 Points     |
 | Setting  ROS parameters	      | 0.2 Points     |
-| **Total**                           | **1.0 Points** |
+| TF Exercises                        |   1 Point      |
+| **Total**                           | **2.0 Points** |
 
 ### References
 
@@ -197,7 +200,7 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 
 ### Commit Specification   
 
-1. When your node works properly, visualize the published laser scan data using RViz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`
+1. When your node works properly, visualize the published laser scan data using RViz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`. If you can't see anything in `rviz` it's probably because you're publishing your laser scan message with the header `base_link` but rviz is visualizing relative to the frame `map`. In the panel on the right, under global options change "`frame: map`" to "`frame: base_link`".
 2. Record a bag file of your laser scan data and call the file `fake_scan_bag.bag`, save it in `ros_exercises/rosbag`.
 3. Again, push your code, bag file, screenshot, and any supporting files with a appropriate commit message.
 
