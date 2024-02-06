@@ -84,23 +84,23 @@ Additionally, a useful ROS cheatcheet can be found [here](https://github.com/Mic
 **Note:** We are using ROS **FOXY** and colcon for this class. Some links may have instructions for different ROS distribuitions / or build systems; make sure to select the correct one.
  
 1. Packages   
-	a. [Managing a colcon workspace](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html)
+	a. [Managing a colcon workspace](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html)	
 	b. [Create ROS python package](https://docs.ros.org/en/foxy/How-To-Guides/Developing-a-ROS-2-Package.html#python-packages)
 2. Messages   
 	a. [ROS Messages](https://docs.ros.org/en/foxy/Concepts/About-ROS-Interfaces.html)   
-	b. [Creating custom messages](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)
-	d. [Common ros message categories](https://github.com/ros2/common_interfaces)   
+	b. [Creating custom messages](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)	
+	c. [Common ros message categories](https://github.com/ros2/common_interfaces)   
 4. Nodes   
-	a. [ROS Nodes](hhttps://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)   
+	a. [ROS Nodes](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)   
 	b. [Writing Publisher and Subscriber(Python)](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html )   
 3. Topics    
 	a. [ROS Topics](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)  
 5. Launch Files    
 	a. [ROS Launch](https://docs.ros.org/en/foxy/Tutorials/Intermediate/Launch/Launch-Main.html)   
 	b. [Launch system](https://docs.ros.org/en/foxy/Tutorials/Intermediate/Launch/Launch-system.html)  
-6. Parameters 
+6. Parameters	
 	a. [Parameter](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Parameters/Understanding-ROS2-Parameters.html)   
-7. Visualization Tools   
+7. Visualization Tools 	  
 	a. rqt   
 		- [rqt](https://docs.ros.org/en/foxy/Concepts/About-RQt.html)   
 		- [rqt_graph](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#rqt-graph)   
@@ -109,7 +109,7 @@ Additionally, a useful ROS cheatcheet can be found [here](https://github.com/Mic
 		- [Interactive Markers](http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers%3A%20Getting%20Started)   
 		- [Tutorials](http://wiki.ros.org/rviz/Tutorials)   
 
-8. [TF](https://docs.ros.org/en/foxy/Tutorials/Intermediate/Tf2/Tf2-Main.html)   
+8. [TF2](https://docs.ros.org/en/foxy/Tutorials/Intermediate/Tf2/Tf2-Main.html)   
 9. Rosbag   
 	a. [Rosbag](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)  
 
@@ -133,10 +133,10 @@ Inside your workspace, create a new package, named `ros_exercises/`, which shoul
 	* /log
 	* /build
 
-**Note**: Push your `ros_exercises/` changes to github.
-
-Additionally, everytime you make an edit to your files, make sure to run `colcon build` to build your package and **source your `setup.bash` file** so you use the underlaid build of your package(_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `colcon build`!_). You will also need to source your setup.bash file each time you open a new terminal window.
+Additionally, every time you make an edit to your files, make sure to run `colcon build` to build your package and **source your `setup.bash` file** so you use the underlaid build of your package (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `colcon build`!_). You will also need to source your setup.bash file each time you open a new terminal window.		
 ```source /opt/ros/foxy/setup.bash```
+
+**Note**: Push your `ros_exercises/` changes to github.
 
 ## Question 1: Create Simple Publisher (Python)
 Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly. Note that this file will reside inside of the /ros_exercises folder of your newly created package.
