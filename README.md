@@ -1,12 +1,15 @@
 
 
-| **Due Date**  | **Tuesday, February 21th at 1:00PM EST**                                 |
+| **Due Date**  | **Tuesday, February 20th at 1:00PM EST**                                 |
 |---------------|----------------------------------------------------------------------------|
 |  **Submission**   | `log.npf` and `ros_exercises.zip` on [Gradescope](https://gradescope.com/) (listed as two separate assignments)|
 
 # Lab 1C: Intro to ROS
 
 ## Introduction
+
+**Before this lab:** Make sure you have completed the [base installation](https://github.com/mit-rss/base_installation) of the racecar Docker container.
+
 The objective of the following exercises is to help you practice the most commonly used concepts in ROS. We provide a quick reference document and pointers to relevant documentations. Feel free to use all the resources available to you to learn the concepts as thoroughly as possible and complete the exercises as efficiently as possible.
 
 Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on Piazza so other students can benefit from the answer. If you have a question about your individual submission, please make a private post.
@@ -16,7 +19,7 @@ You are meant to complete this lab by testing your code and verifying the result
 
 The due date is listed at the top of this document.
 
-### Automated Tests
+### Automated Tests #TODO UPDATE
 
 You can download the test binary to check your solutions locally by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary.
 Most people will probably need to use the `amd64` version but if you have a new M1 Mac you'll need to use the `arm64` version. **Make sure you place the binary in your ```ros_exercises``` folder.**:
@@ -55,7 +58,7 @@ This table shows how the different tasks will be graded by the automated grader.
 
 ### Manual Grading Portion
 
-If you have successfully completed all parts, you should receive a score of 3.0/4.0 on Gradescope. The rest of your score (1.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be avaliable on your github account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**. Make sure that your zip file does not contain large folders or files that are not part of the assignments (the **.git** folder should not be zipped) since large zip files will probably get rejected by Gradescope. 
+If you have successfully completed all parts, you should receive a score of 3.0/5.0 on Gradescope. The rest of your score (2.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be available on your github account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**. Make sure that your zip file does not contain large folders or files that are not part of the assignments (the **.git** folder should not be zipped) since large zip files will probably get rejected by Gradescope. 
 
 
 ### The Manual Grade Breakdown
@@ -68,57 +71,47 @@ This table shows the grading breakdown of the manually graded portion of the lab
 | Open Space Publisher RQT Screenshot | 0.2 Points     |
 | Custom Message file inspection      | 0.2 Points     |
 | Launch file inspection              | 0.1 Points     |
-| Setting  ROS parameters	      | 0.2 Points     |
+| Setting  ROS parameters	          | 0.2 Points     |
 | TF Exercises                        |   1 Point      |
 | **Total**                           | **2.0 Points** |
 
 ### References
 
-The following are selected chapters from the ROS Wiki [Documentation](http://wiki.ros.org/) and [Tutorials](http://wiki.ros.org/ROS/Tutorials). If you understand all the concepts covered in these exercises, you will be ready for the exercises of this lab (given below) and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS Wiki](http://wiki.ros.org/) section and follow the links to learn more.
+The following are selected chapters from the ROS2 [Documentation](https://docs.ros.org/en/foxy/index.html) and [Tutorials](https://docs.ros.org/en/foxy/Tutorials.html). If you understand all the concepts covered in these exercises, you will be ready for the exercises of this lab (given below) and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS2 Wiki](https://docs.ros.org/en/rolling/index.html) section and follow the links to learn more.
 
-Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/cheat_sheets/ROS.docset/Contents/Resources/Documents/index) and [here](https://mirror.umd.edu/roswiki/attachments/de/ROScheatsheet.pdf).
+Additionally, a useful ROS cheatcheet can be found [here](https://github.com/Micropolisdxb/ROS2-Documentation/blob/main/ros2_cheat_sheet.md).
 
-**Note:** We are using ROS Melodic and catkin for this class. Some links may have instructions for different ROS distribuitions / or build systems; make sure to select the correct one.
-
-1. [Catkin](http://wiki.ros.org/catkin/conceptual_overview)   
-2. Catkin Workspace   
-	a. [Catkin workspaces](http://wiki.ros.org/catkin/workspaces)   
-	b. [Creating Catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)   
-3. Packages   
-	a. [ROS package](http://wiki.ros.org/Packages)   
-	b. [Creating ROS package](http://wiki.ros.org/catkin/Tutorials/CreatingPackage)   
-4. Messages   
-	a. [ROS Messages](http://wiki.ros.org/Messages)   
-	b. [Creating custom messages](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv)   
-	c. [The rosmsg command-line tools](http://wiki.ros.org/rosmsg)   
-	d. [Common ros message categories](http://wiki.ros.org/common_msgs)   
-5. Topics    
-	a. [ROS Topics](http://wiki.ros.org/Topics)   
-	b. [Rostopic Command-Line tool](http://wiki.ros.org/rostopic)   
-6. Nodes   
-	a. [ROS Nodes](http://wiki.ros.org/Nodes)   
-	b. [The rosnode command-line tools](http://wiki.ros.org/rosnode)   
-	c. [Writing Publisher and Subscriber(Python)](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29)   
-7. Launch Files    
-	a. [ROS Launch](http://wiki.ros.org/roslaunch)   
-	b. [Command-line Tools](http://wiki.ros.org/roslaunch/Commandline%20Tools)   
-	c. [XML Format](http://wiki.ros.org/roslaunch/XML)   
-	d. [Tips for Large Projects](http://wiki.ros.org/roslaunch/Tutorials/Roslaunch%20tips%20for%20larger%20projects)   
-8. Parameter server   
-	a. [Parameter server](http://wiki.ros.org/Parameter%20Server)   
-	b. [rosparam](http://wiki.ros.org/rosparam)   
-9. Visualization Tools   
+**Note:** We are using ROS **FOXY** and colcon for this class. Some links may have instructions for different ROS distribuitions / or build systems; make sure to select the correct one.
+ 
+1. Packages   
+	a. [Managing a colcon workspace](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html)
+	b. [Create ROS python package](https://docs.ros.org/en/foxy/How-To-Guides/Developing-a-ROS-2-Package.html#python-packages)
+2. Messages   
+	a. [ROS Messages](https://docs.ros.org/en/foxy/Concepts/About-ROS-Interfaces.html)   
+	b. [Creating custom messages](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)
+	d. [Common ros message categories](https://github.com/ros2/common_interfaces)   
+4. Nodes   
+	a. [ROS Nodes](hhttps://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)   
+	b. [Writing Publisher and Subscriber(Python)](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html )   
+3. Topics    
+	a. [ROS Topics](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)  
+5. Launch Files    
+	a. [ROS Launch](https://docs.ros.org/en/foxy/Tutorials/Intermediate/Launch/Launch-Main.html)   
+	b. [Launch system](https://docs.ros.org/en/foxy/Tutorials/Intermediate/Launch/Launch-system.html)  
+6. Parameters 
+	a. [Parameter](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Parameters/Understanding-ROS2-Parameters.html)   
+7. Visualization Tools   
 	a. rqt   
-		- [rqt](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics)   
-		- [rqt_graph](http://wiki.ros.org/rqt_graph)   
-	b. RViz   
-		- [User Guide](http://wiki.ros.org/rviz/UserGuide)   
+		- [rqt](https://docs.ros.org/en/foxy/Concepts/About-RQt.html)   
+		- [rqt_graph](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#rqt-graph)   
+	b. RViz (most features are simply ported over from ROS 1)  
+		- [User Guide](https://github.com/ros2/rviz) and [original](http://wiki.ros.org/rviz/UserGuide)   
 		- [Interactive Markers](http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers%3A%20Getting%20Started)   
 		- [Tutorials](http://wiki.ros.org/rviz/Tutorials)   
-10. [TF](http://wiki.ros.org/tf)   
-11. Rosbag   
-	a. [Rosbag](http://wiki.ros.org/Bags)    
-	b. [Command-Line Tools](http://wiki.ros.org/rosbag/Commandline)   
+
+8. [TF](https://docs.ros.org/en/foxy/Tutorials/Intermediate/Tf2/Tf2-Main.html)   
+9. Rosbag   
+	a. [Rosbag](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)  
 
 **Note:** Some useful **debugging hints** are provided at the end of this document.
 
@@ -126,22 +119,24 @@ Additionally, useful ROS cheatcheets can be found [here](https://kapeli.com/chea
 
 ### Create a package and build it
 
-The racecar docker image already has a catkin workspace installed called `racecar_ws`. 
+The racecar docker image already has a workspace installed called `racecar_ws` (for last year, we used ROS 1 with a Catkin workspace but that is no longer the case this year). 
 
-If you are not using docker to run ROS (e.g. using a virtual machine or a manual install), make sure to create your own catkin workspace.
+If you are not using docker to run ROS (e.g. using a virtual machine or a manual install), make sure to create your own workspace.
 
-Inside your workspace, create a new package, named `ros_exercises/`, which should depend on `rospy`, `std_msgs`, and `sensor_msgs`. **Make sure to build your workspace (using [catkin_make](http://wiki.ros.org/catkin/commands/catkin_make)) before and after you add the package,  and do not forget to source `devel/setup.bash`**. Your package (`ros_exercises`) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make your `ros_exercises` a git repo. After creating the workspace and the package, you should have the following directory layout.
+Inside your workspace, create a new package, named `ros_exercises/`, which should depend on `rcly`, `std_msgs`, and `sensor_msgs`. Your package (`ros_exercises`) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make your `ros_exercises` a git repo. After creating the workspace and the package, you should have the following directory layout.
 
-* ~/racecar_ws[your catkin workspace]
+* ~/racecar_ws[your colcon workspace]
 	* /src
-		* /ros_exercises[Your catkin package]
+		* /ros_exercises[Your package]
 		* [other ros related files and packages if any]
-	* /devel[automatically generated by catkin_make]
-	* /build[automatically generated by catkin_make]
+	* /install
+	* /log
+	* /build
 
 **Note**: Push your `ros_exercises/` changes to github.
 
-Additionally, everytime you make an edit to your files, make sure to run `catkin_make` and **source your `setup.bash` file** (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `catkin_make`!)_. You will also need to source your setup.bash file each time you open a new terminal window.
+Additionally, everytime you make an edit to your files, make sure to run `colcon build` to build your package and **source your `setup.bash` file** so you use the underlaid build of your package(_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `colcon build`!_). You will also need to source your setup.bash file each time you open a new terminal window.
+```source /opt/ros/foxy/setup.bash```
 
 ## Question 1: Create Simple Publisher (Python)
 Your task in this exercise is to create a simple ROS node that publishes a random number between 0 and 10.0. Before you start the following exercise, please make sure that your package is built properly. Note that this file will reside inside of the /ros_exercises folder of your newly created package.
@@ -179,7 +174,7 @@ In this exercise, you will write a listener (subscriber) that listens to the top
 
 In this exercise, you will write a node that publishes fake laser scan data as specified below.   
 ### Node Specification    
-**Description:** Publish a [LaserScan](http://docs.ros.org/api/sensor_msgs/html/msg/LaserScan.html) message with random ranges between 1 and 10.     
+**Description:** Publish a [LaserScan](https://docs.ros2.org/latest/api/sensor_msgs/msg/LaserScan.html) message with random ranges between 1 and 10.     
 **File name:** fake_scan_publisher.py             
 **Node Name:** fake_scan_publisher       
 **Published topic names:** fake_scan    
@@ -206,7 +201,7 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 ### Commit Specification   
 
 1. When your node works properly, visualize the published laser scan data using RViz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`. If you can't see anything in `rviz` it's probably because you're publishing your laser scan message with the header `base_link` but rviz is visualizing relative to the frame `map`. In the panel on the right, under global options change "`frame: map`" to "`frame: base_link`".
-2. Record a bag file of your laser scan data and call the file `fake_scan_bag.bag`, save it in `ros_exercises/rosbag`.
+2. Record a ~10 second bag file of your laser scan data and call the file `fake_scan_bag.bag`, save it in `ros_exercises/rosbag`.
 3. Again, push your code, bag file, screenshot, and any supporting files with a appropriate commit message.
 
 Note: You should get an error in RViz that says "No tf data. Actual error: Fixed Frame [map] does not exist". This will not affect your visualization of the laser scan; however, if you would like, you can run `rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map base_link 10` in a separate terminal window to link `map` to your TF tree.
@@ -255,7 +250,7 @@ In this exercise, we ask you to write a single launch file called `my_first_laun
 ## Question 7: Use ROS parameters
 When writing the last publisher (***fake_scan_publisher***), you had a couple of variables with default values including angle_min, angle_max, range_min, range_max, etc. With the current setup, if you want to change the value of one of those variables you will have to edit the Python code. For hundreds of lines of code, finding where each of such variables is defined can be tedious. The rosparam server provides a way to set those parameters on the terminal when running your program and in launch or config files. You task here is to parameterize the following variables from the last two nodes.
 
-**Note:** Your node should be able to start (e.g. via `rosrun`) even if not all of these parameters have been set. If a parameter has not been set, your node should default to using the values given in the previous question. You will most likely want to use [`rospy.get_param`](http://wiki.ros.org/rospy/Overview/Parameter%20Server), which provides a mechanism for this. This way of falling back to hard-coded defaults can still be useful, especially in cases where a sensible default for a parameter is known and changes would only have to be made rarely.
+**Note:** Your node should be able to start (e.g. via `ros2 run`) even if not all of these parameters have been set. If a parameter has not been set, your node should default to using the values given in the previous question. This [link](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/) may be helpful. This way of falling back to hard-coded defaults can still be useful, especially in cases where a sensible default for a parameter is known and changes would only have to be made rarely.
 
 1. Fake Scan Publisher     
 	* Publish topic      
@@ -273,7 +268,7 @@ When writing the last publisher (***fake_scan_publisher***), you had a couple of
 1. Commit your modified nodes along with any other important changes.
 
 ## Question 8: Playing with bag files
-In question 3, we asked you to visualize your laserscan data on RViz and record a bag file. The RViz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed; real laserscan data is a lot prettier and more informative. Download these [bagfiles](https://www.dropbox.com/s/17d25jtued10jk0/gmapping_data_active_only.zip?dl=0) follow the instructions [here](http://wiki.ros.org/ROS/Tutorials/Recording%20and%20playing%20back%20data), and visualize the laser scan data on RViz. Try it with multiple coordinate frames.     
+In question 3, we asked you to visualize your laserscan data on RViz and record a bag file. The RViz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed; real laserscan data is a lot prettier and more informative. Download these [bagfiles](https://www.dropbox.com/s/17d25jtued10jk0/gmapping_data_active_only.zip?dl=0) follow the instructions [here](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html), and visualize the laser scan data on RViz. Try it with multiple coordinate frames.     
 
 **Note**: The provided bag files are from our cars driving around in the basement of Stata center.
 
@@ -309,7 +304,7 @@ Save a short (~3-5 second) gif of RViz as the rosbag plays with your node runnin
 Take a screen-shot of your tf tree in **rqt** using the `tf-tree` plugin. Save it in `ros_exercises/rqt` and name it `dynamic_tf_tree.png`
 
 * **Note 1:** Don't worry if the new TF frames are jittery and/or don't follow the `base_link_gt` frame fast enough; this should be fixed in part 2.
-
+#TODO UPDATE
 * **Note 2:** You will be doing some transformations in your ROS node. Use [tf.transformations](http://docs.ros.org/jade/api/tf/html/python/transformations.html), a file built into the `tf` package. View the source code [here](https://github.com/ros/geometry/blob/melodic-devel/tf/src/tf/transformations.py). Also, use `numpy`!
 
 * **Note 3:** Remember: your `left_cam` transform is defined relative to `world`, and your `right_cam` transform is defined relative to `left_cam`. These require slightly different equations!
@@ -329,6 +324,8 @@ Save a short (~3-5 second) gif of RViz just as in part 1, but with your `static_
 
 Additionally, write a roslaunch file that launches the `static_transform_publisher` node from the `tf` package and automatically publishes the two transforms. Name this launch file `static_tf_publisher.launch` and save it in the `ros_exercises/launch` directory of your package.
 
+
+#TODO IF STILL RELEVANT
 If you're getting an "extrapolation into the future" error, add this to your launch file:
 
 ```bash
@@ -364,19 +361,16 @@ Here are some helpful tools to use when trying to debugging your code.
 
 Helpful debugging tools (once a node is running):
 
-### `rostopic list`
+### `ros2 topic list`
 A running node should be publishing or subscribing to different topics. To check that these topics are being listened/talked to, the command `rostopic list`, which will list all topics that are currently active (either being subscribed to, published to, or both).
 
-### `rostopic echo /topic_name`
+### `ros2 topic echo /topic_name`
 Once you know that a command is being published/subscribed to, you can echo its contents, which can show whether or not any information is being passed across this topic or if you are not sending what you expect.
 
-### `rostopic hz /topic_name`
-This command can tell you the rate at which messages are being published. This tool is helpful to verify if you are publishing messages at a certain frequency.
-
-The ROS documentation for rostopic at http://wiki.ros.org/rostopic can provide many other tools to debug your ROS node setup.
+To find more ways to use ```ros2 topic```, type ```ros2 topic --help``` in command line. There are many other helpful command line tools to help you out too. See [here](https://docs.ros.org/en/humble/Concepts/Basic/About-Command-Line-Tools.html).
 
 ### `rqt graph`
-This is a tool to display graphs of running ROS nodes with connecting topics and package dependencies. Allows you to visualize your entire framework! Another helpful technique is to look at the [rqt_graph](http://wiki.ros.org/rqt_graph) which shows the interactions between nodes for your system.
+This is a tool to display graphs of running ROS nodes with connecting topics and package dependencies. Allows you to visualize your entire framework! 
 
 ### **`rviz`**
 This is a powerful 3D visualization tool for displaying sensor data and state information from ROS. You will be using it more extensively in future labs.
