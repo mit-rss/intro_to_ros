@@ -84,11 +84,11 @@ Additionally, a useful ROS cheatcheet can be found [here](https://github.com/Mic
 **Note:** We are using ROS **FOXY** and colcon for this class. Some links may have instructions for different ROS distribuitions / or build systems; make sure to select the correct one.
  
 1. Packages   
-	a. [Managing a colcon workspace](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html)	
-	b. [Create ROS python package](https://docs.ros.org/en/foxy/How-To-Guides/Developing-a-ROS-2-Package.html#python-packages)
+	a. [Managing a colcon workspace](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html)    
+	b. [Create ROS python package](https://docs.ros.org/en/foxy/How-To-Guides/Developing-a-ROS-2-Package.html#python-packages)    
 2. Messages   
 	a. [ROS Messages](https://docs.ros.org/en/foxy/Concepts/About-ROS-Interfaces.html)   
-	b. [Creating custom messages](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)	
+	b. [Creating custom messages](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)    
 	c. [Common ros message categories](https://github.com/ros2/common_interfaces)   
 4. Nodes   
 	a. [ROS Nodes](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)   
@@ -98,13 +98,13 @@ Additionally, a useful ROS cheatcheet can be found [here](https://github.com/Mic
 5. Launch Files    
 	a. [ROS Launch](https://docs.ros.org/en/foxy/Tutorials/Intermediate/Launch/Launch-Main.html)   
 	b. [Launch system](https://docs.ros.org/en/foxy/Tutorials/Intermediate/Launch/Launch-system.html)  
-6. Parameters	
+6. Parameters    
 	a. [Parameter](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Parameters/Understanding-ROS2-Parameters.html)   
 7. Visualization Tools 	  
 	a. rqt   
 		- [rqt](https://docs.ros.org/en/foxy/Concepts/About-RQt.html)   
 		- [rqt_graph](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#rqt-graph)   
-	b. RViz (most features are simply ported over from ROS 1)  
+	b. RViz (most features are ported over from ROS 1)  
 		- [User Guide](https://github.com/ros2/rviz) and [original](http://wiki.ros.org/rviz/UserGuide)   
 		- [Interactive Markers](http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers%3A%20Getting%20Started)   
 		- [Tutorials](http://wiki.ros.org/rviz/Tutorials)   
@@ -123,7 +123,7 @@ The racecar docker image already has a workspace installed called `racecar_ws` (
 
 If you are not using docker to run ROS (e.g. using a virtual machine or a manual install), make sure to create your own workspace.
 
-Inside your workspace, create a new package, named `ros_exercises/`, which should depend on `rcly`, `std_msgs`, and `sensor_msgs`. Your package (`ros_exercises`) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make your `ros_exercises` a git repo. After creating the workspace and the package, you should have the following directory layout.
+Inside your workspace, create a new package, named `ros_exercises/`, which should depend on `rclpy`, `std_msgs`, and `sensor_msgs`. Your package (`ros_exercises`) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make your `ros_exercises` a git repo. After creating the workspace and the package, you should have the following directory layout.
 
 * ~/racecar_ws[your colcon workspace]
 	* /src
