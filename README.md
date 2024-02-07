@@ -135,6 +135,7 @@ Inside your workspace, create a new package, named `ros_exercises/`, which shoul
 
 Additionally, every time you make an edit to your files, make sure to run `colcon build` to build your package and **source your `setup.bash` file** so you use the underlaid build of your package (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `colcon build`!_). You will also need to source your setup.bash file each time you open a new terminal window.		
 ```source /opt/ros/foxy/setup.bash```
+An alternative: instead of rebuilding every time you make a change, after `colcon build`, add the flag `--symlink-install`.
 
 **Note**: Push your `ros_exercises/` changes to github.
 
