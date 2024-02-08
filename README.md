@@ -10,9 +10,9 @@
 
 **Before this lab:** Make sure you have completed the [base installation](https://github.com/mit-rss/base_installation) of the racecar Docker container.
 
-The objective of the following exercises is to help you practice the most commonly used concepts in ROS. We provide a quick reference document and pointers to relevant documentations. Feel free to use all the resources available to you to learn the concepts as thoroughly as possible and complete the exercises as efficiently as possible.
+The objective of the following exercises is to help you practice the most commonly used concepts in ROS. We provide a quick reference document and pointers to relevant documentation. Feel free to use all the resources available to you to learn the concepts as thoroughly as possible and complete the exercises as efficiently as possible.
 
-Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post on Piazza so other students can benefit from the answer. If you have a question about your individual submission, please make a private post.
+Although you're encouraged to collaborate with others if you are stuck, the lab should be completed individually so you can get practice with skills that will be essential later on in the course when you are in teams. If you have general questions, please post them on Piazza so other students can benefit from the answer. If you have a question about your individual submission, please make a private post.
 
 ## Submission
 You are meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests. Please refer to the next section, **Automated Tests** for instructions on how to run these tests. You will be submitting the resulting `log.npf` file to "Lab 1C: Intro to ROS -- log.npf submission" on Gradescope, in addition to a zip file containing your local repository (`ros_exercises.zip`) to "Lab 1C: Intro to ROS -- Git repo submission".
@@ -58,7 +58,7 @@ This table shows how the different tasks will be graded by the automated grader.
 
 ### Manual Grading Portion
 
-If you have successfully completed all parts, you should receive a score of 3.0/5.0 on Gradescope. The rest of your score (2.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be available on your github account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**. Make sure that your zip file does not contain large folders or files that are not part of the assignments (the **.git** folder should not be zipped) since large zip files will probably get rejected by Gradescope. 
+If you have completed all parts, you should receive a score of 3.0/5.0 on Gradescope. The rest of your score (2.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be available on your GitHub account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**. Make sure that your zip file does not contain large folders or files that are not part of the assignments (the **.git** folder should not be zipped) since large zip files will probably get rejected by Gradescope. 
 
 
 ### The Manual Grade Breakdown
@@ -77,11 +77,11 @@ This table shows the grading breakdown of the manually graded portion of the lab
 
 ### References
 
-The following are selected chapters from the ROS2 [Documentation](https://docs.ros.org/en/foxy/index.html) and [Tutorials](https://docs.ros.org/en/foxy/Tutorials.html). If you understand all the concepts covered in these exercises, you will be ready for the exercises of this lab (given below) and for most of the ROS related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS2 Wiki](https://docs.ros.org/en/rolling/index.html) section and follow the links to learn more.
+The following are selected chapters from the ROS2 [Documentation](https://docs.ros.org/en/foxy/index.html) and [Tutorials](https://docs.ros.org/en/foxy/Tutorials.html). If you understand all the concepts covered in these exercises, you will be ready for the exercises of this lab (given below) and most of the ROS-related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS2 Wiki](https://docs.ros.org/en/rolling/index.html) section and follow the links to learn more.
 
-Additionally, a useful ROS cheatcheet can be found [here](https://github.com/Micropolisdxb/ROS2-Documentation/blob/main/ros2_cheat_sheet.md).
+Additionally, a useful ROS cheatsheet can be found [here](https://github.com/Micropolisdxb/ROS2-Documentation/blob/main/ros2_cheat_sheet.md).
 
-**Note:** We are using ROS **FOXY** and colcon for this class. Some links may have instructions for different ROS distribuitions / or build systems; make sure to select the correct one.
+**Note:** We are using ROS **FOXY** and colcon for this class. Make sure the documentation you are looking at is for the correct build/distribution.
  
 1. Packages   
 	a. [Managing a colcon workspace](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html)    
@@ -113,7 +113,7 @@ Additionally, a useful ROS cheatcheet can be found [here](https://github.com/Mic
 9. Rosbag   
 	a. [Rosbag](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)  
 
-**Note:** Some useful **debugging hints** are provided at the end of this document.
+**Note:** Some useful debugging hints are provided at the end of this document.
 
 ## ROS Exercises
 
@@ -133,10 +133,9 @@ Inside your workspace, create a new package, named `ros_exercises/`, which shoul
 	* /log
 	* /build
 
-Additionally, every time you make an edit to your files, make sure to run `colcon build` to build your package and **source your `setup.bash` file** so you use the underlaid build of your package (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `colcon build`!_). You will also need to source your setup.bash file each time you open a new terminal window.		
-```source /opt/ros/foxy/setup.bash```
-An alternative: instead of rebuilding every time you make a change, after `colcon build`, add the flag `--symlink-install`.
-
+Additionally, every time you make an edit to your files, make sure to run `colcon build` to build your package and **source your `setup.bash` file** so you use the underlaid build of your package (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `colcon build`!_). You will also need to source your `setup.bash` file each time you open a new terminal window.	   
+```source install/setup.bash```    
+An alternative: instead of rebuilding every time you make a change, after `colcon build`, add the flag `--symlink-install`.     
 **Note**: Push your `ros_exercises/` changes to github.
 
 ## Question 1: Create Simple Publisher (Python)
@@ -155,7 +154,7 @@ Your task in this exercise is to create a simple ROS node that publishes a rando
 2. Push your code, the screenshot, and any supporting files with an appropriate commit message.
 
 ## Question 2: Create Simple Subscriber (Python)
-In this exercise, you will write a listener (subscriber) that listens to the topic ***my_random_float***, which is published to by the previous node. The new node takes the natural log of the message on ***my_random_float*** and publishes it to ***random_float_log***.  
+In this exercise, you will write a listener (subscriber) that listens to the topic ***my_random_float***, which is published by the previous node. The new node takes the natural log of the message on ***my_random_float*** and publishes it to ***random_float_log***.  
 
 ### Node Specification
 
@@ -196,14 +195,14 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 
 **Range_min:** 1.0        
 **Range_max:** 10.0       
-**Ranges:** One dimensional array with elements of random floats between range_min and range_max, Use angle_min, angle_max,  and angle_increment to determine the length. Be careful of an off by 1 error! There should be an element **at** ```angle_min``` and ```angle_max```.
+**Ranges:** One dimensional array with elements of random floats between range_min and range_max, Use angle_min, angle_max,  and angle_increment to determine the length. Be careful of an off-by-1 error! There should be an element **at** ```angle_min``` and ```angle_max```.    
 **Intensities:** Leave it unset if you wish      
 
 ### Commit Specification   
 
 1. When your node works properly, visualize the published laser scan data using RViz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`. If you can't see anything in `rviz` it's probably because you're publishing your laser scan message with the header `base_link` but rviz is visualizing relative to the frame `map`. In the panel on the right, under global options change "`frame: map`" to "`frame: base_link`".
-2. Record a ~10 second bag file of your laser scan data and call the file `fake_scan_bag.bag`, save it in `ros_exercises/rosbag`.
-3. Again, push your code, bag file, screenshot, and any supporting files with a appropriate commit message.
+2. Record a ~10-second bag file of your laser scan data and call the file `fake_scan_bag.bag`, save it in `ros_exercises/rosbag`.
+3. Again, push your code, bag file, screenshot, and any supporting files with an appropriate commit message.
 
 Note: You should get an error in RViz that says "No tf data. Actual error: Fixed Frame [map] does not exist". This will not affect your visualization of the laser scan; however, if you would like, you can run `rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map base_link 10` in a separate terminal window to link `map` to your TF tree.
 
@@ -224,32 +223,32 @@ Create a node that subscribes to the fake laser scan data and outputs the longes
 **Publish rate:** 20hz    
 ### Commit Specification    
 1. Again, take a screenshot of ***rqt_graph*** showing your nodes running, named it `open_space_rqt.png`, and save it in `ros_exercises/rqt`.
-2. Again, push your code, the screenshot, and any supporting files with a appropriate commit message.
+2. Again, push your code, the screenshot, and any supporting files with an appropriate commit message.
 
 **If you are failing this test make sure you have these files in your ```ros_exercises``` directory**:
 
 - ```rqt/open_space_rqt.png```
 
-Note: Test case #4 and onward will still not pass. You will need move onto Question 5 to pass the next test case.
+Note: Test case #4 and onward will still not pass. You will need to finish Question 5 to pass the next test case.
 
 ## Question 5: Create a custom Message and Publish it
-The publisher from the previous exercise was publishing two related pieces of data on two separate topics (***open_space/angle*** and ***open_space/distance***). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data, the same way the LaserScan message type combines multiple pieces of data, and name your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the previous exercise to publish this message type on the topic ***open_space***. Hint: Don't forget to modify your `CMakeLists.txt` and `package.xml` files.
+The publisher from the previous exercise was publishing two related pieces of data on two separate topics (***open_space/angle*** and ***open_space/distance***). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data, the same way the LaserScan message type combines multiple pieces of data, and name your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the previous exercise to publish this message type on the topic ***open_space***. Hint: You will need to make a separate package for your custom messages since custom messages require cmake to compile. Don't forget to modify your `CMakeLists.txt` and `package.xml` files.
 
-**Important:** For grading purposes, it is required that your ***angle*** field be specified **BEFORE** your ***distance*** field. When creating your messages, you will be completely in charge of what your message specification looks like, so be aware that this is just a somewhat arbitrary requirement of the autograding system.
+**Important:** For grading purposes, it is required that your ***angle*** field be specified **BEFORE** your ***distance*** field. When creating your messages, you will be completely in charge of what your message specification looks like, so be aware that this is just a somewhat arbitrary requirement of the auto-grading system.
 
 ### Commit Specification    
-1. Commit your modified code, config/meta files, and your custom message file as well any supporting files.
+1. Commit your modified code, config/meta files, and your custom message file as well as any supporting files.
 
 ## Question 6: Using launch files
-If you have been running your publisher(s), subscriber(s), and roscore separately using the rosrun command, there’s a more organized way to run multiple nodes at same time with one command.
+If you have been running your publisher(s), subscriber(s), and roscore separately using the rosrun command, there’s a more organized way to run multiple nodes at the same time with one command.
 
-In this exercise, we ask you to write a single launch file called `my_first_launch.launch` containing all 4 python files that you have written thus far.
+In this exercise, we ask you to write a single launch file called `my_first_launch.launch.xml` containing all 4 python files that you have written thus far.
 
 ### Commit Specification    
 1. Commit your launch file. It should be inside a directory called `launch` within your package.
 
 ## Question 7: Use ROS parameters
-When writing the last publisher (***fake_scan_publisher***), you had a couple of variables with default values including angle_min, angle_max, range_min, range_max, etc. With the current setup, if you want to change the value of one of those variables you will have to edit the Python code. For hundreds of lines of code, finding where each of such variables is defined can be tedious. The rosparam server provides a way to set those parameters on the terminal when running your program and in launch or config files. You task here is to parameterize the following variables from the last two nodes.
+When writing the last publisher (***fake_scan_publisher***), you had a couple of variables with default values including angle_min, angle_max, range_min, range_max, etc. With the current setup, if you want to change the value of one of those variables you will have to edit the Python code. For hundreds of lines of code, finding where each of such variables is defined can be tedious. The rosparam server provides a way to set those parameters on the terminal when running your program and in launch or config files. Your task here is to parameterize the following variables from the last two nodes.
 
 **Note:** Your node should be able to start (e.g. via `ros2 run`) even if not all of these parameters have been set. If a parameter has not been set, your node should default to using the values given in the previous question. This [link](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/) may be helpful. This way of falling back to hard-coded defaults can still be useful, especially in cases where a sensible default for a parameter is known and changes would only have to be made rarely.
 
@@ -271,11 +270,11 @@ When writing the last publisher (***fake_scan_publisher***), you had a couple of
 ## Question 8: Playing with bag files
 In question 3, we asked you to visualize your laserscan data on RViz and record a bag file. The RViz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed; real laserscan data is a lot prettier and more informative. Download these [bagfiles](https://www.dropbox.com/s/17d25jtued10jk0/gmapping_data_active_only.zip?dl=0) follow the instructions [here](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html), and visualize the laser scan data on RViz. Try it with multiple coordinate frames.     
 
-**Note**: The provided bag files are from our cars driving around in the basement of Stata center.
+**Note**: The provided bag files are from our cars driving around in the basement of Stata Center.
 
 ## Question 9: TF Exercises
 
-You will need to download [this rosbag](https://www.dropbox.com/s/qvqloye6dilsj4y/tesse_no_statics_2.bag?dl=0) from Google drive; it may take a while.
+You will need to download [this rosbag](https://www.dropbox.com/s/qvqloye6dilsj4y/tesse_no_statics_2.bag?dl=0) from Google Drive; it may take a while.
 
 The rosbag was collected from a robot driving around in a simulated environment. Its `base_link` position in the environment is broadcast to the TF tree in ROS. However, the poses of the sensors onboard the robot are not broadcasted to the TF tree.
 
@@ -310,7 +309,7 @@ Take a screen-shot of your tf tree in **rqt** using the `tf-tree` plugin. Save i
 
 * **Note 3:** Remember: your `left_cam` transform is defined relative to `world`, and your `right_cam` transform is defined relative to `left_cam`. These require slightly different equations!
 
-* **Note 4:** You can easily record screen-captures using the Kazam package (`sudo apt-get install kazam`) and you can use the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post) or a web-hosted tool to convert to gif.
+* **Note 4:** You can easily record screen captures using the Kazam package (`sudo apt-get install kazam`) and you can use the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post) or a web-hosted tool to convert to gif.
 
 
 ### Part 2: The ~~Easy~~ Better Way
@@ -358,17 +357,17 @@ Save a short gif of RViz again, and make sure you can see the both `base_link_gt
 
 
 ## Debugging Hints
-Here are some helpful tools to use when trying to debugging your code.
+Here are some helpful tools to use when trying to debug your code.
 
 Helpful debugging tools (once a node is running):
 
 ### `ros2 topic list`
-A running node should be publishing or subscribing to different topics. To check that these topics are being listened/talked to, the command `rostopic list`, which will list all topics that are currently active (either being subscribed to, published to, or both).
+A running node should be publishing or subscribing to different topics. To check that these topics are being listened/talked to, the command `rostopic list` will list all topics that are currently active (either being subscribed to, published to, or both).
 
 ### `ros2 topic echo /topic_name`
 Once you know that a command is being published/subscribed to, you can echo its contents, which can show whether or not any information is being passed across this topic or if you are not sending what you expect.
 
-To find more ways to use ```ros2 topic```, type ```ros2 topic --help``` in command line. There are many other helpful command line tools to help you out too. See [here](https://docs.ros.org/en/humble/Concepts/Basic/About-Command-Line-Tools.html).
+To find more ways to use ```ros2 topic```, type ```ros2 topic --help``` in the command line. There are many other helpful command line tools to help you out too. See [here](https://docs.ros.org/en/humble/Concepts/Basic/About-Command-Line-Tools.html).
 
 ### `rqt graph`
 This is a tool to display graphs of running ROS nodes with connecting topics and package dependencies. Allows you to visualize your entire framework! 
