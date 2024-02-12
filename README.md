@@ -1,6 +1,6 @@
 
 
-| **Due Date**  | **Tuesday, February 20th at 1:00PM EST**                                 |
+| **Due Date**  | **Wednesday, February 21th at 1:00PM EST**                                 |
 |---------------|----------------------------------------------------------------------------|
 |  **Submission**   | `log.npf` and `ros_exercises.zip` on [Gradescope](https://gradescope.com/) (listed as two separate assignments)|
 
@@ -304,6 +304,8 @@ Save a short (~3-5 second) gif of RViz as the rosbag plays with your node runnin
 Take a screen-shot of your tf tree in **rqt** using the `tf-tree` plugin. Save it in `ros_exercises/rqt` and name it `dynamic_tf_tree.png`
 
 * **Note 1:** Don't worry if the new TF frames are jittery and/or don't follow the `base_link_gt` frame fast enough; this should be fixed in part 2.
+
+
 #TODO UPDATE
 * **Note 2:** You will be doing some transformations in your ROS node. Use [tf.transformations](http://docs.ros.org/jade/api/tf/html/python/transformations.html), a file built into the `tf` package. View the source code [here](https://github.com/ros/geometry/blob/melodic-devel/tf/src/tf/transformations.py). Also, use `numpy`!
 
@@ -367,8 +369,6 @@ A running node should be publishing or subscribing to different topics. To check
 ### `ros2 topic echo /topic_name`
 Once you know that a command is being published/subscribed to, you can echo its contents, which can show whether or not any information is being passed across this topic or if you are not sending what you expect.
 
-To find more ways to use ```ros2 topic```, type ```ros2 topic --help``` in the command line. There are many other helpful command line tools to help you out too. See [here](https://docs.ros.org/en/humble/Concepts/Basic/About-Command-Line-Tools.html).
-
 ### `rqt graph`
 This is a tool to display graphs of running ROS nodes with connecting topics and package dependencies. Allows you to visualize your entire framework! 
 
@@ -377,4 +377,7 @@ This is a powerful 3D visualization tool for displaying sensor data and state in
 
 ### **`rqt_tf_tree`**
 This is a GUI plugin that you can install/use to display your ROS transformation (TF) tree. 
+
+
+To find more ways to use ```ros2 topic```, type ```ros2 topic --help``` in the command line. There are many other helpful command line tools to help you out too. See [here](https://docs.ros.org/en/humble/Concepts/Basic/About-Command-Line-Tools.html).
 
