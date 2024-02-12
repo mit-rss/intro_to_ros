@@ -210,7 +210,7 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 2. Record a ~10-second bag file of your laser scan data and call the file `fake_scan_bag.bag`, save it in `ros_exercises/rosbag`.
 3. Again, push your code, bag file, screenshot, and any supporting files with an appropriate commit message.
 
-Note: You should get an error in RViz that says "No tf data. Actual error: Fixed Frame [map] does not exist". This will not affect your visualization of the laser scan; however, if you would like, you can run `rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map base_link 10` in a separate terminal window to link `map` to your TF tree.
+Note: You should get an error in RViz that says "No tf data. Actual error: Fixed Frame [map] does not exist". This will not affect your visualization of the laser scan; however, if you would like, you can run `ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 1 map base_link` in a separate terminal window to link `map` to your TF tree. You'll see more about this in Question 9.
 
 **If you are failing this test make sure you have these files in your ```ros_exercises``` directory**:
 
@@ -246,7 +246,7 @@ The publisher from the previous exercise was publishing two related pieces of da
 1. Commit your modified code, config/meta files, and your custom message file as well as any supporting files.
 
 ## Question 6: Using launch files
-If you have been running your publisher(s), subscriber(s), and roscore separately using the rosrun command, there’s a more organized way to run multiple nodes at the same time with one command.
+If you have been running your publisher(s) and subscriber(s) separately using the ros2 run command, there’s a more organized way to run multiple nodes at the same time with one command.
 
 In this exercise, we ask you to write a single launch file called `my_first_launch.launch.xml` containing all 4 python files that you have written thus far.
 
