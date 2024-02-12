@@ -135,7 +135,8 @@ Inside your workspace, create a new package, named `ros_exercises/`, which shoul
 
 Additionally, every time you make an edit to your files, make sure to run `colcon build` to build your package and **source your `setup.bash` file** so you use the underlaid build of your package (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `colcon build`!_). You will also need to source your `setup.bash` file each time you open a new terminal window.	   
 ```source install/setup.bash```    
-An alternative: instead of rebuilding every time you make a change, after `colcon build`, add the flag `--symlink-install`.     
+An alternative: instead of rebuilding every time you make a change, after `colcon build`, add the flag `--symlink-install`.    
+
 **Note**: Push your `ros_exercises/` changes to github.
 
 ## Question 1: Create Simple Publisher (Python)
@@ -149,9 +150,14 @@ Your task in this exercise is to create a simple ROS node that publishes a rando
 **Message type:** Float32    
 **Subscription topic names:** None    
 **Publish rate:** 20hz    
+
+**Script executable Name:** simple_publisher
+
 ### Commit Specification    
-1. When your node works properly, take a screenshot of ***rqt_graph*** visualization of your node(s) and topic(s). Name your screenshot `simple_publisher_rqt.png` and save it in `ros_exercises/rqt` (create the `rqt/` directory). Note: `ros_exercises/` is the ros package you created at the beginning of this section.
+1. When your node works properly, run it (remember to update your `setup.py`), take a screenshot of ***rqt_graph*** visualization of your node(s) and topic(s). Name your screenshot `simple_publisher_rqt.png` and save it in `ros_exercises/rqt` (create the `rqt/` directory). Note: `ros_exercises/` is the ros package you created at the beginning of this section.
 2. Push your code, the screenshot, and any supporting files with an appropriate commit message.
+
+**For grading purposes: ALWAYS NAME THE SCRIPT EXECUTABLE'S NAME THE SAME AS ITS CORRESPONDING NODE'S NAME**
 
 ## Question 2: Create Simple Subscriber (Python)
 In this exercise, you will write a listener (subscriber) that listens to the topic ***my_random_float***, which is published by the previous node. The new node takes the natural log of the message on ***my_random_float*** and publishes it to ***random_float_log***.  
