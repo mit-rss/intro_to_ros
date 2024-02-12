@@ -21,25 +21,7 @@ The due date is listed at the top of this document.
 
 ### Automated Tests #TODO UPDATE
 
-You can download the test binary to check your solutions locally by going to the [releases page of this repo](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary.
-Most people will probably need to use the `amd64` version but if you have a new M1 Mac you'll need to use the `arm64` version. **Make sure you place the binary in your ```ros_exercises``` folder.**:
-
-    mv run_tests ~/racecar_ws/src/ros_exercises/
-
-Then make the binary executable with ```chmod```
-
-    chmod +x run_tests
-
-First, kill all running ROS processes. Then start ```roscore```.
-
-Finally, run the following in a new terminal to begin testing:
-
-     cd ~/racecar_ws/src/ros_exercises/
-    ./run_tests
-
-You should be graded on the completion of 6 tests. Be careful with naming the various files defined in the handout correctly or else you won't be graded properly. Also, **be sure to `cd` into `ros_exercises` before running the tests**, or the automated tests may use the wrong paths to each of the files it checks for.
-
-Additionally the `run_tests` file will generate a file called `log.npf` which you **must upload to gradescope for credit**.
+We will release instructions for how to generate your submission and test file this week. You will eventually generate a `log.npf` which you **must upload to gradescope for credit**.
 
 
 ### Automatic grade Breakdown
