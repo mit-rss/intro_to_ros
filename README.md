@@ -322,7 +322,7 @@ Save a short (~3-5 seconds) gif of RViz just as in part 1, but with your `static
 
 #### 2b: Launch File
 
-Additionally, write a roslaunch file that launches the `static_transform_publisher` node from the `tf` package and automatically publishes the two transforms. Name this launch file `static_tf_publisher.launch.xml` and save it in the `ros_exercises/launch` directory of your package.
+Additionally, write a roslaunch file that automatically publishes the two transforms. Name this launch file `static_tf_publisher.launch.xml` and save it in the `ros_exercises/launch` directory of your package.
 
 If you're getting an "extrapolation into the future" error, add this to your launch file:
 
@@ -338,7 +338,7 @@ rosbag play tesse_no_statics_2.bag --clock
 
 See [here](https://answers.ros.org/question/288672/how-use_sim_time-works/) for more information.
 
-* **Note 1:** Your launch file should not launch any of your nodes yet, just the `static_transform_publisher` node in the `tf` package.
+* **Note 1:** Your launch file can be done two ways: you can use the node you've written, or use the `static_transform_publisher` node in the `tf` package as demonstrated [here](https://wiki.ros.org/tf2_ros#static_transform_publisher).
 
 
 ### Part 3: Back to `base_link`
