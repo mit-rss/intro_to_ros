@@ -57,7 +57,7 @@ This table shows the grading breakdown of the manually graded portion of the lab
 | TF Exercises                        |   1 Point      |
 | **Total**                           | **2.0 Points** |
 
-### References
+### References (These are not the exercises)
 
 The following are selected chapters from the ROS2 [Documentation](https://docs.ros.org/en/foxy/index.html) and [Tutorials](https://docs.ros.org/en/foxy/Tutorials.html). If you understand all the concepts covered in these exercises, you will be ready for the exercises of this lab (given below) and most of the ROS-related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS2 Wiki](https://docs.ros.org/en/rolling/index.html) section and follow the links to learn more.
 
@@ -105,7 +105,7 @@ The racecar docker image already has a workspace installed called `racecar_ws` (
 
 If you are not using docker to run ROS (e.g. using a virtual machine or a manual install), make sure to create your own workspace.
 
-Inside your workspace, create a new package, named `ros_exercises/`, which should depend on `rclpy`, `std_msgs`, and `sensor_msgs`. Your package (`ros_exercises`) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make your `ros_exercises` a git repo. After creating the workspace and the package, you should have the following directory layout.
+Inside your workspace, create a new PYTHON BASED (not C++ based) package (this means that the keyword ament_python will be in the command to create the package), named `ros_exercises/`, which should depend on `rclpy`, `std_msgs`, and `sensor_msgs`. Your package (`ros_exercises`) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make your `ros_exercises` a git repo. After creating the workspace and the package, you should have the following directory layout.
 
 * ~/racecar_ws[your colcon workspace]
 	* /src
