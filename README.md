@@ -19,7 +19,7 @@ You are meant to complete this lab by testing your code and verifying the result
 
 The due date is listed at the top of this document.
 
-### Automated Tests #TODO UPDATE
+### Automated Tests 
 
 We will release instructions for how to generate your submission and test file this week. You will eventually generate a `log.npf` which you **must upload to gradescope for credit**.
 
