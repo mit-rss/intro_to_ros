@@ -262,7 +262,7 @@ In question 3, we asked you to visualize your laserscan data on RViz and record 
 
 ## Question 9: TF Exercises
 
-You will need to download [this rosbag](https://www.dropbox.com/s/qvqloye6dilsj4y/tesse_no_statics_2.bag?dl=0) from Google Drive; it may take a while.
+You will need to download [this rosbag](https://www.dropbox.com/scl/fo/xnwygxq1wpaq071pahnt1/h?rlkey=2tyxed357jk8cbbanyjo7dw3m&dl=0); it may take a while.
 
 The rosbag was collected from a robot driving around in a simulated environment. Its `base_link` position in the environment is broadcast to the TF tree in ROS. However, the poses of the sensors onboard the robot are not broadcasted to the TF tree.
 
@@ -298,6 +298,8 @@ Take a screen-shot of your tf tree in **rqt** using the `tf-tree` plugin. Save i
 * **Note 3:** Remember: your `left_cam` transform is defined relative to `world`, and your `right_cam` transform is defined relative to `left_cam`. These require slightly different equations!
 
 * **Note 4:** You can easily record screen captures using the Kazam package (`sudo apt-get install kazam`) and you can use the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post) or a web-hosted tool to convert to gif.
+
+* **Note 5:** To use the rqt-tf-tree plug-in, you might need to install a few more ros2 packages. Try installing `ros-foxy-tf2-tools` and `ros-foxy-rqt-tf-tree` and then execute `rqt --clear-config`.
 
 
 ### Part 2: The ~~Easy~~ Better Way
@@ -359,8 +361,8 @@ This is a tool to display graphs of running ROS nodes with connecting topics and
 ### **`rviz`**
 This is a powerful 3D visualization tool for displaying sensor data and state information from ROS. You will be using it more extensively in future labs.
 
-### **`rqt_tf_tree`**
-This is a GUI plugin that you can install/use to display your ROS transformation (TF) tree. 
+### **`rqt`**
+Includes many handy GUI plugins such as `rqt-tf-tree` that you can install and use to display your ROS transformation (TF) tree. 
 
 
 To find more ways to use ```ros2 topic```, type ```ros2 topic --help``` in the command line. There are many other helpful command line tools to help you out too. See [here](https://docs.ros.org/en/humble/Concepts/Basic/About-Command-Line-Tools.html).
