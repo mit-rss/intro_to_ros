@@ -189,7 +189,7 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 ### Commit Specification   
 
 1. When your node works properly, visualize the published laser scan data using RViz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`. If you can't see anything in `rviz` it's probably because you're publishing your laser scan message with the header `base_link` but rviz is visualizing relative to the frame `map`. In the panel on the right, under global options change "`frame: map`" to "`frame: base_link`".
-2. Record a ~10-second bag file of your laser scan data and call the file `fake_scan_bag.bag`, save it in `ros_exercises/rosbag`.
+2. Record a ~10-second bag file of your laser scan data and call the file `fake_scan_bag`, save it in `ros_exercises/rosbag`.
 3. Again, push your code, bag file, screenshot, and any supporting files with an appropriate commit message.
 
 Note: You should get an error in RViz that says "No tf data. Actual error: Fixed Frame [map] does not exist". This will not affect your visualization of the laser scan; however, if you would like, you can run `ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 1 map base_link` in a separate terminal window to link `map` to your TF tree. You'll see more about this in Question 9.
@@ -197,7 +197,7 @@ Note: You should get an error in RViz that says "No tf data. Actual error: Fixed
 **If you are failing this test make sure you have these files in your ```ros_exercises``` directory**:
 
 - ```rviz/fake_scan_rviz.png```
-- ```rosbag/fake_scan_bag.bag```
+- ```rosbag/fake_scan_bag```
 
 ## Question 4: Create a more complex Subscriber(Python)
 Create a node that subscribes to the fake laser scan data and outputs the longest range from the laser scan ranges and its corresponding angle.    
@@ -323,7 +323,7 @@ If you're getting an "extrapolation into the future" error, add this to your lau
 And make sure you're running the rosbag with the `/clock` topic published like so:
 
 ```bash
-rosbag play tesse_no_statics_2.bag --clock
+ros2 bag play tesse_no_statics_2 --clock
 ```
 
 See [here](https://answers.ros.org/question/288672/how-use_sim_time-works/) for more information.
