@@ -21,10 +21,10 @@ The due date is listed at the top of this document.
 
 ### Automated Tests 
 
-You can download the test binary to check your solutions locally by going to the TODO: ONE MIN and downloading the ```run_tests``` binary.
-Most people will probably need to use the `amd64` version but if you have a new M1 Mac you'll need to use the `arm64` version. **Make sure you place the binary in your ```ros_exercises``` folder.**:
+You can download the test binary to check your solutions locally by going to the [relase page here](https://github.com/mit-rss/intro_to_ros/releases/tag/2024) and downloading the ```run_tests``` binary.
+Most people will probably need to use the `amd64` version but if your Mac's chip is M1-M3  you'll need to use the `arm64` version. **Make sure you place the binary in your ```ros_exercises``` folder.**:
 
-    mv run_tests ~/racecar_ws/src/ros_exercises/
+    mv run_tests ~/racecar_ws/src/lab1c/ros_exercises/
 
 Then make the binary executable with ```chmod```
 
@@ -37,7 +37,7 @@ In order to pass all the tests you will need to add a few lines in your fake_sca
 
 Finally, run the following in a new terminal to begin testing:
 
-     cd ~/racecar_ws/src/ros_exercises/
+     cd ~/racecar_ws/src/lab1c/ros_exercises/
     ./run_tests_**
 
 You should be graded on the completion of 6 tests. Be careful with naming the various files defined in the handout correctly or else you won't be graded properly. Also, **be sure to `cd` into `ros_exercises` before running the tests**, or the automated tests may use the wrong paths to each of the files it checks for.
