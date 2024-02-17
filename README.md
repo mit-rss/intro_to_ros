@@ -130,7 +130,10 @@ Inside your workspace, create a new PYTHON BASED (not C++ based) package (this m
 
 * ~/racecar_ws[your colcon workspace]
 	* /src
-		* /ros_exercises[Your package]
+		* /lab1c[init git gere]
+			* /ros_exercises[Your package]
+			* /custom_msgs
+     
 		* [other ros related files and packages if any]
 	* /install
 	* /log
