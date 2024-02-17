@@ -21,6 +21,27 @@ The due date is listed at the top of this document.
 
 ### Automated Tests 
 
+You can download the test binary to check your solutions locally by going to the TODO: ONE MIN and downloading the ```run_tests``` binary.
+Most people will probably need to use the `amd64` version but if you have a new M1 Mac you'll need to use the `arm64` version. **Make sure you place the binary in your ```ros_exercises``` folder.**:
+
+    mv run_tests ~/racecar_ws/src/ros_exercises/
+
+Then make the binary executable with ```chmod```
+
+    chmod +x run_tests_**
+
+In order to pass all the tests you will need to add a few lines in your fake_scan_publisher Node:
+
+- Create a publisher with name "range_test" and type Float32
+- In your callback after publishing your msg = LaserScan() message, publish float(len(msg.ranges)) on the "range_test" publisher
+
+Finally, run the following in a new terminal to begin testing:
+
+     cd ~/racecar_ws/src/ros_exercises/
+    ./run_tests_**
+
+You should be graded on the completion of 6 tests. Be careful with naming the various files defined in the handout correctly or else you won't be graded properly. Also, **be sure to `cd` into `ros_exercises` before running the tests**, or the automated tests may use the wrong paths to each of the files it checks for.
+
 We will release instructions for how to generate your submission and test file this week. You will eventually generate a `log.npf` which you **must upload to gradescope for credit**.
 
 
