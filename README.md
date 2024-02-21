@@ -352,8 +352,6 @@ ros2 bag play tesse_no_statics_2 --clock
 
 See [here](https://answers.ros.org/question/288672/how-use_sim_time-works/) for more information.
 
-* **Note 1:** Your launch file can be done two ways: you can use the node you've written, or use the `static_transform_publisher` node in the `tf` package as demonstrated [here](https://wiki.ros.org/tf2_ros#static_transform_publisher).
-
 
 ### Part 3: Back to `base_link`
 
