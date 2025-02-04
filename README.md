@@ -8,7 +8,7 @@
 
 ## Introduction
 
-**Before this lab:** Make sure you have completed the [base installation](https://github.com/mit-rss/base_installation) of the racecar Docker container.
+**Before this lab:** Make sure you have completed the [base installation](https://github.com/mit-rss/racecar_docker) of the racecar Docker container.
 
 The objective of the following exercises is to help you practice the most commonly used concepts in ROS. We provide a quick reference document and pointers to relevant documentation. Feel free to use all the resources available to you to learn the concepts as thoroughly as possible and complete the exercises as efficiently as possible.
 
@@ -21,8 +21,8 @@ The due date is listed at the top of this document.
 
 ### Automated Tests 
 
-You can download the test binary to check your solutions locally by going to the [relase page here](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary.
-Most people will probably need to use the `amd64` version but if your Mac's chip is M1-M3  you'll need to use the `arm64` version. **Make sure you place the binary in your ```ros_exercises``` folder.**:
+You can download the test binary to check your solutions locally by going to the [release page here](https://github.com/mit-rss/intro_to_ros/releases) and downloading the ```run_tests``` binary.
+Most people will probably need to use the `amd64` version but if your Mac's chip is M1-M3  you'll need to use the `arm64` version. **Make sure you place the binary in your ```ros_exercises``` folder**:
 
     mv run_tests ~/racecar_ws/src/lab1c/ros_exercises/
 
@@ -80,7 +80,7 @@ This table shows the grading breakdown of the manually graded portion of the lab
 
 ### References (These are not the exercises)
 
-The following are selected chapters from the ROS2 [Documentation](https://docs.ros.org/en/foxy/index.html) and [Tutorials](https://docs.ros.org/en/foxy/Tutorials.html). If you understand all the concepts covered in these exercises, you will be ready for the exercises of this lab (given below) and most of the ROS-related tasks you will be performing throughout the first few labs. For more on ROS, visit the [ROS2 Wiki](https://docs.ros.org/en/rolling/index.html) section and follow the links to learn more.
+The following are selected chapters from the ROS2 [Documentation](https://docs.ros.org/en/foxy/index.html) and [Tutorials](https://docs.ros.org/en/foxy/Tutorials.html). If you understand all the concepts covered in these exercises, you will be ready for the exercises of this lab (given below) and most of the ROS-related tasks you will be performing throughout the first few labs.
 
 Additionally, a useful ROS cheatsheet can be found [here](https://github.com/Micropolisdxb/ROS2-Documentation/blob/main/ros2_cheat_sheet.md).
 
@@ -94,7 +94,7 @@ Additionally, a useful ROS cheatsheet can be found [here](https://github.com/Mic
 	b. [Creating custom messages](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)    
 	c. [Common ros message categories](https://github.com/ros2/common_interfaces)   
 4. Nodes   
-	a. [ROS Nodes](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)   
+	a. [ROS Nodes](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)   
 	b. [Writing Publisher and Subscriber(Python)](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html )   
 3. Topics    
 	a. [ROS Topics](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)  
@@ -106,7 +106,7 @@ Additionally, a useful ROS cheatsheet can be found [here](https://github.com/Mic
 7. Visualization Tools 	  
 	a. rqt   
 		- [rqt](https://docs.ros.org/en/foxy/Concepts/About-RQt.html)   
-		- [rqt_graph](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#rqt-graph)   
+		- [rqt_graph](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#rqt-graph)   
 	b. RViz (most features are ported over from ROS 1)  
 		- [User Guide](https://github.com/ros2/rviz) and [original](http://wiki.ros.org/rviz/UserGuide)   
 		- [Interactive Markers](http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers%3A%20Getting%20Started)   
@@ -122,26 +122,26 @@ Additionally, a useful ROS cheatsheet can be found [here](https://github.com/Mic
 
 ### Create a package and build it
 
-The racecar docker image already has a workspace installed called `racecar_ws` (for last year, we used ROS 1 with a Catkin workspace but that is no longer the case this year). 
+The racecar docker image already has a workspace installed called `racecar_ws`. 
 
 If you are not using docker to run ROS (e.g. using a virtual machine or a manual install), make sure to create your own workspace.
 
-Inside your workspace, create a new PYTHON BASED (not C++ based) package (this means that the keyword ament_python will be in the command to create the package), named `ros_exercises/`, which should depend on `rclpy`, `std_msgs`, and `sensor_msgs`. Your package (`ros_exercises`) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make `src` a git repo, and have it track `ros_exercises` and `custom_msgs` (later on). After creating the workspace and the package, you should have the following directory layout.
+Inside your workspace, create a new PYTHON BASED (not C++ based) package (this means that the keyword **ament_python** will be in the command to create the package), named `ros_exercises/`, which should depend on `rclpy`, `std_msgs`, and `sensor_msgs`. Your package (`ros_exercises`) should live in the `/src/` directory, where you add other packages (such as other labs later on). Make `src` a git repo, and have it track `ros_exercises` and `custom_msgs` (later on). After creating the workspace and the package, you should have the following directory layout.
 
-* ~/racecar_ws[your colcon workspace]
+* ~/racecar_ws [your colcon workspace]
 	* /src
-		* /lab1c[init git gere]
+		* /lab1c [init git here]
 			* /ros_exercises[Your package]
 			* /custom_msgs
      
 		* [other ros related files and packages if any]
-	* /install
-	* /log
-	* /build
+	* /install [autogenerated]
+	* /log [autogenerated]
+	* /build [autogenerated]
 
-Additionally, every time you make an edit to your files, make sure to run `colcon build` to build your package and **source your `setup.bash` file** so you use the underlaid build of your package (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `colcon build`!_). You will also need to source your `setup.bash` file each time you open a new terminal window.	   
+Additionally, every time you add a file or make a new package, make sure to run `colcon build --symlink-install` to build your package. **ALWAYS** run `colcon build --symlink-install` from the `~\racecar_ws` directory. If you run `colcon build --symlink-install` from a different directory delete the install, log and build directories from that directory and run `colcon build --symlink-install` from the `~\racecar_ws` directory. Whenever you open a new terminal, **source your `setup.bash` file** so you use the underlaid build of your package (_forgetting to source this file can cause some confusing situations, so make sure to always perform this step after `colcon build`!_). 
 ```source install/setup.bash```    
-An alternative: instead of rebuilding every time you make a change, after `colcon build`, add the flag `--symlink-install`.    
+   
 
 **Note**: Push your `ros_exercises/` changes to github.
 
@@ -213,7 +213,7 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 ### Commit Specification   
 
 1. When your node works properly, visualize the published laser scan data using RViz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`. If you can't see anything in `rviz` it's probably because you're publishing your laser scan message with the header `base_link` but rviz is visualizing relative to the frame `map`. In the panel on the left, under global options change "`frame: map`" to "`frame: base_link`".
-2. Record a ~10-second bag file of your laser scan data and call the file `fake_scan_bag`, save it in `ros_exercises/rosbag`.
+2. Record a ~10-second [bag](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html) file of your laser scan data and call the file `fake_scan_bag`, save it in `ros_exercises/rosbag`.
 3. Again, push your code, bag file, screenshot, and any supporting files with an appropriate commit message.
 
 Note: You should get an error in RViz that says "No tf data. Actual error: Fixed Frame [map] does not exist". This will not affect your visualization of the laser scan; however, if you would like, you can run `ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 1 map base_link` in a separate terminal window to link `map` to your TF tree. You'll see more about this in Question 9.
