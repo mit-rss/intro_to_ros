@@ -15,6 +15,7 @@
  	* [Manual Grading Portion](https://github.com/mit-rss/intro_to_ros#manual-grading-portion)
 	* [Manual Grade Breakdown](https://github.com/mit-rss/intro_to_ros#manual-grade-breakdown)
 * [References](https://github.com/mit-rss/intro_to_ros#references)
+* [ROS Exercises](https://github.com/mit-rss/intro_to_ros#ros-exercises)
 * [Question 1: Create Simple Publisher (Python)](https://github.com/mit-rss/intro_to_ros#question-1-create-simple-publisher-python)
 * [Question 2: Create Simple Subscriber (Python)](https://github.com/mit-rss/intro_to_ros#question-2-create-simple-subscriber-python)
 * [Question 3: Create More Complex Publisher (Python)](https://github.com/mit-rss/intro_to_ros#question-3-create-more-complex-publisher-python)
