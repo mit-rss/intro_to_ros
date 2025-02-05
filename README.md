@@ -6,6 +6,26 @@
 
 # Lab 1C: Intro to ROS
 
+## Table of Contents
+
+* [Introduction](https://github.com/mit-rss/intro_to_ros#introduction)
+* [Submission](https://github.com/mit-rss/intro_to_ros#submission)
+	* [Automated Tests](https://github.com/mit-rss/intro_to_ros#automated-tests)
+	* [Automatic Grade Breakdown](https://github.com/mit-rss/intro_to_ros#automatic-grade-breakdown)
+ 	* [Manual Grading Portion](https://github.com/mit-rss/intro_to_ros#manual-grading-portion)
+	* [Manual Grade Breakdown](https://github.com/mit-rss/intro_to_ros#manual-grade-breakdown)
+* [References](https://github.com/mit-rss/intro_to_ros#references)
+* [Question 1: Create Simple Publisher (Python)](https://github.com/mit-rss/intro_to_ros#question-1-create-simple-publisher-python)
+* [Question 2: Create Simple Subscriber (Python)](https://github.com/mit-rss/intro_to_ros#question-2-create-simple-subscriber-python)
+* [Question 3: Create More Complex Publisher (Python)](https://github.com/mit-rss/intro_to_ros#question-3-create-more-complex-publisher-python)
+* [Question 4: Create More Complex Subscriber (Python)](https://github.com/mit-rss/intro_to_ros#question-4-create-more-complex-subscriber-python)
+* [Question 5: Create a Custom Message and Publish It](https://github.com/mit-rss/intro_to_ros#question-5-create-a-custom-message-and-publish-it)
+* [Question 6: Using Launch Files](https://github.com/mit-rss/intro_to_ros#question-6-using-launch-files)
+* [Question 7: Use ROS Parameters](https://github.com/mit-rss/intro_to_ros#question-7-use-ros-parameters)
+* [Question 8: Playing with Bag Files](https://github.com/mit-rss/intro_to_ros#question-8-playing-with-bag-files)
+* [Question 9: TF Exercises](https://github.com/mit-rss/intro_to_ros#question-9-tf-exercises)
+* [Debugging Hints](https://github.com/mit-rss/intro_to_ros#debugging-hints)
+
 ## Introduction
 
 **Before this lab:** Make sure you have completed the [base installation](https://github.com/mit-rss/racecar_docker) of the racecar Docker container.
@@ -45,7 +65,7 @@ You should be graded on the completion of 6 tests. Be careful with naming the va
 We will release instructions for how to generate your submission and test file this week. You will eventually generate a `log.npf` which you **must upload to gradescope for credit**.
 
 
-### Automatic grade Breakdown
+### Automatic Grade Breakdown
 
 This table shows how the different tasks will be graded by the automated grader.
 | Task                    |      Grade        |
@@ -64,7 +84,7 @@ This table shows how the different tasks will be graded by the automated grader.
 If you have completed all parts, you should receive a score of 3.0/5.0 on Gradescope. The rest of your score (2.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be available on your GitHub account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**. Make sure that your zip file does not contain large folders or files that are not part of the assignments (the **.git** folder should not be zipped) since large zip files will probably get rejected by Gradescope. 
 
 
-### The Manual Grade Breakdown
+### Manual Grade Breakdown
 This table shows the grading breakdown of the manually graded portion of the lab.
 | Task                                | Grade          |
 |-------------------------------------|----------------|
@@ -78,7 +98,7 @@ This table shows the grading breakdown of the manually graded portion of the lab
 | TF Exercises                        |   1 Point      |
 | **Total**                           | **2.0 Points** |
 
-### References (These are not the exercises)
+## References
 
 The following are selected chapters from the ROS2 [Documentation](https://docs.ros.org/en/foxy/index.html) and [Tutorials](https://docs.ros.org/en/foxy/Tutorials.html). If you understand all the concepts covered in these exercises, you will be ready for the exercises of this lab (given below) and most of the ROS-related tasks you will be performing throughout the first few labs.
 
@@ -182,7 +202,7 @@ In this exercise, you will write a listener (subscriber) that listens to the top
 1. Again, take a screenshot of ***rqt_graph*** showing your nodes running, name it `simple_subscriber_rqt.png`, and save it in the same folder as the previous exercise.
 2. Again, push your code, the screenshot, and any supporting files with an appropriate commit message.
 
-## Question 3: Create more Complex Publisher (Python)
+## Question 3: Create More Complex Publisher (Python)
 
 In this exercise, you will write a node that publishes fake laser scan data as specified below.   
 ### Node Specification    
@@ -223,7 +243,7 @@ Note: You should get an error in RViz that says "No tf data. Actual error: Fixed
 - ```rviz/fake_scan_rviz.png```
 - ```rosbag/fake_scan_bag```
 
-## Question 4: Create a more complex Subscriber(Python)
+## Question 4: Create More complex Subscriber (Python)
 Create a node that subscribes to the fake laser scan data and outputs the longest range from the laser scan ranges and its corresponding angle.    
 ### Node Specification    
 **Description:** Subscribes to the fake_scan topic published on by the fake_scan_publisher from the previous exercises, and finds the longest return (the range element with the greatest value) and publishes the corresponding angle and return value or distance.    
@@ -243,7 +263,7 @@ Create a node that subscribes to the fake laser scan data and outputs the longes
 
 Note: Test case #4 and onward will still not pass. You will need to finish Question 5 to pass the next test case.
 
-## Question 5: Create a custom Message and Publish it
+## Question 5: Create a Custom Message and Publish It
 The publisher from the previous exercise was publishing two related pieces of data on two separate topics (***open_space/angle*** and ***open_space/distance***). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data, the same way the LaserScan message type combines multiple pieces of data, and name your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the previous exercise to publish this message type on the topic ***open_space***. Hint: You will need to make a separate package for your custom messages since custom messages require cmake to compile. Don't forget to modify your `CMakeLists.txt` and `package.xml` files.
 
 **Important:** For grading purposes, it is required that your ***angle*** field be specified **BEFORE** your ***distance*** field. When creating your messages, you will be completely in charge of what your message specification looks like, so be aware that this is just a somewhat arbitrary requirement of the auto-grading system.
@@ -251,7 +271,7 @@ The publisher from the previous exercise was publishing two related pieces of da
 ### Commit Specification    
 1. Commit your modified code, config/meta files, and your custom message file as well as any supporting files.
 
-## Question 6: Using launch files
+## Question 6: Using Launch Files
 If you have been running your publisher(s) and subscriber(s) separately using the ros2 run command, there’s a more organized way to run multiple nodes at the same time with one command.
 
 In this exercise, we ask you to write a single launch file called `my_first_launch.launch.xml` containing all 4 python files that you have written thus far.
@@ -259,7 +279,7 @@ In this exercise, we ask you to write a single launch file called `my_first_laun
 ### Commit Specification    
 1. Commit your launch file. It should be inside a directory called `launch` within your package.
 
-## Question 7: Use ROS parameters
+## Question 7: Use ROS Parameters
 When writing the last publisher (***fake_scan_publisher***), you had a couple of variables with default values including angle_min, angle_max, range_min, range_max, etc. With the current setup, if you want to change the value of one of those variables you will have to edit the Python code. For hundreds of lines of code, finding where each of such variables is defined can be tedious. The rosparam server provides a way to set those parameters on the terminal when running your program and in launch or config files. Your task here is to parameterize the following variables from the last two nodes.
 
 **Note:** Your node should be able to start (e.g. via `ros2 run`) even if not all of these parameters have been set. If a parameter has not been set, your node should default to using the values given in the previous question. This [link](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/) may be helpful. This way of falling back to hard-coded defaults can still be useful, especially in cases where a sensible default for a parameter is known and changes would only have to be made rarely.
@@ -279,7 +299,7 @@ When writing the last publisher (***fake_scan_publisher***), you had a couple of
 ### Commit Specification
 1. Commit your modified nodes along with any other important changes.
 
-## Question 8: Playing with bag files
+## Question 8: Playing with Bag Files
 In question 3, we asked you to visualize your laserscan data on RViz and record a bag file. The RViz visualization was probably meaningless and ugly because you’re publishing random data. Don’t be alarmed; real laserscan data is a lot prettier and more informative. Download these [bagfiles](https://www.dropbox.com/scl/fi/z4ln37mh9twxmpzu7obx1/gmapping_data_active_only.zip?rlkey=nxiyhgfo2396acwxoztqbuo4k&dl=0) follow the instructions [here](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html), and visualize the laser scan data on RViz. Try it with multiple coordinate frames.     
 
 **Note**: The provided bag files are from our cars driving around in the basement of Stata Center.
