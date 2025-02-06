@@ -2,7 +2,7 @@
 
 | **Due Date**  | **Wednesday, February 19th at 1:00PM EST**                                 |
 |---------------|----------------------------------------------------------------------------|
-|  **Submission**   | `log.npf` and `ros_exercises.zip` on [Gradescope](https://gradescope.com/) (listed as two separate assignments)|
+|  **Submission**   | `log.npf` and `ros_exercises.zip` on [Gradescope](https://www.gradescope.com/courses/973988) (listed as two separate assignments)|
 
 # Lab 1C: Intro to ROS
 
