@@ -202,8 +202,6 @@ In this exercise, you will write a listener (subscriber) that listens to the top
 ### Question 3: Create More Complex Publisher (Python)
 In this exercise, you will write a node that publishes fake laser scan data as specified below. Additionally, you will publish the length of the `ranges` array of the LaserScan message.
 
->**Note:** ROS is very particular about its message types. Make sure you convert the length of the `ranges` array to a `float` before publishing.
-
 #### Node Specification    
 - **Description:** Publish a [LaserScan](https://docs.ros2.org/latest/api/sensor_msgs/msg/LaserScan.html) message with random ranges between 1.0 and 10.0. Also publish a Float32 message with the length of the `ranges` array.
 - **File name:** fake_scan_publisher.py
@@ -212,6 +210,8 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 - **Message type:** LaserScan, Float32 (respectively)
 - **Subscription topic names:** None   
 - **Publish Rate:** 20hz
+
+>**Note:** ROS is very particular about its message types. Make sure you convert the length of the `ranges` array to a `float` before publishing.
 
 #### LaserScan Topic Specifications
 - **Header:**       
