@@ -38,7 +38,7 @@ Although you're encouraged to collaborate with others if you are stuck, the lab 
 
 ## Submission
 
-You are meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests. Please refer to the next section, **Automated Tests** for instructions on how to run these tests. You will be submitting the resulting `log.npf` file to **Lab 1C: Intro to ROS -- log.npf submission** on Gradescope, in addition to a zip file containing your local repository (`lab1c.zip`) to "Lab 1C: Intro to ROS -- Git repo submission".
+You are meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life. Once you are confident in your answers, your lab will be graded against our automated tests. Please refer to the next section, **Automated Tests** for instructions on how to run these tests. You will be submitting the resulting `log.npf` file to **Lab 1C: Intro to ROS -- log.npf submission** on Gradescope, in addition to a zip file containing your local repository (`lab1c.zip`) to **Lab 1C: Intro to ROS -- Git repo submission**.
 
 The due date is listed at the top of this document.
 
@@ -299,37 +299,32 @@ In question 3, we asked you to visualize your laserscan data on RViz and record 
 
 ### Question 9: TF Exercises
 
-You will need to download [this rosbag](https://www.dropbox.com/scl/fo/xnwygxq1wpaq071pahnt1/h?rlkey=2tyxed357jk8cbbanyjo7dw3m&dl=0); it may take a while.
-
-The rosbag was collected from a robot driving around in a simulated environment. Its `base_link` position in the environment is broadcast to the TF tree in ROS. However, the poses of the sensors onboard the robot are not broadcasted to the TF tree.
-
-Note that instead of `map`, this rosbag uses `world`. Instead of `base_link`, this rosbag uses `base_link_gt`.
+In this question, we will use the `one_loop` bagfile from Question 8. Note that instead of `map`, this rosbag uses `odom`.
 
 #### Part 1: The Hard Way
 
 Begin by developing a ROS node that publishes the correct TF of the left and right cameras to the TF tree. Name this node `dynamic_tf_cam_publisher.py`.
 
-The left camera is located `0.05m` to the left of the `base_link_gt` position, and the right camera is located `0.05m` to the right of the `base_link_gt` position. Both cameras have identity rotation relative to the `base_link_gt` pose. In this case, the right-direction is the positive-x axis.
+The left camera is located `0.05m` to the left of the `base_link` position, and the right camera is located `0.05m` to the right of the `base_link` position. Both cameras have identity rotation relative to the `base_link` pose. In this case, the forward direction is the positive-x axis.
 
-Precompute the relative transforms between the cameras and `base_link_gt` as 4x4 numpy arrays using the above information. Refer to lecture notes for the typical 4x4 formulation.
+Precompute the relative transforms between the cameras and `base_link` as 4x4 numpy arrays using the above information. Refer to lecture notes for the typical 4x4 formulation.
 
 At each time step, your node should:
 
-1. Get the current transform of the robot with respect to `world`. Use the TF tree!
+1. Get the current transform of the robot w.r.t. (with respect to) `odom`. Use the TF tree!
 2. Convert the robot's transform to a 4x4 numpy array.
-3. Compute the current transform of the left camera w.r.t. **world** by composing the precomputed camera-base_link transform with the base_link-world transform.
+3. Compute the current transform of the left camera w.r.t. `odom` by composing the precomputed `base_link->camera` transform with the `odom->base_link` transform.
 4. Compute the current transform of the right camera w.r.t **the left camera** by composing the relevant matrices.
 5. Broadcast the computed transforms for the cameras to the TF tree. The left camera's TF should be broadcast on the `left_cam` frame, and the right camera's TF goes on `right_cam`.
 
 Save a short (~3-5 second) gif of RViz as the rosbag plays with your node running. Make sure we can see the base_link frame and both the left and right camera frames moving around. Name this file `dynamic_node.gif` and save it in the `ros_exercises/rviz` directory of your package.
 
-Take a screenshot of your tf tree in **rqt** using the `tf-tree` plugin. Save it in `ros_exercises/rqt` and name it `dynamic_tf_tree.png`
+Take a screenshot of your tf tree using `ros2 run tf2_tools view_frames.py`. Save the resulting PDF in `ros_exercises/rqt` and name it `dynamic_tf_tree.pdf` (you can delete the `frames.gv` file).
 
-* **Note 1:** Don't worry if the new TF frames are jittery and/or don't follow the `base_link_gt` frame fast enough; this should be fixed in part 2.
+* **Note 1:** Don't worry if the new TF frames are jittery and/or don't follow the `base_link` frame fast enough; this should be fixed in part 2.
 * **Note 2:** You will be doing some transformations in your ROS node. **Use [tf_transformations](https://github.com/DLu/tf_transformations/blob/main/README.md)**, a library that can convert transformations between Euler angles, quaternions, and matrices.
-* **Note 3:** Remember: your `left_cam` transform is defined relative to `world`, and your `right_cam` transform is defined relative to `left_cam`. These require slightly different equations!
-* **Note 4:** You can easily record screen captures using the Kazam package (`sudo apt-get install kazam`) and you can use the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post) or a web-hosted tool to convert to gif.
-* **Note 5:** To use the rqt-tf-tree plug-in, you might need to install a few more ros2 packages. Try installing `ros-foxy-tf2-tools` and `ros-foxy-rqt-tf-tree` and then execute `rqt --clear-config`.
+* **Note 3:** Remember: your `left_cam` transform is defined relative to `odom`, and your `right_cam` transform is defined relative to `left_cam`. These require slightly different equations!
+* **Note 4:** You can easily record screen captures using the Kazam package (`sudo apt-get install kazam`) and you can use the `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post) or a [web-hosted tool](https://new.express.adobe.com/tools/convert-to-gif) to convert to gif.
 
 #### Part 2: The ~~Easy~~ Better Way
 
@@ -361,11 +356,11 @@ See [here](https://answers.ros.org/question/288672/how-use_sim_time-works/) for 
 
 Write a new ROS node called `base_link_tf_pub.py`.
 
-This new node must listen to the transform between `left_cam` and `world` and then broadcast the transform from `world` to `base_link_gt` on a new frame: `base_link_gt_2`. The transform you publish must be computed by composing the transform between `left_cam` and `base_link` with the transform you are listening for. In other words, this **cannot** be a static transform.
+This new node must listen to the transform between `left_cam` and `odom` and then broadcast the transform from `odom` to `base_link` on a new frame: `base_link_2`. The transform you publish must be computed by composing the transform between `left_cam` and `base_link` with the transform you are listening for. In other words, this **cannot** be a static transform.
 
-Add this node to your `static_tf_publisher.launch.xml` file, such that both the static transforms for the two cameras are published when the launch file is executed. You should be able to visualize both `base_link_gt` and `base_link_gt_2` on top of each other in RViz.
+Add this node to your `static_tf_publisher.launch.xml` file, such that both the static transforms for the two cameras are published when the launch file is executed. You should be able to visualize both `base_link` and `base_link_2` on top of each other in RViz.
 
-Save a short gif of RViz again, and make sure you can see both `base_link_gt_2` and `base_link_gt` on top of each other. Name this file `back_to_base_link.gif` and save it in the `ros_exercises/rviz` directory.
+Save a short gif of RViz again, and make sure you can see both `base_link_2` and `base_link` on top of each other. Name this file `back_to_base_link.gif` and save it in the `ros_exercises/rviz` directory.
 
 * **Hint:** Use `numpy.linalg.inv()`!
 
@@ -380,14 +375,14 @@ A running node should be publishing or subscribing to different topics. To check
 ### `ros2 topic echo /topic_name`
 Once you know that a command is being published/subscribed to, you can echo its contents, which can show whether or not any information is being passed across this topic or if you are not sending what you expect.
 
-### `rqt graph`
+### `rqt_graph`
 This is a tool to display graphs of running ROS nodes with connecting topics and package dependencies. Allows you to visualize your entire framework! 
 
 ### **`rviz2`**
 This is a powerful 3D visualization tool for displaying sensor data and state information from ROS. You will be using it more extensively in future labs.
 
-### **`rqt`**
-Includes many handy GUI plugins such as `rqt-tf-tree` that you can install and use to display your ROS transformation (TF) tree. 
+### **`ros2 run tf2_tools view_frames.py`**
+This creates a PDF file with a visualization of your TF tree.
 
 To find more ways to use ```ros2 topic```, type ```ros2 topic --help``` in the command line. There are many other helpful command line tools to help you out too. See [here](https://docs.ros.org/en/foxy/Concepts/About-Command-Line-Tools.html).
 
