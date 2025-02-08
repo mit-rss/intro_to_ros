@@ -125,10 +125,7 @@ Additionally, a useful ROS cheatsheet can be found [here](https://github.com/Mic
 	a. rqt   
 		- [rqt](https://docs.ros.org/en/foxy/Concepts/About-RQt.html)   
 		- [rqt_graph](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#rqt-graph)   
-	b. RViz (most features are ported over from ROS 1)  
-		- [User Guide](https://github.com/ros2/rviz) and [original](http://wiki.ros.org/rviz/UserGuide)   
-		- [Interactive Markers](http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers%3A%20Getting%20Started)   
-		- [Tutorials](http://wiki.ros.org/rviz/Tutorials)   
+	b. [RViz](https://docs.ros.org/en/humble/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html)
 
 8. [TF2](https://docs.ros.org/en/foxy/Tutorials/Intermediate/Tf2/Tf2-Main.html)   
 9. [Rosbag](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)  
