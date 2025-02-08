@@ -131,8 +131,7 @@ Additionally, a useful ROS cheatsheet can be found [here](https://github.com/Mic
 		- [Tutorials](http://wiki.ros.org/rviz/Tutorials)   
 
 8. [TF2](https://docs.ros.org/en/foxy/Tutorials/Intermediate/Tf2/Tf2-Main.html)   
-9. Rosbag   
-	a. [Rosbag](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)  
+9. [Rosbag](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)  
 
 **Note:** Some useful debugging hints are provided at the end of this document.
 
