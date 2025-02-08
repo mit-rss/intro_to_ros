@@ -243,7 +243,7 @@ Create a node that subscribes to the fake laser scan data and outputs the longes
 - **Description:** Subscribes to the fake_scan topic published on by the fake_scan_publisher from the previous exercises, and finds the longest return (the range element with the greatest value) and publishes the corresponding angle and return value or distance.
 - **File name:** open_space_publisher.py
 - **Node Name:** open_space_publisher
-- **Published topic names:** open_space/distance and open_space/angle
+- **Published topic names:** `open_space/distance` and `open_space/angle`
 - **Message type:** Float32
 - **Subscription topic names:** fake_scan
 
