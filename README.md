@@ -75,9 +75,9 @@ This table shows how the different tasks will be graded by the automated grader.
 | Simple Publisher        |      0.5 points   |
 | Simple Subscriber       |      0.5 Points   |
 | Complex Publisher       |      0.5 Points   |
-| Complex Subscriber      |      1.0 Points   |
+| Complex Subscriber      |      0.5 Points   |
 | Launch File             |      0.5 Points   |
-| **Total**               |   **3.0 Points**  |
+| **Total**               |   **2.5 Points**  |
 
 
 
@@ -93,12 +93,12 @@ This table shows the grading breakdown of the manually graded portion of the lab
 | Simple Publisher RQT Screenshot     | 0.1 Points     |
 | Simple Subscriber RQT screenshot    | 0.1 Points     |
 | Fake Scan RViz ScreenShot           | 0.1 Points     |
-| Open Space Publisher RQT Screenshot | 0.2 Points     |
-| Custom Message file inspection      | 0.2 Points     |
+| Open Space Publisher RQT Screenshot | 0.1 Points     |
+| Custom Message file inspection      | 0.1 Points     |
 | Launch file inspection              | 0.1 Points     |
-| Setting  ROS parameters	          | 0.2 Points     |
-| TF Exercises                        |   1 Point      |
-| **Total**                           | **2.0 Points** |
+| Setting  ROS parameters	      | 0.1 Points     |
+| TF Exercises                        | 0.8 Points     |
+| **Total**                           | **1.5 Points** |
 
 ## References
 
