@@ -83,7 +83,7 @@ This table shows how the different tasks will be graded by the automated grader.
 
 ### Manual Grading Portion
 
-If you have completed all parts, you should receive a score of 3.0/5.0 on Gradescope. The rest of your score (2.0 points) will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be available on your GitHub account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**. Make sure that your zip file does not contain large folders or files that are not part of the assignments (the **.git** folder should not be zipped) since large zip files will probably get rejected by Gradescope. 
+If you have completed all parts, you should receive a score of 2.5/4.0 on Gradescope. The rest of your score will be a manual grading of your package ``ros_exercises`` by the staff of your git repository, which should be available on your GitHub account. Submit a zip file of your repository to the Gradescope assignment **Lab 1C: Intro to ROS -- Git repo submission**. Make sure that your zip file does not contain large folders or files that are not part of the assignments (the **.git** folder should not be zipped) since large zip files will probably get rejected by Gradescope. 
 
 
 ### Manual Grade Breakdown
