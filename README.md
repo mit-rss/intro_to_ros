@@ -236,7 +236,7 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 - `rviz/fake_scan_rviz.png`
 - `rosbag/fake_scan_bag/`
 
-### Question 4: Create More complex Subscriber (Python)
+### Question 4: Create More Complex Subscriber (Python)
 Create a node that subscribes to the fake laser scan data and outputs the longest range from the laser scan ranges and its corresponding angle.
 
 #### Node Specification
