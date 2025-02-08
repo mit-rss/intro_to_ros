@@ -27,6 +27,7 @@
 	* [Question 8: Playing with Bag Files](https://github.com/mit-rss/intro_to_ros#question-8-playing-with-bag-files)
 	* [Question 9: TF Exercises](https://github.com/mit-rss/intro_to_ros#question-9-tf-exercises)
 * [Debugging Hints](https://github.com/mit-rss/intro_to_ros#debugging-hints)
+* [Frequently Used Instructions](https://github.com/mit-rss/frequently_used_instructions)
 
 ## Introduction
 
