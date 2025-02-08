@@ -228,7 +228,7 @@ In this exercise, you will write a node that publishes fake laser scan data as s
 - **Intensities:** Leave it unset if you wish
 
 #### Commit Specification   
-1. When your node works properly, visualize the published laser scan data using RViz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`. If you can't see anything in `rviz` it's probably because you're publishing your laser scan message with the header `base_link` but rviz is visualizing relative to the frame `map`. In the panel on the left, under global options change `frame: map` to `frame: base_link`.
+1. When your node works properly, visualize the published laser scan data using RViz. Take a screenshot of your visualized laser scan data and name it `fake_scan_rviz.png`. Save the image in `ros_exercises/rviz`. If you can't see anything in `rviz` it's probably because you're publishing your laser scan message with the header `base_link` but rviz is visualizing relative to the frame `map`. In the panel on the left, under global options change `Fixed Frame: map` to `Fixed Frame: base_link`.
 2. Record a ~10-second [bag](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html) file of your laser scan data and call the file `fake_scan_bag`, save it in `ros_exercises/rosbag`.
 3. Again, push your code, bag file, screenshot, and any supporting files with an appropriate commit message.
 
@@ -305,7 +305,7 @@ In this question, we will use the `one_loop` bagfile from Question 8. Note that 
 
 Begin by developing a ROS node that publishes the correct TF of the left and right cameras to the TF tree. Name this node `dynamic_tf_cam_publisher.py`.
 
-The left camera is located `0.05m` to the left of the `base_link` position, and the right camera is located `0.05m` to the right of the `base_link` position. Both cameras have identity rotation relative to the `base_link` pose. In this case, the forward direction is the positive-x axis.
+The left camera is located `0.05m` to the left of the `base_link` position, and the right camera is located `0.05m` to the right of the `base_link` position. Both cameras have identity rotation relative to the `base_link` pose. In this case, the "forward" direction is the positive-x axis, and the "left" direction is the positive-y axis.
 
 Precompute the relative transforms between the cameras and `base_link` as 4x4 numpy arrays using the above information. Refer to lecture notes for the typical 4x4 formulation.
 
@@ -317,7 +317,9 @@ At each time step, your node should:
 4. Compute the current transform of the right camera w.r.t **the left camera** by composing the relevant matrices.
 5. Broadcast the computed transforms for the cameras to the TF tree. The left camera's TF should be broadcast on the `left_cam` frame, and the right camera's TF goes on `right_cam`.
 
-Save a short (~3-5 second) gif of RViz as the rosbag plays with your node running. Make sure we can see the base_link frame and both the left and right camera frames moving around. Name this file `dynamic_node.gif` and save it in the `ros_exercises/rviz` directory of your package.
+Save a short (~3-5 second) gif of RViz as the rosbag plays with your node running. Since this bagfile uses the `odom` frame, you need to click the panel on the left and under global options, change `Fixed Frame: map` to `Fixed Frame: odom`.
+This changes the "origin" of the RViz grid to the `odom` frame instead of the `map` frame which doesn't exist in this bagfile. Additionally, make sure we can see the `base_link` frame and both the left and right camera frames moving around
+by clicking `Add -> By display type -> TF`. Finally, we can make the camera follow `base_link` by changing `Target Frame: <Fixed Frame>` to `Target Frame: base_link` on the right panel. Name this gif `dynamic_node.gif` and save it in the `ros_exercises/rviz` directory of your package.
 
 Take a screenshot of your tf tree using `ros2 run tf2_tools view_frames.py`. Save the resulting PDF in `ros_exercises/rqt` and name it `dynamic_tf_tree.pdf` (you can delete the `frames.gv` file).
 
@@ -330,27 +332,14 @@ Take a screenshot of your tf tree using `ros2 run tf2_tools view_frames.py`. Sav
 
 #### 2a: ROS Node
 
-Write a ROS node that publishes the relative pose between each camera and the robot as a **static transform**. It should only broadcast the transform once. Name this node `static_tf_cam_publisher.py`. Make sure to use `tf2_ros`.
+Write a ROS node that publishes the relative pose between each camera and the robot as a **static transform**. The static transforms to broadcast are `base_link->left_cam` and `left_cam->right_cam`.
+The node should only broadcast each transform once. Name this node `static_tf_cam_publisher.py`.
 
 Save a short (~3-5 seconds) gif of RViz just as in part 1, but with your `static_tf_cam_publisher.py` node running. Name this file `static_node.gif` and save it in the `ros_exercises/rviz` directory of your package. This should look much smoother than in part 1.
 
 #### 2b: Launch File
 
-Additionally, write a roslaunch file that automatically publishes the two transforms. Name this launch file `static_tf_publisher.launch.xml` and save it in the `ros_exercises/launch` directory of your package.
-
-If you're getting an "extrapolation into the future" error, add this to your launch file:
-
-```
-<param name="use_sim_time" value="true"/>
-```
-
-And make sure you're running the rosbag with the `/clock` topic published like so:
-
-```
-ros2 bag play tesse_no_statics_2 --clock
-```
-
-See [here](https://answers.ros.org/question/288672/how-use_sim_time-works/) for more information.
+Write a roslaunch file that runs `static_tf_cam_publisher.py`. Name this launch file `static_tf_publisher.launch.xml` and save it in the `ros_exercises/launch` directory of your package.
 
 #### Part 3: Back to `base_link`
 
