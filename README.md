@@ -56,9 +56,11 @@ Then make the binary executable with `chmod`
 chmod +x run_tests_*
 ```
 
-Finally, run the following in a new terminal to begin testing:
+Finally, run the following in a new terminal to begin testing (**REMEMBER TO SOURCE WORKSPACE WHEN RUNNING TESTER**):
 
 ```
+cd ~/racecar_ws
+source install/setup.bash
 cd ~/racecar_ws/src/lab1c/ros_exercises/
 ./run_tests_*
 ```
