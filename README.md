@@ -137,7 +137,8 @@ The racecar docker image already has a workspace installed called `racecar_ws`.
 
 If you are not using docker to run ROS (e.g. using a virtual machine or a manual install), make sure to create your own workspace.
 
-Inside your workspace, create a new PYTHON BASED (not C++ based) package (this means that the keyword **ament_python** will be in the command to create the package), named `ros_exercises/`, which should depend on `rclpy`, `std_msgs`, and `sensor_msgs`. Your package (`ros_exercises`) should live in the `~/racecar_ws/src/lab1c/` directory. Make `lab1c` a git repo, and have it track `ros_exercises` and `custom_msgs` (later on). After creating the workspace and the package, you should have the following directory layout.
+
+Inside your workspace, first create a folder inside /src named lab1c. Inside this new folder (lab1c) create a new PYTHON BASED (not C++ based) package (this means that the keyword **ament_python** will be in the command to create the package), named `ros_exercises/`, which should depend on `rclpy`, `std_msgs`, and `sensor_msgs`. Your package (`ros_exercises`) should live in the `~/racecar_ws/src/lab1c/` directory. Make `lab1c` a git repo, and have it track `ros_exercises` and `custom_msgs` (later on). After creating the workspace and the package, you should have the following directory layout.
 
 ```
 ~/racecar_ws (your colcon workspace)
