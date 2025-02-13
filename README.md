@@ -274,7 +274,7 @@ When writing the last publisher (`fake_scan_publisher`), you had a couple of var
 **Note:** Your node should be able to start (e.g. via `ros2 run`) even if not all of these parameters have been set. If a parameter has not been set, your node should default to using the values given in the previous question. This [link](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/) may be helpful. This way of falling back to hard-coded defaults can still be useful, especially in cases where a sensible default for a parameter is known and changes would only have to be made rarely.
 
 1. Fake Scan Publisher     
-	* Publish topic      
+	* `fake_scan` topic      
 	* Publish rate      
 	* Angle_min     
 	* Angle_max     
