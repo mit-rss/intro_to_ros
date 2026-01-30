@@ -371,7 +371,7 @@ we can see the `base_link` frame and both the left and right camera frames movin
 Finally, we can make the camera follow `base_link` by changing `Target Frame: <Fixed Frame>` to `Target Frame: base_link` on the right
 panel. Upload this GIF and `dynamic_tf_cam_publisher.py` to Gradescope.
 
-Take a screenshot of your tf tree using `ros2 run tf2_tools view_frames`. Save and upload the resulting PDF to Gradescope.
+Take a screenshot of your tf tree using `ros2 run tf2_tools view_frames`. Save and upload a screenshot of the resulting PDF to Gradescope.
 
 * **Note 1:** Don't worry if the new TF frames are jittery and/or don't follow the `base_link` frame fast enough; this should be fixed in part 2.
 * **Note 2:** You will be doing some transformations in your ROS node.
