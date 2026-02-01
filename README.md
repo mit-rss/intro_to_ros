@@ -46,7 +46,7 @@ about your individual submission, please make a private post.
 You are meant to complete this lab by testing your code and verifying the results on your own, as you would do in real life.
 Once you are confident in your answers, your lab will be graded against our automated tests. Please refer to the next section,
 **Automated Tests** for instructions on how to run these tests. You will be submitting the resulting `log.npf` file to
-**Lab 1C: Intro to ROS -- log.npf submission** on Gradescope, in addition to your code, screenshot, and videos to
+**Lab 1C: Intro to ROS -- log.npf submission** on Gradescope in addition to your code, screenshot, and videos to
 **Lab 1C: Intro to ROS -- Manual grader**.
 
 ### Automated Tests 
@@ -123,8 +123,8 @@ ready for the exercises of this lab and most of the ROS-related tasks you will b
 
 Additionally, a useful ROS2 cheatsheet can be found [here](https://github.com/Micropolisdxb/ROS2-Documentation/blob/main/ros2_cheat_sheet.md).
 
-**Note:** This class uses ROS2 **Humble** with colcon. Be careful when searching online: much of the available documentation
-is for the deprecated ROS1 system, which uses different commands and concepts. Always verify you're reading ROS2 Humble documentation.
+> This class uses ROS2 **Humble** with colcon. Be careful when searching online: much of the available documentation
+> is for the deprecated ROS1 system, which uses different commands and concepts. Always verify you're reading ROS2 Humble documentation.
  
 1. Packages   
     a. [Managing a colcon workspace](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html)
@@ -182,7 +182,7 @@ delete the auto-generated `install`, `log` and `build` directories. Additionally
 
 ```
 source install/setup.bash
-```    
+```
 
 ### Question 1: Create a Simple Publisher (Python)
 
@@ -218,11 +218,12 @@ The new node takes the natural log of the message in the `my_random_float` topic
 - **Message type:** Float32
 - **Subscription topic names:** `my_random_float`
 
-Take a screenshot of **rqt_graph** showing your nodes running, and upload it to Gradescope.
+Take a screenshot of **rqt_graph** showing your nodes running. On rqt_graph, select `Nodes/Topics (all)` on the top-left to view both
+nodes and topics, and uncheck the hide `Dead sinks` and `Leaf topics` options. Upload the screenshot to Gradescope.
 
 ### Question 3: Create a More Complex Publisher (Python)
 
-In this exercise, you will write a node that publishes fake laser scan data as specified below. Additionally, you will publish the
+In this exercise, you will write a node that publishes fake LaserScan data as specified below. Additionally, you will publish the
 length of the `ranges` array of the LaserScan message.
 
 #### Node Specification
@@ -236,7 +237,7 @@ length of the `ranges` array of the LaserScan message.
 - **Subscription topic names:** None
 - **Publish Rate:** 20hz
 
-> **Note:** ROS is very particular about its message types. Make sure you convert the length of the `ranges` array to a `float` before publishing.
+> ROS is very particular about its message types. Make sure you convert the length of the `ranges` array to a `float` before publishing.
 
 #### LaserScan Topic Specifications
 
@@ -254,19 +255,16 @@ length of the `ranges` array of the LaserScan message.
     and `angle_increment` to determine the length. Be careful of an off-by-1 error! There should be an element **at** `angle_min` and `angle_max`.
 - **Intensities:** Leave it unset if you wish
 
-When your node works properly, visualize the published laser scan data using RViz. Take a screenshot of your visualized laser scan data
+When your node works properly, visualize the published LaserScan data using RViz. Take a screenshot of your visualized LaserScan data
 and upload it to Gradescope.
 
-> If you can't see anything in RViz, it's probably because you're publishing your laser scan message with the header `base_link`
+> If you can't see anything in RViz, it's probably because you're publishing your LaserScan message with the header `base_link`
 > but RViz is visualizing relative to the `map` frame. In the panel on the left, under global options, change `Fixed Frame: map`
 > to `Fixed Frame: base_link`.
 
-Record a ~10 second [rosbag](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
-of your LaserScan data, name it `fake_scan_bag`, and save it in `ros_exercises/rosbag`.
-
 ### Question 4: Create a More Complex Subscriber (Python)
 
-Create a node that subscribes to the fake laser scan data and outputs the longest range from the laser scan ranges and its corresponding angle.
+Create a node that subscribes to the fake LaserScan data and outputs the longest range from the LaserScan ranges and its corresponding angle.
 
 #### Node Specification
 
@@ -278,19 +276,18 @@ Create a node that subscribes to the fake laser scan data and outputs the longes
 - **Message type:** Float32
 - **Subscription topic names:** `fake_scan`
 
-Take a screenshot of **rqt_graph** showing your nodes running and upload it to Gradescope.
-
-> **Note:** Test case #4 and onward will still not pass. You will need to finish Question 5 to pass the next test case.
-
 ### Question 5: Create a Custom Message and Publish It
 
-The publisher from the previous exercise was publishing two related pieces of data on two separate topics (`open_space/angle`
-and `open_space/distance`). In this exercise, we ask you to create a custom message that encapsulates the two pieces of data,
-the same way the LaserScan message type combines multiple pieces of data. Create a new `custom_msgs` CMake package containing
-your custom message file `OpenSpace.msg`. After creating and compiling your custom message, modify the publisher from the
-previous exercise to publish this message type on the topic `open_space`.
+In the previous exercise, the publisher sent two related data points on separate topics: `open_space/angle` and `open_space/distance`.
+For this exercise, you'll create a custom message that bundles both pieces of data together, similar to how the LaserScan message type
+consolidates multiple data fields. Start by creating a new CMake package called `custom_msgs` that contains your custom message file
+`OpenSpace.msg`. `OpenSpace.msg` should include two Float32 fields: `angle` and `distance`. Once you've created and compiled this custom
+message, update the publisher from the previous exercise to publish this new message type on a single topic called `open_space`,
+replacing the two separate topic publications.
 
-Upload `OpenSpace.msg` to Gradescope.
+Take a screenshot of **rqt_graph** showing both `fake_scan_publisher.py` and `open_space_publisher.py`
+running. Again, select `Nodes/Topics (all)` to view both nodes and topics, and uncheck the hide `Dead sinks` and
+`Leaf topics` options. Upload the screenshot and `OpenSpace.msg` to Gradescope.
 
 ### Question 6: Using Launch Files
 
@@ -303,16 +300,16 @@ you have written thus far. Once completed, upload `my_first_launch.launch.xml` t
 ### Question 7: Use ROS Parameters
 
 When writing the last publisher (`fake_scan_publisher`), you had a couple of variables with default values including `angle_min`,
-`angle_max`, `range_min`, `range_max`, etc. With the current setup, if you want to change the value of one of those variables,
+`angle_max`, `range_min`, `range_max`, and `angle_increment`. With the current setup, if you want to change the value of one of those variables,
 you will have to edit the Python code. For hundreds of lines of code, finding where each of such variables is defined can be tedious.
 The rosparam server provides a way to set those parameters in the terminal, in launch files, and/or in config files. Your task
-here is to parameterize the following variables from the last two nodes.
+here is to parameterize the following variables from the last two nodes:
 
-**Note:** Your node should be able to start (e.g. via `ros2 run`) even if not all of these parameters have been set.
-If a parameter has not been set, your node should default to using the values given in the previous question.
-This [link](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/) may be helpful.
-This way of falling back to hard-coded defaults can still be useful, especially in cases where a sensible default for
-a parameter is known and changes would only have to be made rarely.
+> Your node should be able to start (e.g. via `ros2 run`) even if not all of these parameters have been set.
+> If a parameter has not been set, your node should default to using the values given in the previous question.
+> This [link](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/) may be helpful.
+> This way of falling back to hard-coded defaults can still be useful, especially in cases where a sensible default for
+> a parameter is known and changes would only have to be made rarely.
 
 1. Fake Scan Publisher
 	* Publish rate
@@ -330,13 +327,13 @@ Upload `fake_scan_publisher.py` to Gradescope.
 
 ### Question 8: Playing with Bag Files
 
-In question 3, we asked you to visualize your LaserScan data on RViz and record a bag file. The RViz visualization was probably meaningless
-and ugly because you’re publishing random data. Don’t be alarmed; real LaserScan data is a lot prettier and more informative. Download these
+In Question 3, we asked you to visualize your LaserScan data on RViz. The RViz visualization was probably meaningless and ugly because
+you were publishing random data. Don't be alarmed; real LaserScan data is a lot prettier and more informative. Download these
 [bagfiles](https://www.dropbox.com/scl/fi/z4ln37mh9twxmpzu7obx1/gmapping_data_active_only.zip?rlkey=nxiyhgfo2396acwxoztqbuo4k&dl=0), follow the
 instructions [here](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html),
 and visualize the LaserScan data on RViz. Try it with multiple coordinate frames.
 
-> **Note**: The provided bag files are from our cars driving around in the basement of Stata Center.
+> The provided bag files are from our cars driving around in the basement of Stata Center.
 
 ### Question 9: TF Exercises
 
@@ -352,7 +349,7 @@ the `base_link` position. Both cameras have identity rotation relative to the `b
 is the positive-x axis, and the "left" direction is the positive-y axis.
 
 Precompute the relative transforms between the cameras and `base_link` as 4x4 numpy arrays using the above information. Refer to
-lecture notes for the typical 4x4 formulation.
+the lecture notes for the typical 4x4 formulation.
 
 At each time step, your node should:
 
@@ -367,16 +364,16 @@ At each time step, your node should:
 Save a short (~4 seconds) GIF of RViz as the rosbag plays with your node running. Since this bagfile uses the `odom` frame, you
 need to click the panel on the left and under global options, change `Fixed Frame: map` to `Fixed Frame: odom`. This changes the
 "origin" of the RViz grid to the `odom` frame instead of the `map` frame (which doesn't exist in this bagfile). Additionally, make sure
-we can see the `base_link` frame and both the left and right camera frames moving around by clicking `Add -> By display type -> TF`.
-Finally, we can make the camera follow `base_link` by changing `Target Frame: <Fixed Frame>` to `Target Frame: base_link` on the right
-panel. Upload this GIF and `dynamic_tf_cam_publisher.py` to Gradescope.
+we can see the `base_link` frame and both the left and right camera frames moving around by clicking `Add -> By display type -> TF`,
+and make the camera follow `base_link` by changing `Target Frame: <Fixed Frame>` to `Target Frame: base_link` on the right panel.
 
-Take a screenshot of your tf tree using `ros2 run tf2_tools view_frames`. Save and upload a screenshot of the resulting PDF to Gradescope.
+Lastly, generate a PDF of your TF tree using `ros2 run tf2_tools view_frames`. Save and upload the GIF, PDF, and
+`dynamic_tf_cam_publisher.py` to Gradescope.
 
 * **Note 1:** Don't worry if the new TF frames are jittery and/or don't follow the `base_link` frame fast enough; this should be fixed in part 2.
-* **Note 2:** You will be doing some transformations in your ROS node.
-    **Use [tf_transformations](https://github.com/DLu/tf_transformations/blob/main/README.md)**, a library that can
-    convert transformations between Euler angles, quaternions, and matrices.
+* **Note 2:** You will be doing some transformations in your ROS node. You may find
+    [SciPy](https://docs.scipy.org/doc/scipy/reference/spatial.transform.html#module-scipy.spatial.transform)
+    spatial transforms to be useful.
 * **Note 3:** Remember: your `left_cam` transform is defined relative to `odom`, and your `right_cam` transform is defined relative to
     `left_cam`. These require slightly different equations!
 * **Note 4:** You can easily record screen captures using the Kazam package (`sudo apt-get install kazam`) and you can use the
@@ -390,19 +387,22 @@ Take a screenshot of your tf tree using `ros2 run tf2_tools view_frames`. Save a
     once. Name this node `static_tf_cam_publisher.py`.
 2. Write a ROS launch file that runs `static_tf_cam_publisher.py`. Name this launch file `static_tf_publisher.launch.xml`.
 
+> Do NOT call `sendTransform` multiple times when broadcasting multiple static transforms. Instead, pass all of them as a list to a
+> single `sendTransform` call.
+
 Save a short (~4 seconds) GIF of RViz just as in part 1, but with your `static_tf_cam_publisher.py` node running. This should
 look much smoother than in part 1. Upload the GIF and `static_tf_cam_publisher.py` to Gradescope.
 
 #### Part 3: Back to `base_link`
 
-Write a new ROS node called `base_link_tf_pub.py`.
+Write a new ROS node called `base_link_tf_pub.py`. This new node must listen to the transform between `left_cam` and `odom` and
+then broadcast the transform from `odom` to `base_link` on a new frame: `base_link_2`. The transform you publish must be computed by
+composing the transform between `left_cam` and `base_link` with the transform you are listening for. In other words, this **cannot**
+be a static transform.
 
-This new node must listen to the transform between `left_cam` and `odom` and then broadcast the transform from `odom` to
-`base_link` on a new frame: `base_link_2`. The transform you publish must be computed by composing the transform between
-`left_cam` and `base_link` with the transform you are listening for. In other words, this **cannot** be a static transform.
-
-Add this node to your `static_tf_publisher.launch.xml` file, such that both the static transforms for the two cameras are published
-when the launch file is executed. You should be able to visualize both `base_link` and `base_link_2` on top of each other in RViz.
+Add this node to your `static_tf_publisher.launch.xml` file, such that both the static transforms for the two cameras and
+`base_link_2` are broadcasted when the launch file is executed. You should be able to visualize both `base_link` and `base_link_2`
+on top of each other in RViz.
 
 Save a short GIF of RViz again, and make sure you can see both `base_link_2` and `base_link` on top of each other.
 Upload the GIF, `static_tf_publisher.launch.xml`, and `base_link_tf_pub.py` to Gradescope.
