@@ -55,30 +55,17 @@ You can download the test binary to check your solutions locally by going to the
 and downloading the `run_tests` binary. **Run this autograder AFTER you have completed questions 1-6**. Most people will probably need to use
 the `amd64` version, but if you have an Apple Silicon chip, you'll need to use the `arm64` version.
 
-Place the binary in your `ros_exercises` folder:
-
-```
-mv run_tests_* ~/racecar_ws/src/lab1c/ros_exercises/
-```
-
-Then, make the binary executable with `chmod`
-
+Once you download the test binary, make it executable with `chmod`:
 ```
 chmod +x run_tests_*
 ```
 
-Finally, run the following in a new terminal to begin testing. **Remember to source your workspace when running the tester**!:
-
+Finally, run the following in a new terminal to begin testing:
 ```
-cd ~/racecar_ws
-source install/setup.bash
-cd ~/racecar_ws/src/lab1c/ros_exercises/
 ./run_tests_*
 ```
 
-You should be graded on the completion of 6 tests. Be careful with naming the various files defined in the handout correctly or
-else you won't be graded properly. Also, be sure to `cd` into `ros_exercises` before running the tests, or the automated tests may
-use the wrong paths to each of the files it checks for. Once you are happy with your score, submit the resulting `log.npf` file
+You should be graded on the completion of 6 tests. Once you are happy with your score, submit the resulting `log.npf` file
 to **Lab 1C: Intro to ROS -- log.npf submission** on Gradescope.
 
 ### Automatic Grade Breakdown
