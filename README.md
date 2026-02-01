@@ -305,12 +305,6 @@ you will have to edit the Python code. For hundreds of lines of code, finding wh
 The rosparam server provides a way to set those parameters in the terminal, in launch files, and/or in config files. Your task
 here is to parameterize the following variables from the last two nodes:
 
-> Your node should be able to start (e.g. via `ros2 run`) even if not all of these parameters have been set.
-> If a parameter has not been set, your node should default to using the values given in the previous question.
-> This [link](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/) may be helpful.
-> This way of falling back to hard-coded defaults can still be useful, especially in cases where a sensible default for
-> a parameter is known and changes would only have to be made rarely.
-
 1. Fake Scan Publisher
 	* Publish rate
 	* `fake_scan` topic
@@ -322,6 +316,12 @@ here is to parameterize the following variables from the last two nodes:
 2. Open Space Publisher
 	* Subscriber topic
 	* Publisher topic
+
+Your node should be able to start (e.g. via `ros2 run`) even if not all of these parameters have been set.
+If a parameter has not been set, your node should default to using the values given in the previous question.
+This [link](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/) may be helpful.
+This way of falling back to hard-coded defaults can still be useful, especially in cases where a sensible default for
+a parameter is known and changes would only have to be made rarely.
 
 Upload `fake_scan_publisher.py` to Gradescope.
 
