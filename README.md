@@ -205,7 +205,7 @@ The new node takes the natural log of the message in the `my_random_float` topic
 - **Subscription topic names:** `my_random_float`
 
 Let's run both the subscriber and the publisher at the same time using `tmuxp`! Create a YAML tmux configuration file named
-`simple_pubsub_tmux.yaml`. Running `tmuxp load simple_pubsub_tmux.yaml` launches a tmux session with the following structure:
+`simple_pubsub_tmux.yaml`. Running `tmuxp load simple_pubsub_tmux.yaml` should launch a tmux session with the following structure:
 
 - **Session name:** `rss_lab1c`
 - **Window name:** `simple_pubsub`
