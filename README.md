@@ -1,7 +1,7 @@
-| Deliverable                                                                                           | Due Date                               |
-|-------------------------------------------------------------------------------------------------------|----------------------------------------|
-| `log.npf` [Gradescope Submission](https://www.gradescope.com/courses/1227626/assignments/7471281)     | Wednesday, February 18th at 1:00PM EST |
-| Manual grader [Gradescope Submission](https://www.gradescope.com/courses/1227626/assignments/7574354) | Wednesday, February 18th at 1:00PM EST |
+| Deliverable                                                                                           | Due Date                             |
+|-------------------------------------------------------------------------------------------------------|--------------------------------------|
+| `log.npf` [Gradescope Submission](https://www.gradescope.com/courses/1227626/assignments/7471281)     | Tuesday, February 17th at 1:00PM EST |
+| Manual grader [Gradescope Submission](https://www.gradescope.com/courses/1227626/assignments/7574354) | Tuesday, February 17th at 1:00PM EST |
 
 # Lab 1C: Intro to ROS
 
@@ -72,14 +72,15 @@ to **Lab 1C: Intro to ROS -- log.npf submission** on Gradescope.
 
 This table shows how the different tasks will be graded by the automated grader.
 
-| Task               | Grade          |
-|--------------------|----------------|
-| Simple Publisher   | 0.5 points     |
-| Simple Subscriber  | 0.5 Points     |
-| Complex Publisher  | 0.5 Points     |
-| Complex Subscriber | 0.5 Points     |
-| Launch File        | 0.5 Points     |
-| **Total**          | **2.5 Points** |
+| Task                                   | Grade          |
+|----------------------------------------|----------------|
+| Create a Simple Publisher              | 0.5 points     |
+| Create a Simple Subscriber             | 0.5 Points     |
+| Create a More Complex Publisher        | 0.5 Points     |
+| Create a More Complex Subscriber       | 0.5 Points     |
+| Create a Custom Message and Publish It | 0.5 Points     |
+| Using Launch Files                     | 0.5 Points     |
+| **Total**                              | **3.0 Points** |
 
 ### Manual Grading Portion
 
@@ -90,17 +91,17 @@ Throughout the exercises, submit your screenshots, videos, and code to the Grade
 
 This table shows the grading breakdown of the manually graded portion of the lab.
 
-| Task                                | Grade          |
-|-------------------------------------|----------------|
-| Simple Publisher RQT Screenshot     | 0.1 Points     |
-| Simple Subscriber RQT Screenshot    | 0.1 Points     |
-| Fake Scan RViz Screenshot           | 0.1 Points     |
-| Open Space Publisher RQT Screenshot | 0.1 Points     |
-| Custom Message file inspection      | 0.1 Points     |
-| Launch file inspection              | 0.1 Points     |
-| Setting ROS parameters	          | 0.1 Points     |
-| TF Exercises                        | 0.8 Points     |
-| **Total**                           | **1.5 Points** |
+| Task                                   | Grade          |
+|----------------------------------------|----------------|
+| Create a Simple Publisher              | 0.1 Points     |
+| Create a Simple Subscriber             | 0.4 Points     |
+| Create a More Complex Publisher        | 0.2 Points     |
+| Create a Custom Message and Publish It | 0.2 Points     |
+| Using Launch Files                     | 0.3 Points     |
+| Use ROS Parameters                     | 0.3 Points     |
+| Playing with Bag Files                 | 0.3 Points     |
+| TF Exercises                           | 3.2 Points     |
+| **Total**                              | **5.0 Points** |
 
 ## References
 
@@ -113,24 +114,24 @@ Additionally, a useful ROS2 cheatsheet can be found [here](https://github.com/Mi
 > This class uses ROS2 **Humble** with colcon. Be careful when searching online: much of the available documentation
 > is for the deprecated ROS1 system, which uses different commands and concepts. Always verify you're reading ROS2 Humble documentation.
  
-1. Packages   
+1. Packages
     a. [Managing a colcon workspace](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html)
     b. [Create a ROS Python package](https://docs.ros.org/en/humble/How-To-Guides/Developing-a-ROS-2-Package.html#python-packages)
-2. Messages   
-    a. [ROS messages](https://docs.ros.org/en/humble/Concepts/About-ROS-Interfaces.html)   
-    b. [Creating custom messages](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)    
-    c. [Common ROS message categories](https://github.com/ros2/common_interfaces)   
-3. [Topics](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)  
-4. Nodes   
-    a. [ROS nodes](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)   
-    b. [Writing publishers and subscribers (Python)](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html )   
-5. Launch Files    
-    a. [ROS launch](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Launch-Main.html)   
-    b. [Launch system](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Launch-system.html)  
-6. [Parameters](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Parameters/Understanding-ROS2-Parameters.html)   
-7. Visualization Tools 	  
-    a. [rqt](https://docs.ros.org/en/humble/Concepts/About-RQt.html)   
-    b. [rqt_graph](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#rqt-graph)   
+2. Messages
+    a. [ROS messages](https://docs.ros.org/en/humble/Concepts/About-ROS-Interfaces.html)
+    b. [Creating custom messages](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)
+    c. [Common ROS message categories](https://github.com/ros2/common_interfaces)
+3. [Topics](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)
+4. Nodes
+    a. [ROS nodes](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)
+    b. [Writing publishers and subscribers (Python)](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)
+5. Launch Files
+    a. [ROS launch](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Launch-Main.html)
+    b. [Launch system](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Launch-system.html)
+6. [Parameters](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Parameters/Understanding-ROS2-Parameters.html)
+7. Visualization Tools
+    a. [rqt](https://docs.ros.org/en/humble/Concepts/About-RQt.html)
+    b. [rqt_graph](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#rqt-graph)
     c. [RViz](https://docs.ros.org/en/humble/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html)
 8. [TF2](https://docs.ros.org/en/humble/Tutorials/Intermediate/Tf2/Tf2-Main.html)
 9. [Rosbag](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
@@ -186,7 +187,7 @@ will reside inside of the `ros_exercises/ros_exercises/` folder (i.e. inside the
 - **Subscription topic names:** None
 - **Publish rate:** 20hz
 
-When your node works properly, run it (remember to update your `setup.py`, `colcon build --symlnk-install`, and `source install/setup.bash`),
+When your node works properly, run it (remember to update your `setup.py`, `colcon build --symlink-install`, and `source install/setup.bash`),
 take a screenshot of an **rqt_graph** visualization of your node(s) and topic(s), and upload the screenshot to Gradescope.
 
 > **IMPORTANT NOTE:** For grading purposes, always name the script executable's name the same as its corresponding node's name.
@@ -205,8 +206,35 @@ The new node takes the natural log of the message in the `my_random_float` topic
 - **Message type:** Float32
 - **Subscription topic names:** `my_random_float`
 
-Take a screenshot of **rqt_graph** showing your nodes running. On rqt_graph, select `Nodes/Topics (all)` on the top-left to view both
-nodes and topics, and uncheck the hide `Dead sinks` and `Leaf topics` options. Upload the screenshot to Gradescope.
+Let's run both the subscriber and the publisher at the same time using `tmuxp`! Create a YAML tmux configuration file named
+`simple_pubsub_tmux.yaml`. Running `tmuxp load simple_pubsub_tmux.yaml` launches a tmux session with the following structure:
+
+- **Session name:** `rss_lab1c`
+- **Window name:** `simple_pubsub`
+- **Layout**: tiled
+- **Pane 1:** runs the `simple_publisher` node
+- **Pane 2:** runs the `simple_subscriber` node
+- **Pane 3:** runs the command `ros2 topic echo /my_random_float`
+- **Pane 4:** runs the command `ros2 topic hz /my_random_float`
+
+On the bottom-left pane, you should see the output of `ros2 topic echo /my_random_float`. This is a valuable debugging tool
+that lets you monitor messages on any topic in real-time, helping you verify that nodes are publishing correctly, check message
+content and frequency, and troubleshoot communication issues between nodes.
+
+On the bottom-right pane, `ros2 topic hz /my_random_float` monitors the message publishing frequency, which can be useful for
+confirming your node is publishing at the expected rate and diagnosing timing issues. If you wrote `simple_publisher` correctly,
+you should see your node is publishing `/my_random_float` at 20 Hz.
+
+Take and save a screenshot of **rqt_graph** showing your nodes running. On rqt_graph, select `Nodes/Topics (all)` on the top-left to
+view both nodes and topics, and uncheck the hide `Dead sinks` and `Leaf topics` options.
+
+Lastly, take and save a screenshot of **rqt_plot**, selecting `/random_float_log/data` as the Topic on the top-left corner of the window.
+rqt_plot is a tool that visualizes ROS2 topic data as a line graph, allowing you to see how values change over time. This is especially
+useful for future labs with briefings and reports, where presenting quantitative data is essential.
+
+Upload the rqt_graph screenshot, rqt_plot screenshot, and `simple_pubsub_tmux.yaml` to Gradescope.
+
+> **Hint:** You can run rqt_plot using `ros2 run rqt_plot rqt_plot`.
 
 ### Question 3: Create a More Complex Publisher (Python)
 
@@ -322,6 +350,28 @@ and visualize the LaserScan data on RViz. Try it with multiple coordinate frames
 
 > The provided bag files are from our cars driving around in the basement of Stata Center.
 
+Recording your own bagfiles is also very important for reproducing test results and debugging your code.
+Re-launch `my_first_launch.launch.xml` from Question 6, and run `ros2 topic list`. This is a useful command to see the list of
+active topics. Now, while `my_first_launch.launch.xml` is launched, record a short (~4 seconds) rosbag named `my_first_bag` which
+contains the topics `/fake_scan`, `/my_random_float`, and `/open_space`.
+
+Once you've finished recording, stop `my_first_launch.launch.xml` and run `ros2 bag play my_first_bag -l`. The `-l` flag enables looping,
+so the rosbag automatically restarts from the beginning when it reaches the end.
+
+Open a new terminal and run `ros2 topic list`. You should see `/fake_scan`, `/my_random_float`, and `/open_space`
+being published by the rosbag player.
+
+Next, open another terminal and run your `simple_subscriber` node. You should observe that `/random_float_log` is now being published,
+with the subscriber processing the `/my_random_float` data from the bagfile. This demonstrates how rosbags allow you to replay
+identical input data for consistent debugging, testing, and evaluation.
+
+Take a screenshot of **rqt_graph** showing:
+- The `rosbag2_player` node publishing `/fake_scan`, `/my_random_float`, and `/open_space`
+- Your `simple_subscriber` node running, subscribing to `/my_random_float`, and publishing to `/random_float_log`
+
+Again, make sure to select `Nodes/Topics (all)` to display both nodes and topics, and uncheck `Hide Dead sinks` and `Hide Leaf topics`.
+Upload the screenshot to Gradescope.
+
 ### Question 9: TF Exercises
 
 In this question, we will use the `one_loop` bagfile from Question 8. Note that instead of `map`, this rosbag uses `odom`.
@@ -348,14 +398,15 @@ At each time step, your node should:
 5. Broadcast the computed transforms for the cameras to the TF tree. The left camera's TF should be broadcast on the
     `left_cam` frame, and the right camera's TF goes on `right_cam`.
 
-Save a short (~4 seconds) GIF of RViz as the rosbag plays with your node running. Since this bagfile uses the `odom` frame, you
+Save a short (~4 seconds) video of RViz as the rosbag plays with your node running. Since this bagfile uses the `odom` frame, you
 need to click the panel on the left and under global options, change `Fixed Frame: map` to `Fixed Frame: odom`. This changes the
 "origin" of the RViz grid to the `odom` frame instead of the `map` frame (which doesn't exist in this bagfile). Additionally, make sure
 we can see the `base_link` frame and both the left and right camera frames moving around by clicking `Add -> By display type -> TF`,
 and make the camera follow `base_link` by changing `Target Frame: <Fixed Frame>` to `Target Frame: base_link` on the right panel.
 
-Lastly, generate a PDF of your TF tree using `ros2 run tf2_tools view_frames`. Save and upload the GIF, PDF, and
-`dynamic_tf_cam_publisher.py` to Gradescope.
+Lastly, generate a PDF of your TF tree using `ros2 run tf2_tools view_frames`. Save and upload the video, PDF, and
+`dynamic_tf_cam_publisher.py` to Gradescope. **Please submit the video as an MP4 or GIF!** Gradescope does not work
+well with other video file formats.
 
 * **Note 1:** Don't worry if the new TF frames are jittery and/or don't follow the `base_link` frame fast enough; this should be fixed in part 2.
 * **Note 2:** You will be doing some transformations in your ROS node. You may find
@@ -363,9 +414,6 @@ Lastly, generate a PDF of your TF tree using `ros2 run tf2_tools view_frames`. S
     spatial transforms to be useful.
 * **Note 3:** Remember: your `left_cam` transform is defined relative to `odom`, and your `right_cam` transform is defined relative to
     `left_cam`. These require slightly different equations!
-* **Note 4:** You can easily record screen captures using the Kazam package (`sudo apt-get install kazam`) and you can use the
-    `ffmpeg` package (see [this](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality) post)
-    or a [web-hosted tool](https://new.express.adobe.com/tools/convert-to-gif) to convert to GIF.
 
 #### Part 2: The ~~Easy~~ Better Way
 
@@ -377,8 +425,9 @@ Lastly, generate a PDF of your TF tree using `ros2 run tf2_tools view_frames`. S
 > Do NOT call `sendTransform` multiple times when broadcasting multiple static transforms. Instead, pass all of them as a list to a
 > single `sendTransform` call.
 
-Save a short (~4 seconds) GIF of RViz just as in part 1, but with your `static_tf_cam_publisher.py` node running. This should
-look much smoother than in part 1. Upload the GIF and `static_tf_cam_publisher.py` to Gradescope.
+Save a short (~4 seconds) video of RViz just as in part 1, but with your `static_tf_cam_publisher.py` node running. This should
+look much smoother than in part 1. Upload the video and `static_tf_cam_publisher.py` to Gradescope. Again **please submit the video
+as an MP4 or GIF!**
 
 #### Part 3: Back to `base_link`
 
@@ -391,8 +440,8 @@ Add this node to your `static_tf_publisher.launch.xml` file, such that both the 
 `base_link_2` are broadcasted when the launch file is executed. You should be able to visualize both `base_link` and `base_link_2`
 on top of each other in RViz.
 
-Save a short GIF of RViz again, and make sure you can see both `base_link_2` and `base_link` on top of each other.
-Upload the GIF, `static_tf_publisher.launch.xml`, and `base_link_tf_pub.py` to Gradescope.
+Save a short MP4 or GIF video of RViz again, and make sure you can see both `base_link_2` and `base_link` on top of each other.
+Upload the video, `static_tf_publisher.launch.xml`, and `base_link_tf_pub.py` to Gradescope.
 
 > **Hint:** Use `numpy.linalg.inv()`!
 
@@ -401,7 +450,10 @@ Upload the GIF, `static_tf_publisher.launch.xml`, and `base_link_tf_pub.py` to G
 Here are some helpful tools to use when trying to debug your code.
 
 ### `ros2 topic list`
-A running node should be publishing or subscribing to different topics. To check that these topics are being listened/talked to, the command `rostopic list` will list all topics that are currently active (either being subscribed to, published to, or both).
+Lists currently active topics which are being subscribed to, published to, or both.
+
+### `ros2 node list`
+Lists currently active nodes.
 
 ### `ros2 topic echo /topic_name`
 Once you know that a command is being published/subscribed to, you can echo its contents, which can show whether or not any information is being passed across this topic or if you are not sending what you expect.
@@ -411,6 +463,9 @@ This is a tool to display graphs of running ROS nodes with connecting topics and
 
 ### `rviz2`
 This is a powerful 3D visualization tool for displaying sensor data and state information from ROS. You will be using it more extensively in future labs.
+
+### `ros2 run rqt_plot rqt_plot`
+This is a plotting tool that visualizes ROS2 topic data as a line graph, allowing you to see how values change over time.
 
 ### `ros2 run tf2_tools view_frames`
 This creates a PDF file with a visualization of your TF tree.
