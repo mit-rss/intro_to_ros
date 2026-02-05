@@ -144,8 +144,6 @@ Additionally, a useful ROS2 cheatsheet can be found [here](https://github.com/Mi
 
 The racecar Docker image already has a workspace installed called `racecar_ws`. 
 
-If you are not using Docker to run ROS (e.g. using a virtual machine or a manual install), make sure to create your own workspace.
-
 Inside your workspace, create a directory inside `/src` named `lab1c`. Inside this new `lab1c` directory, create a new
 **Python based** (not C++ based) package (this means that the keyword **`ament_python`** will be in the command to create the package),
 named `ros_exercises`, which should depend on `rclpy`, `std_msgs`, and `sensor_msgs`. Your `ros_exercises` package should live in the
