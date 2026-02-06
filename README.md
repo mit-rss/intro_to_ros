@@ -2,6 +2,7 @@
 |-------------------------------------------------------------------------------------------------------|--------------------------------------|
 | `log.npf` [Gradescope Submission](https://www.gradescope.com/courses/1227626/assignments/7471281)     | Tuesday, February 17th at 1:00PM EST |
 | Manual grader [Gradescope Submission](https://www.gradescope.com/courses/1227626/assignments/7574354) | Tuesday, February 17th at 1:00PM EST |
+| In-person Lab Checkoffs                                                                               | Tuesday, February 17th, during lab   |
 
 # Lab 1C: Intro to ROS
 
