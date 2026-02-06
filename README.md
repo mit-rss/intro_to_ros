@@ -114,24 +114,24 @@ Additionally, a useful ROS2 cheatsheet can be found [here](https://github.com/Mi
 > This class uses ROS2 **Humble** with colcon. Be careful when searching online: much of the available documentation
 > is for the deprecated ROS1 system, which uses different commands and concepts. Always verify you're reading ROS2 Humble documentation.
  
-1. Packages
-    a. [Managing a colcon workspace](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html)
+1. Packages\
+    a. [Managing a colcon workspace](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html)\
     b. [Create a ROS Python package](https://docs.ros.org/en/humble/How-To-Guides/Developing-a-ROS-2-Package.html#python-packages)
-2. Messages
-    a. [ROS messages](https://docs.ros.org/en/humble/Concepts/About-ROS-Interfaces.html)
-    b. [Creating custom messages](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)
+2. Messages\
+    a. [ROS messages](https://docs.ros.org/en/humble/Concepts/About-ROS-Interfaces.html)\
+    b. [Creating custom messages](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)\
     c. [Common ROS message categories](https://github.com/ros2/common_interfaces)
 3. [Topics](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)
-4. Nodes
-    a. [ROS nodes](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)
+4. Nodes\
+    a. [ROS nodes](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)\
     b. [Writing publishers and subscribers (Python)](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)
-5. Launch Files
-    a. [ROS launch](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Launch-Main.html)
+5. Launch Files\
+    a. [ROS launch](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Launch-Main.html)\
     b. [Launch system](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Launch-system.html)
 6. [Parameters](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Parameters/Understanding-ROS2-Parameters.html)
-7. Visualization Tools
-    a. [rqt](https://docs.ros.org/en/humble/Concepts/About-RQt.html)
-    b. [rqt_graph](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#rqt-graph)
+7. Visualization Tools\
+    a. [rqt](https://docs.ros.org/en/humble/Concepts/About-RQt.html)\
+    b. [rqt_graph](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#rqt-graph)\
     c. [RViz](https://docs.ros.org/en/humble/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html)
 8. [TF2](https://docs.ros.org/en/humble/Tutorials/Intermediate/Tf2/Tf2-Main.html)
 9. [Rosbag](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
