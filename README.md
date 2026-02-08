@@ -89,6 +89,7 @@ This table shows how the different tasks will be graded by the automated grader.
 
 Throughout the exercises, submit your screenshots, videos, and code to the Gradescope assignment
 **Lab 1C: Intro to ROS -- Manual grader** whenever a problem requests submission.
+Questions 7-9 are all manually graded.
 
 ### Manual Grade Breakdown
 
@@ -423,7 +424,7 @@ well with other video file formats.
     once. Name this node `static_tf_cam_publisher.py`.
 2. Write a ROS launch file that runs `static_tf_cam_publisher.py`. Name this launch file `static_tf_publisher.launch.xml`.
 
-> Do NOT call `sendTransform` multiple times when broadcasting multiple static transforms. Instead, pass all of them as a list to a
+> **Do NOT call `sendTransform` multiple times** when broadcasting multiple static transforms. Instead, pass all of them as a list to a
 > single `sendTransform` call.
 
 Save a short (~4 seconds) video of RViz just as in part 1, but with your `static_tf_cam_publisher.py` node running. This should
