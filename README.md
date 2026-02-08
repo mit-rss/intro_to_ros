@@ -56,7 +56,9 @@ You can download the test binary to check your solutions locally by going to the
 and downloading the `run_tests` binary. **Run this autograder AFTER you have completed questions 1-6**. Most people will probably need to use
 the `amd64` version, but if you have an Apple Silicon chip, you'll need to use the `arm64` version.
 
-Once you download the test binary, make it executable with `chmod`:
+Once you download the test binary, move it into `~/racecar_ws`, and open a new terminal in your Docker container.
+
+Then, make it executable with `chmod`:
 ```
 chmod +x run_tests_*
 ```
