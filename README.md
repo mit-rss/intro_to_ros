@@ -189,8 +189,9 @@ will reside inside of the `ros_exercises/ros_exercises/` folder (i.e. inside the
 - **Subscription topic names:** None
 - **Publish rate:** 20hz
 
-When your node works properly, run it (remember to update your `setup.py`, `colcon build --symlink-install`, and `source install/setup.bash`),
-take a screenshot of an **rqt_graph** visualization of your node(s) and topic(s), and upload the screenshot to Gradescope.
+When your node works properly, run it (remember to update your `setup.py`, `colcon build --symlink-install`, and `source install/setup.bash`)
+and take a screenshot of an **rqt_graph** visualization of your node(s) and topic(s). On rqt_graph, make sure to select `Nodes/Topics (all)` on the
+top-left to view both nodes and topics, and uncheck the hide `Dead sinks` and `Leaf topics` options. Upload the screenshot to Gradescope.
 
 > **IMPORTANT NOTE:** For grading purposes, always name the script executable's name the same as its corresponding node's name.
 
@@ -227,7 +228,7 @@ On the bottom-right pane, `ros2 topic hz /my_random_float` monitors the message 
 confirming your node is publishing at the expected rate and diagnosing timing issues. If you wrote `simple_publisher` correctly,
 you should see your node is publishing `/my_random_float` at 20 Hz.
 
-Take and save a screenshot of **rqt_graph** showing your nodes running. On rqt_graph, select `Nodes/Topics (all)` on the top-left to
+Take and save a screenshot of **rqt_graph** showing your nodes running. Again, on rqt_graph, select `Nodes/Topics (all)` on the top-left to
 view both nodes and topics, and uncheck the hide `Dead sinks` and `Leaf topics` options.
 
 Lastly, take and save a screenshot of **rqt_plot**, selecting `/random_float_log/data` as the Topic on the top-left corner of the window.
