@@ -113,7 +113,7 @@ The following are selected chapters from the ROS2 [Documentation](https://docs.r
 [Tutorials](https://docs.ros.org/en/humble/Tutorials.html). If you understand the concepts covered in these tutorials, you will be
 ready for the exercises of this lab and most of the ROS-related tasks you will be performing throughout the first few labs.
 
-Additionally, a useful ROS2 cheatsheet can be found [here](https://github.com/Micropolisdxb/ROS2-Documentation/blob/main/ros2_cheat_sheet.md).
+Additionally, a useful ROS2 cheatsheet can be found [here](https://docs.google.com/document/d/19KpKdB8fCG35zQ4zX0TzEmOgEfiJ4PT6eRGjgpOhSmQ/edit?tab=t.0).
 
 > This class uses ROS2 **Humble** with colcon. Be careful when searching online: much of the available documentation
 > is for the deprecated ROS1 system, which uses different commands and concepts. Always verify you're reading ROS2 Humble documentation.
