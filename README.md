@@ -63,7 +63,7 @@ Then, make it executable with `chmod`:
 chmod +x run_tests_*
 ```
 
-Finally, run the following in a new terminal to begin testing:
+**After completing questions 1-6**, run the following in a new terminal to begin testing:
 ```
 ./run_tests_*
 ```
