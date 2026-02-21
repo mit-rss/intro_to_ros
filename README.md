@@ -299,7 +299,7 @@ Create a node that subscribes to the fake LaserScan data and outputs the longest
 In the previous exercise, the publisher sent two related data points on separate topics: `open_space/angle` and `open_space/distance`.
 For this exercise, you'll create a custom message that bundles both pieces of data together, similar to how the LaserScan message type
 consolidates multiple data fields. Start by creating a new CMake package called `custom_msgs` that contains your custom message file
-`OpenSpace.msg`. `OpenSpace.msg` should include two Float32 fields: `angle` and `distance`. Once you've created and compiled this custom
+`OpenSpace.msg`. `OpenSpace.msg` should include two float32 fields: `angle` and `distance`. Once you've created and compiled this custom
 message, update the publisher from the previous exercise to publish this new message type on a single topic called `open_space`,
 replacing the two separate topic publications.
 
